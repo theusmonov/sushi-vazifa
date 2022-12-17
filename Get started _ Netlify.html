@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://app.netlify.com/signup-questions -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Get started | Netlify</title><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><meta name="google-site-verification" content="G4JqDTXMHpDyWoqIRwgw8PBqg-AncXqtdkHehcOR7kc"><link rel="preconnect" href="https://api.commandbar.com/" crossorigin=""><link rel="preconnect" href="https://screenshot-proxy.netlify.app/" crossorigin=""><link rel="apple-touch-icon" sizes="180x180" href="https://www.netlify.com/v3/static/favicon/apple-touch-icon.png"><link rel="icon" type="image/x-icon" href="https://app.netlify.com/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="https://app.netlify.com/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="https://app.netlify.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="48x48" href="https://app.netlify.com/favicon-48x48.png"><link href="./Get started _ Netlify_files/app.css" rel="stylesheet"><script src="./Get started _ Netlify_files/banner.js.download" type="text/javascript" id="cookieBanner-7477936" data-cookieconsent="ignore" data-hs-ignore="true" data-loader="hs-scriptloader" data-hsjs-portal="7477936" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script src="./Get started _ Netlify_files/7477936.js.download" type="text/javascript" id="hs-script-loader"></script><script type="text/javascript" async="" src="./Get started _ Netlify_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Get started _ Netlify_files/7477936.js(1).download" id="hs-analytics"></script><script type="text/javascript" async="" src="./Get started _ Netlify_files/gtm.js.download"></script><script type="text/javascript" src="./Get started _ Netlify_files/commons.c42222c4cb2f8913500f.js.gz" async="" status="loaded"></script><script type="text/javascript" src="./Get started _ Netlify_files/visual-tagger.dynamic.js.gz" async="" status="loaded"></script><script type="text/javascript" src="./Get started _ Netlify_files/hubspot.dynamic.js.gz" async="" status="loaded"></script><script type="text/javascript" src="./Get started _ Netlify_files/google-tag-manager.dynamic.js.gz" async="" status="loaded"></script><script type="text/javascript" src="./Get started _ Netlify_files/ed984d68b220640a83ac.js.download" async="" status="loaded"></script><script async="" src="./Get started _ Netlify_files/analytics.min.js.download"></script><script async="" type="module" src="./Get started _ Netlify_files/userflow.js.download"></script><link rel="prefetch" as="script" href="https://app.netlify.com/framework-info.bundle.js"><style id="_goober"> @keyframes go2264125279{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go3020080000{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}@keyframes go463499852{from{transform:scale(0) rotate(90deg);opacity:0;}to{transform:scale(1) rotate(90deg);opacity:1;}}@keyframes go1268368563{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes go1310225428{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go651618207{0%{height:0;width:0;opacity:0;}40%{height:0;width:6px;opacity:1;}100%{opacity:1;height:10px;}}@keyframes go901347462{from{transform:scale(0.6);opacity:0.4;}to{transform:scale(1);opacity:1;}}.go4109123758{z-index:9999;}.go4109123758 > *{pointer-events:auto;}</style><style>#commandbar-wrapper *,
+#commandbar-wrapper *:before,
+#commandbar-wrapper *:after {
+  box-sizing: border-box;
+}
+
+.commandbar-modal > .rc-dialog > .rc-dialog-content {
+  background-color: transparent;
+  /* Enables 3d animations within the bar */
+  perspective: 100px;
+}
+
+.commandbar-tooltip {
+  z-index: 2147483647 !important; /*make the tooltip the highest possible z index*/
+}
+
+/*** Hack: Hide this because it's less flexible (classnames can't be changes)
+    Instead we only show its children, by translating its children ***/
+.commandbar-modal > .rc-dialog > .rc-dialog-content > .rc-dialog-header {
+  max-height: 0px !important;
+  padding: 0px !important;
+}
+
+.commandbar-modal > .rc-dialog {
+  left: 0px;
+  transition: left 0.3s;
+}
+
+.commandbar-modal > .rc-dialog > .rc-dialog-content > .rc-dialog-body {
+  position: relative !important;
+}
+
+/* TestMode inline CommandBar */
+.commandbar-modal-inline.rc-dialog-wrap {
+  position: relative;
+  height: 100%;
+}
+
+#commandbar-container > div {
+  height: 100%;
+}
+
+#commandbar-home > .rc-dialog-root {
+  height: 100%;
+}
+
+#commandbar-wrapper .rc-header-guidance {
+  background: rgba(174, 177, 221, 1) !important;
+  filter: brightness(135%);
+  border-radius: 2px 2px 0px 0px !important;
+  border-bottom: 0px !important;
+  padding: 8px 30px 2px 30px !important;
+  margin: 0px 10px 0px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px !important;
+  font-weight: 400;
+  text-align: center;
+}
+
+@keyframes fontbulger {
+  0% {
+    font-size: 10px;
+  }
+  30% {
+    font-size: 15px;
+  }
+  100% {
+    font-size: 12px;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
+.commandbar-category-collapse {
+  transform: scale(1, -1);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.commandbar-category-expand {
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+</style><style>/*** Guidance banner styling and animation ***/
+@keyframes example {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+.rc-header-guidance {
+  animation: example 0.5s; /* IE 10+, Fx 29+ */
+  -webkit-animation: example 0.5s; /* Safari 4+ */
+  -moz-animation: example 0.5s; /* Fx 5+ */
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards; /* Safari 4+ */
+  -moz-animation-fill-mode: forwards; /* Fx 5+ */
+}
+
+/*** CommandBar entry animation ***/
+/*** We can't do exit animation because rc-dialog makes display: none ***/
+@keyframes onEntry {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.commandbar-opened {
+  animation: onEntry 0.1s; /* IE 10+, Fx 29+ */
+  -webkit-animation: onEntry 0.1s; /* Safari 4+ */
+  -moz-animation: onEntry 0.1s; /* Fx 5+ */
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards; /*   Safari 4+ */
+  -moz-animation-fill-mode: forwards; /*  Fx 5+ */
+}
+
+@keyframes onSelect {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(0px, 0px, -0.5px);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.commandbar-selected {
+  animation: onSelect 0.4s; /* IE 10+, Fx 29+ */
+  -webkit-animation: onSelect 0.4s; /* Safari 4+ */
+  -moz-animation: onSelect 0.4s; /* Fx 5+ */
+}
+
+@keyframes ScaleEntry {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.commandbar-scale-entry-animation {
+  animation: ScaleEntry 0.3s; /* IE 10+, Fx 29+ */
+  -webkit-animation: ScaleEntry 0.3s; /* Safari 4+ */
+  -moz-animation: ScaleEntry 0.3s; /* Fx 5+ */
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards; /*   Safari 4+ */
+  -moz-animation-fill-mode: forwards; /*  Fx 5+ */
+}
+
+.commandbar-shortcut-tooltip {
+  opacity: 0;
+  animation: tagEntry 0.2s;
+  animation-delay: 0.5s;
+  -webkit-animation: tagEntry 0.2s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation: tagEntry 0.2s;
+  -moz-animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+}
+
+@keyframes tagExit {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.commandbar-shortcut-tooltip-remove {
+  animation: tagExit 0.2s; /* IE 10+, Fx 29+ */
+  -webkit-animation: tagExit 0.2s; /* Safari 4+ */
+  -moz-animation: tagExit 0.2s; /* Fx 5+ */
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards; /*   Safari 4+ */
+  -moz-animation-fill-mode: forwards; /*  Fx 5+ */
+}
+
+.commandbar-shortcut-tooltip,
+.commandbar-shortcut-tooltip-remove {
+  z-index: 99999999;
+  position: absolute;
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: proxima-nova, sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.commandbar-shortcut-tooltip-tag {
+  margin-left: 10px;
+  padding: 2px 5px;
+  border-radius: 2px;
+  background-color: grey;
+}
+
+#commandbar-launcher {
+  animation: 0.25s ease-out scaleIn;
+}
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes growFromBottom {
+  0% {
+    transform: scale(1, 0.3);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.commandbar-animation-fade-in {
+  animation: 0.3s ease-out onEntry;
+  transform-origin: 100% 100%;
+}
+@keyframes moveLeft {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -110;
+  }
+}
+
+@keyframes commandbar-animation-shake {
+  10%,
+  90% {
+    transform: translate3d(-0.5px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(1px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+.commandbar-blocks-animation {
+  animation: moveLeft 0.4s; /* IE 10+, Fx 29+ */
+  -webkit-animation: moveLeft 0.4s; /* Safari 4+ */
+  -moz-animation: moveLeft 0.4s; /* Fx 5+ */
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards; /*   Safari 4+ */
+  -moz-animation-fill-mode: forwards; /*  Fx 5+ */
+}
+</style><style>.rc-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.rc-dialog-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.rc-dialog-title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: bold;
+}
+.rc-dialog-content {
+  position: relative;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 6px 6px;
+  background-clip: padding-box;
+}
+.rc-dialog-close {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  font-size: 21px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+  text-decoration: none;
+}
+.rc-dialog-close-x:after {
+  content: '×';
+}
+.rc-dialog-close:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  text-decoration: none;
+}
+.rc-dialog-header {
+  padding: 13px 20px 14px 20px;
+  border-radius: 5px 5px 0 0;
+  background: #fff;
+  color: #666;
+  border-bottom: 1px solid #e9e9e9;
+}
+.rc-dialog-body {
+  padding: 20px;
+}
+.rc-dialog-footer {
+  border-top: 1px solid #e9e9e9;
+  padding: 10px 20px;
+  text-align: right;
+  border-radius: 0 0 5px 5px;
+}
+.rc-dialog-zoom-enter,
+.rc-dialog-zoom-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+  animation-play-state: paused;
+}
+.rc-dialog-zoom-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  animation-play-state: paused;
+}
+.rc-dialog-zoom-enter.rc-dialog-zoom-enter-active,
+.rc-dialog-zoom-appear.rc-dialog-zoom-appear-active {
+  animation-name: rcDialogZoomIn;
+  animation-play-state: running;
+}
+.rc-dialog-zoom-leave.rc-dialog-zoom-leave-active {
+  animation-name: rcDialogZoomOut;
+  animation-play-state: running;
+}
+@keyframes rcDialogZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+@keyframes rcDialogZoomOut {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+}
+@media (min-width: 768px) {
+  .rc-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+}
+.rc-dialog-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #373737;
+  background-color: rgba(55, 55, 55, 0.6);
+  height: 100%;
+  filter: alpha(opacity=50);
+  z-index: 1050;
+}
+.rc-dialog-mask-hidden {
+  display: none;
+}
+.rc-dialog-fade-enter,
+.rc-dialog-fade-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+.rc-dialog-fade-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+.rc-dialog-fade-enter.rc-dialog-fade-enter-active,
+.rc-dialog-fade-appear.rc-dialog-fade-appear-active {
+  animation-name: rcDialogFadeIn;
+  animation-play-state: running;
+}
+.rc-dialog-fade-leave.rc-dialog-fade-leave-active {
+  animation-name: rcDialogFadeOut;
+  animation-play-state: running;
+}
+@keyframes rcDialogFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rcDialogFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+</style><style>.commandbar-search-filter-block,
+.commandbar-block,
+.commandbar-block-background-left,
+.commandbar-block-background-top {
+  line-height: 19.2px;
+  min-width: 0px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  position: relative;
+  transition: color ease-in 0.3s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.commandbar-search-filter-block {
+  padding: 4px;
+}
+
+.commandbar-block-background-left {
+  margin: 0px 4px 8px 4px;
+}
+
+.commandbar-block-background-top:first-child {
+  margin-left: 0px;
+}
+
+.commandbar-block-background-top {
+  margin: 4px;
+}
+
+.commandbar-blocks-container-left {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: -110px;
+  max-width: 100px;
+  z-index: -1;
+  overflow: visible;
+  align-items: flex-end;
+  top: 0px;
+}
+
+.commandbar-blocks-container-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+</style><style>/*
+* rc-tooltip styles
+* TODO set up a less loader and use the built in rc-tooltip.less files instead
+* of manually overwriting the css file with specific selectors
+*/
+
+.commandbar-tooltip.commandbar-tooltip-zoom-enter,
+.commandbar-tooltip.commandbar-tooltip-zoom-leave {
+  display: block;
+}
+.commandbar-tooltip-zoom-enter,
+.commandbar-tooltip-zoom-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation-play-state: paused;
+}
+.commandbar-tooltip-zoom-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
+  animation-play-state: paused;
+}
+.commandbar-tooltip-zoom-enter.commandbar-tooltip-zoom-enter-active,
+.commandbar-tooltip-zoom-appear.commandbar-tooltip-zoom-appear-active {
+  animation-name: rcToolTipZoomIn;
+  animation-play-state: running;
+}
+.commandbar-tooltip-zoom-leave.commandbar-tooltip-zoom-leave-active {
+  animation-name: rcToolTipZoomOut;
+  animation-play-state: running;
+}
+@keyframes rcToolTipZoomIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+  }
+}
+@keyframes rcToolTipZoomOut {
+  0% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(0, 0);
+  }
+}
+.commandbar-tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  visibility: visible;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+.commandbar-tooltip-hidden {
+  display: none;
+}
+.commandbar-tooltip-placement-top,
+.commandbar-tooltip-placement-topLeft,
+.commandbar-tooltip-placement-topRight {
+  padding: 5px 0 9px 0;
+}
+.commandbar-tooltip-placement-right,
+.commandbar-tooltip-placement-rightTop,
+.commandbar-tooltip-placement-rightBottom {
+  padding: 0 5px 0 9px;
+}
+.commandbar-tooltip-placement-bottom,
+.commandbar-tooltip-placement-bottomLeft,
+.commandbar-tooltip-placement-bottomRight {
+  padding: 9px 0 5px 0;
+}
+.commandbar-tooltip-placement-left,
+.commandbar-tooltip-placement-leftTop,
+.commandbar-tooltip-placement-leftBottom {
+  padding: 0 9px 0 5px;
+}
+.commandbar-tooltip-inner {
+  padding: 8px 10px;
+  color: #d5d6d7 !important;
+  text-align: left;
+  text-decoration: none;
+  background-color: #373737;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+}
+
+.commandbar-tooltip-inner > span {
+  color: inherit;
+}
+
+.commandbar-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.commandbar-tooltip-placement-top .commandbar-tooltip-arrow,
+.commandbar-tooltip-placement-topLeft .commandbar-tooltip-arrow,
+.commandbar-tooltip-placement-topRight .commandbar-tooltip-arrow {
+  bottom: 4px;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #373737;
+}
+.commandbar-tooltip-placement-top .commandbar-tooltip-arrow {
+  left: 50%;
+}
+.commandbar-tooltip-placement-topLeft .commandbar-tooltip-arrow {
+  left: 15%;
+}
+.commandbar-tooltip-placement-topRight .commandbar-tooltip-arrow {
+  right: 15%;
+}
+.commandbar-tooltip-placement-right .commandbar-tooltip-arrow,
+.commandbar-tooltip-placement-rightTop .commandbar-tooltip-arrow,
+.commandbar-tooltip-placement-rightBottom .commandbar-tooltip-arrow {
+  left: 4px;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #373737;
+}
+.commandbar-tooltip-placement-right .commandbar-tooltip-arrow {
+  top: 50%;
+}
+.commandbar-tooltip-placement-rightTop .commandbar-tooltip-arrow {
+  top: 15%;
+  margin-top: 0;
+}
+.commandbar-tooltip-placement-rightBottom .commandbar-tooltip-arrow {
+  bottom: 15%;
+}
+.commandbar-tooltip-placement-left .commandbar-tooltip-arrow,
+.commandbar-tooltip-placement-leftTop .commandbar-tooltip-arrow,
+.commandbar-tooltip-placement-leftBottom .commandbar-tooltip-arrow {
+  right: 4px;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #373737;
+}
+.commandbar-tooltip-placement-left .commandbar-tooltip-arrow {
+  top: 50%;
+}
+.commandbar-tooltip-placement-leftTop .commandbar-tooltip-arrow {
+  top: 15%;
+  margin-top: 0;
+}
+.commandbar-tooltip-placement-leftBottom .commandbar-tooltip-arrow {
+  bottom: 15%;
+}
+.commandbar-tooltip-placement-bottom .commandbar-tooltip-arrow,
+.commandbar-tooltip-placement-bottomLeft .commandbar-tooltip-arrow,
+.commandbar-tooltip-placement-bottomRight .commandbar-tooltip-arrow {
+  top: 4px;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #373737;
+}
+.commandbar-tooltip-placement-bottom .commandbar-tooltip-arrow {
+  left: 50%;
+}
+.commandbar-tooltip-placement-bottomLeft .commandbar-tooltip-arrow {
+  left: 15%;
+}
+.commandbar-tooltip-placement-bottomRight .commandbar-tooltip-arrow {
+  right: 15%;
+}
+</style><style>.styles_poweredContainer__YRbFW {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.styles_poweredContainer__YRbFW:hover {
+  opacity: 1;
+}
+</style><style data-emotion="css" data-s=""></style><script charset="utf-8" src="./Get started _ Netlify_files/13.7ca37fd749ece40e6b66.chunk.js.download"></script><script charset="utf-8" src="./Get started _ Netlify_files/6.4163748cda0759be4763.chunk.js.download"></script><script charset="utf-8" src="./Get started _ Netlify_files/1.7d5648fd7c0291d649aa.chunk.js.download"></script></head><body><script src="./Get started _ Netlify_files/s.js.download"></script><svg style="bottom: 0; position: absolute; z-index: -1" aria-hidden="true"><defs><radialgradient id="netlify-logo-gradient" cx="0%" cy="0%" r="100%" fx="0%" fy="0%"><stop offset="0%" stop-color="#20C6B7"></stop><stop offset="100%" stop-color="#4D9ABF"></stop></radialgradient><path id="netlify-logomark" d="m297 88-8 50c3 1 5 2 7 5l39-17-38-38zm-34 69c-.5-2-.5-2.9 0-5l-58-25c-4 7-14 11-22 9l-49 76 129-55zm-59-54c2 2 4 7 4 11l62 27c2-2 3-3 6-4l10-60-40-40-42 66zm-98-18-47 47 51 74c4-1 8-2 13 0l48-76c-5-5-7-13-5-20l-60-25zm160 190-12 80 75.9-75.9L276 268c-2 4-6 6-10 7zm36-121 98 41.9a9 9 0 0 0-.6-2.2c-1.5-4.9-6-9.3-14.4-17.7l-40-41-43 19zm-59 107-105.1-21c-.9 2-.9 2-1.9 3l94 136 8-8 16-96c-6-3-10-8-11-14zM74 282l23-36c-1-1-1-1-2-3l-43 18 22 21zm223-116c-3 5-8 7-13 7l-12 71c4 3 6 6 7 12l62 12 44-44a76.7 76.7 0 0 0 13-15l-101-43zM91 230 4.8 212.9c2.3 2.9 5.6 6.5 10.2 11.1l27 27 49-21zm35 21c-5 3-13 3-18 1l-25 40 94 93c8.4 8.4 12.1 12.5 17 14 4.1 1.3 8.4 1.3 12.5 0s7.3-3.9 13.5-10l-94-138zm142.5-82.5L140 223c1 2 1 3 1 5l104 21c3-6 9-9 15-9l11-70c-1 0-2-1-2.5-1.5zM94 218c2-4 1-3 5-6l-49-71-34.9 35.2C6.7 184.6 2.5 188.8.9 193.7c-.5 1.7-.8 3.5-.9 5.3l94 19zm79-118c5-5 14-6 21-4l43-68-13-12.9C215.6 6.7 211.4 2.5 206.5 1a20.8 20.8 0 0 0-12.6 0c-4.9 1.5-9.5 6.6-17.9 15l-60 59 57 25z"></path><symbol id="netlify-logo" viewBox="0 0 400 400"><use xlink:href="#netlify-logomark" fill="url(#netlify-logo-gradient)"></use></symbol><symbol id="netlify-logo-mono" viewBox="0 0 400 400"><use xlink:href="#netlify-logomark" fill="inherit"></use></symbol></defs></svg><div id="root" tabindex="-1"><div role="status" aria-live="polite" aria-atomic="true" class="visuallyhidden" style=""></div><div class="app" style=""><main id="main" class="app-main" role="main" tabindex="-1"><div class="container tw-my-4 tw-mx-0 tw-max-w-none tw-relative tw-z-overlay before:tw-content-empty before:tw-bg-white before:tw-fixed before:tw-inset-0 dark:before:tw-bg-bgApp"><header class="tw-block"><svg xmlns="http://www.w3.org/2000/svg" width="147" height="40" aria-hidden="true" class="tw-text-black dark:tw-text-white tw-relative"><radialgradient id="logo-full-light-a" cy="0%" r="100.11%" gradientTransform="matrix(0 .9989 -1.152 0 .5 -.5)"><stop offset="0" stop-color="#20c6b7"></stop><stop offset="1" stop-color="#4d9abf"></stop></radialgradient><g fill-rule="evenodd"><path d="m53.37 12.98.12 2.2a6.82 6.82 0 0 1 5.53-2.55c3.95 0 5.96 2.26 6.03 6.8V32h-4.26V19.68c0-1.21-.26-2.1-.78-2.69-.52-.58-1.37-.87-2.55-.87-1.72 0-3 .78-3.84 2.34V32h-4.26V12.98h4.01zm24.38 19.37a8.8 8.8 0 0 1-6.57-2.56c-1.68-1.7-2.52-3.97-2.52-6.8v-.54c0-1.9.37-3.6 1.1-5.08a8.13 8.13 0 0 1 7.5-4.74c2.58 0 4.58.82 5.99 2.48 1.4 1.65 2.11 3.99 2.11 7.01v1.72h-12.4c.13 1.57.65 2.81 1.57 3.73s2.07 1.37 3.46 1.37c1.96 0 3.55-.79 4.77-2.37l2.3 2.2a7.68 7.68 0 0 1-3.04 2.64 9.5 9.5 0 0 1-4.27.94zm-.51-16.3c-1.17 0-2.11.42-2.83 1.24a6.38 6.38 0 0 0-1.38 3.42h8.12v-.31a5.2 5.2 0 0 0-1.14-3.25 3.56 3.56 0 0 0-2.77-1.1zm16.77-7.7v4.63h3.34v3.16H94v10.62c0 .73.15 1.25.43 1.57.3.33.8.49 1.54.49a6.55 6.55 0 0 0 1.49-.18v3.3c-.97.28-1.9.4-2.8.4-3.28 0-4.92-1.8-4.92-5.42V16.14h-3.12v-3.16h3.12V8.36H94zM105.13 32h-4.26V5h4.26zm9.17 0h-4.26V12.98h4.26zm-4.5-23.96c0-.66.2-1.2.62-1.63.42-.44 1.01-.65 1.78-.65s1.37.21 1.8.65c.41.43.62.97.62 1.63a2.2 2.2 0 0 1-.63 1.6 2.4 2.4 0 0 1-1.79.65c-.77 0-1.36-.21-1.78-.64a2.22 2.22 0 0 1-.62-1.61zM120.45 32V16.14h-2.9v-3.16h2.9v-1.74c0-2.11.59-3.74 1.75-4.89 1.17-1.15 2.81-1.72 4.91-1.72.75 0 1.55.1 2.4.32l-.11 3.34a8.38 8.38 0 0 0-1.64-.14c-2.03 0-3.05 1.04-3.05 3.14v1.69h3.86v3.16h-3.86V32h-4.26zm17.87-6.12 3.86-12.9h4.54l-7.54 21.9c-1.16 3.2-3.12 4.8-5.9 4.8-.61 0-1.3-.1-2.04-.32v-3.3l.8.05c1.08 0 1.89-.2 2.43-.59a3.9 3.9 0 0 0 1.3-1.97l.6-1.64-6.66-18.93h4.6z"></path><path fill="url(#logo-full-light-a)" fill-rule="nonzero" d="M28.59 14.13h-.02l-.02-.01a.11.11 0 0 1-.03-.1l.78-4.72 3.62 3.62-3.77 1.6a.08.08 0 0 1-.03.01h-.02l-.02-.01a1.72 1.72 0 0 0-.5-.38zm5.26-.28 3.87 3.87c.8.8 1.21 1.21 1.36 1.68l.05.2-9.26-3.92a.73.73 0 0 0-.02 0c-.03-.02-.08-.04-.08-.07s.05-.06.09-.07zm5.12 7c-.2.38-.59.77-1.25 1.43l-4.37 4.37-5.65-1.18h-.03c-.05-.01-.1-.02-.1-.07a1.7 1.7 0 0 0-.66-1.2c-.02-.02-.01-.05 0-.08v-.02l1.06-6.52v-.03c0-.05.02-.1.06-.1a1.73 1.73 0 0 0 1.16-.67l.03-.03c.03-.01.07 0 .1.02l9.65 4.08zm-6.62 6.8-7.19 7.19 1.23-7.56v-.01l.01-.03c.01-.03.04-.04.06-.05h.01a1.85 1.85 0 0 0 .7-.52c.02-.03.05-.05.09-.06a.09.09 0 0 1 .03 0l5.06 1.04zm-8.7 8.7-.82.82-8.95-12.94a.42.42 0 0 0-.01-.02l-.03-.06.02-.04.01-.01.08-.13.02-.03.05-.06h.08l9.92 2.04a.16.16 0 0 1 .07.03c.02.02.02.03.02.05a1.76 1.76 0 0 0 1.03 1.17c.03.02.02.05 0 .08a.24.24 0 0 0-.01.05l-1.49 9.06zm-1.7 1.7c-.6.59-.95.9-1.35 1.03a2 2 0 0 1-1.2 0c-.47-.15-.87-.55-1.68-1.36l-8.99-8.99 2.35-3.64a.15.15 0 0 1 .04-.05c.02-.02.06-.01.09 0a2.43 2.43 0 0 0 1.64-.08c.03-.01.05-.02.07 0a.19.19 0 0 1 .03.03l9 13.06zM7.86 27.86 5.8 25.8l4.07-1.74a.08.08 0 0 1 .04 0c.03 0 .05.03.07.06a2.91 2.91 0 0 0 .13.18l.01.02v.05l-2.26 3.5zM4.9 24.9l-2.61-2.61c-.45-.45-.77-.77-1-1.05l7.94 1.65a.84.84 0 0 0 .03 0c.05.01.1.02.1.07s-.05.07-.1.09l-.03.01zm-4.06-5a2 2 0 0 1 .1-.5c.14-.46.54-.86 1.35-1.67l3.34-3.34a2175.53 2175.53 0 0 0 4.62 6.69c.03.04.06.08.03.1-.15.17-.3.34-.4.53a.16.16 0 0 1-.05.07h-.04L.83 19.89zm5.68-6.4L11 8.99c.42.2 1.96.84 3.33 1.42l2.29.97c.03.01.06.03.07.06v.06a2 2 0 0 0 .52 1.82c.03.03 0 .08-.02.11l-.02.03-4.56 7.06a.14.14 0 0 1-.04.05h-.09a2.27 2.27 0 0 0-.54-.07 3 3 0 0 0-.52.06h-.06a.21.21 0 0 1-.04-.06l-4.82-7zm5.4-5.4 5.81-5.81c.8-.8 1.21-1.21 1.68-1.36a2 2 0 0 1 1.2 0c.47.15.87.55 1.68 1.36l1.26 1.26-4.14 6.4a.15.15 0 0 1-.04.05c-.02.02-.06 0-.09 0a2.1 2.1 0 0 0-1.92.37c-.03.03-.07.01-.1 0L11.92 8.1zm12.5-3.67 3.82 3.81-.92 5.7v.02a.14.14 0 0 1 0 .03c-.01.02-.03.03-.05.03a1.83 1.83 0 0 0-.55.28.15.15 0 0 0-.02.01l-.04.03a.11.11 0 0 1-.05 0l-5.81-2.48h-.01c-.04-.02-.09-.04-.09-.08a2.2 2.2 0 0 0-.3-.91c-.03-.05-.06-.1-.04-.14zm-3.93 8.6 5.46 2.31c.03.02.06.03.07.06a.1.1 0 0 1 0 .06c-.01.08-.03.17-.03.26v.15c0 .04-.04.06-.07.07h-.01l-12.15 5.18c-.02 0-.03 0-.05-.02-.03-.03 0-.07.03-.1a.76.76 0 0 0 0-.03l4.5-6.94v-.01c.03-.04.06-.09.1-.09h.05l.28.03c.68 0 1.31-.33 1.7-.9a.16.16 0 0 1 .03-.03c.02-.02.06-.01.1 0zm-6.24 9.19 12.28-5.24.03.02.18.15.03.02c.02.01.05.03.05.05v.03l-1.05 6.46v.03c-.01.05-.02.1-.07.1a1.73 1.73 0 0 0-1.37.85l-.06.07h-.07l-9.79-2.02-.16-.52z" transform="translate(-.7)"></path></g></svg></header><section class="tw-mx-auto tw-mt-4 tw-relative tw-w-auto tw-max-w-10"><div class="tw-mt-5 md:tw-mt-5" data-ff-cosmog-val="false"><h1>Get started</h1><form class="tw-mt-4 form-group form-group--mkt"><h2>Tell us about yourself</h2><p class="tw-mt-2">Your responses will help us improve your experience.</p><fieldset class="tw-mt-3 form-field floating"><legend class="!tw-text-xs label">I'm using Netlify for</legend><div><div class="tw-mt-1 md:tw-mt-1 tw-ml-[4px] tw-inline-block"><label><input data-testid="checkbox" class="tw-appearance-none tw-border-[1px] tw-border-solid tw-w-[20px] tw-h-[20px] tw-p-0 tw-cursor-pointer tw-mr-1 tw-mt-[2px] tw-mb-0 tw-ml-[2px] tw-box-border tw-absolute tw-top-auto before:tw-absolute before:tw-content-empty before:tw-origin-top-left focus:tw-outline-0 focus:tw-shadow-checkbox tw-border-gray-dark hover:tw-border-gray-darker dark:tw-border-gray-light dark:hover:tw-border-gray-lighter checked:tw-bg-teal checked:tw-border-teal checked:hover:focus:tw-border-teal-lighter checked:after:tw-bg-teal-darkest checked:before:tw-bg-teal-darkest dark:tw-bg-gray-darkest dark:focus:tw-shadow-black-teal dark:checked:tw-bg-teal-lighter dark:checked:tw-border-teal-lighter dark:checked:hover:tw-bg-teal dark:checked:hover:tw-border-teal dark:checked:tw-border-teal-lighter dark:disabled:tw-bg-gray-darker tw-absolute !tw-w-0 tw-p-0 tw-m-0 tw-border-0 tw-opacity-0 tw-rounded-50 checked:before:tw-rounded-50 checked:before:tw-h-1 checked:before:tw-w-1 checked:before:tw-opacity-100 checked:before:tw-top-1/2 checked:before:tw-left-1/2 checked:before:tw-transform checked:before:tw--translate-x-1/2 checked:before:tw--translate-y-1/2" type="radio" name="useCaseContext" value="school"><span class="tw-inline-block tw-px-2 tw-border-solid tw-rounded-sm tw-py-[4px] tw-border-[2px] tw-border-gray-light tw-text-gray-darkest tw-font-medium hover:tw-bg-gray-lighter label-checked:tw-border-teal-darker label-focus:tw-bg-gray-lighter label-focus:tw-border-teal dark:tw-border-gray-dark dark:tw-text-gray-lightest dark:hover:tw-bg-gray-darker dark:label-checked:tw-border-teal-lighter dark:label-focus:tw-bg-gray-darker tw-cursor-pointer tw-text-base tw-text-gray-darkest tw-font-semibold dark:tw-text-gray-lightest">School</span></label></div><div class="tw-mt-1 md:tw-mt-1 tw-ml-[4px] tw-inline-block"><label><input data-testid="checkbox" class="tw-appearance-none tw-border-[1px] tw-border-solid tw-w-[20px] tw-h-[20px] tw-p-0 tw-cursor-pointer tw-mr-1 tw-mt-[2px] tw-mb-0 tw-ml-[2px] tw-box-border tw-absolute tw-top-auto before:tw-absolute before:tw-content-empty before:tw-origin-top-left focus:tw-outline-0 focus:tw-shadow-checkbox tw-border-gray-dark hover:tw-border-gray-darker dark:tw-border-gray-light dark:hover:tw-border-gray-lighter checked:tw-bg-teal checked:tw-border-teal checked:hover:focus:tw-border-teal-lighter checked:after:tw-bg-teal-darkest checked:before:tw-bg-teal-darkest dark:tw-bg-gray-darkest dark:focus:tw-shadow-black-teal dark:checked:tw-bg-teal-lighter dark:checked:tw-border-teal-lighter dark:checked:hover:tw-bg-teal dark:checked:hover:tw-border-teal dark:checked:tw-border-teal-lighter dark:disabled:tw-bg-gray-darker tw-absolute !tw-w-0 tw-p-0 tw-m-0 tw-border-0 tw-opacity-0 tw-rounded-50 checked:before:tw-rounded-50 checked:before:tw-h-1 checked:before:tw-w-1 checked:before:tw-opacity-100 checked:before:tw-top-1/2 checked:before:tw-left-1/2 checked:before:tw-transform checked:before:tw--translate-x-1/2 checked:before:tw--translate-y-1/2" type="radio" name="useCaseContext" value="personal"><span class="tw-inline-block tw-px-2 tw-border-solid tw-rounded-sm tw-py-[4px] tw-border-[2px] tw-border-gray-light tw-text-gray-darkest tw-font-medium hover:tw-bg-gray-lighter label-checked:tw-border-teal-darker label-focus:tw-bg-gray-lighter label-focus:tw-border-teal dark:tw-border-gray-dark dark:tw-text-gray-lightest dark:hover:tw-bg-gray-darker dark:label-checked:tw-border-teal-lighter dark:label-focus:tw-bg-gray-darker tw-cursor-pointer tw-text-base tw-text-gray-darkest tw-font-semibold dark:tw-text-gray-lightest">Personal</span></label></div><div class="tw-mt-1 md:tw-mt-1 tw-ml-[4px] tw-inline-block"><label><input data-testid="checkbox" class="tw-appearance-none tw-border-[1px] tw-border-solid tw-w-[20px] tw-h-[20px] tw-p-0 tw-cursor-pointer tw-mr-1 tw-mt-[2px] tw-mb-0 tw-ml-[2px] tw-box-border tw-absolute tw-top-auto before:tw-absolute before:tw-content-empty before:tw-origin-top-left focus:tw-outline-0 focus:tw-shadow-checkbox tw-border-gray-dark hover:tw-border-gray-darker dark:tw-border-gray-light dark:hover:tw-border-gray-lighter checked:tw-bg-teal checked:tw-border-teal checked:hover:focus:tw-border-teal-lighter checked:after:tw-bg-teal-darkest checked:before:tw-bg-teal-darkest dark:tw-bg-gray-darkest dark:focus:tw-shadow-black-teal dark:checked:tw-bg-teal-lighter dark:checked:tw-border-teal-lighter dark:checked:hover:tw-bg-teal dark:checked:hover:tw-border-teal dark:checked:tw-border-teal-lighter dark:disabled:tw-bg-gray-darker tw-absolute !tw-w-0 tw-p-0 tw-m-0 tw-border-0 tw-opacity-0 tw-rounded-50 checked:before:tw-rounded-50 checked:before:tw-h-1 checked:before:tw-w-1 checked:before:tw-opacity-100 checked:before:tw-top-1/2 checked:before:tw-left-1/2 checked:before:tw-transform checked:before:tw--translate-x-1/2 checked:before:tw--translate-y-1/2" type="radio" name="useCaseContext" value="work"><span class="tw-inline-block tw-px-2 tw-border-solid tw-rounded-sm tw-py-[4px] tw-border-[2px] tw-border-gray-light tw-text-gray-darkest tw-font-medium hover:tw-bg-gray-lighter label-checked:tw-border-teal-darker label-focus:tw-bg-gray-lighter label-focus:tw-border-teal dark:tw-border-gray-dark dark:tw-text-gray-lightest dark:hover:tw-bg-gray-darker dark:label-checked:tw-border-teal-lighter dark:label-focus:tw-bg-gray-darker tw-cursor-pointer tw-text-base tw-text-gray-darkest tw-font-semibold dark:tw-text-gray-lightest">Work</span></label></div><div class="tw-mt-1 md:tw-mt-1 tw-ml-[4px] tw-inline-block"><label><input data-testid="checkbox" class="tw-appearance-none tw-border-[1px] tw-border-solid tw-w-[20px] tw-h-[20px] tw-p-0 tw-cursor-pointer tw-mr-1 tw-mt-[2px] tw-mb-0 tw-ml-[2px] tw-box-border tw-absolute tw-top-auto before:tw-absolute before:tw-content-empty before:tw-origin-top-left focus:tw-outline-0 focus:tw-shadow-checkbox tw-border-gray-dark hover:tw-border-gray-darker dark:tw-border-gray-light dark:hover:tw-border-gray-lighter checked:tw-bg-teal checked:tw-border-teal checked:hover:focus:tw-border-teal-lighter checked:after:tw-bg-teal-darkest checked:before:tw-bg-teal-darkest dark:tw-bg-gray-darkest dark:focus:tw-shadow-black-teal dark:checked:tw-bg-teal-lighter dark:checked:tw-border-teal-lighter dark:checked:hover:tw-bg-teal dark:checked:hover:tw-border-teal dark:checked:tw-border-teal-lighter dark:disabled:tw-bg-gray-darker tw-absolute !tw-w-0 tw-p-0 tw-m-0 tw-border-0 tw-opacity-0 tw-rounded-50 checked:before:tw-rounded-50 checked:before:tw-h-1 checked:before:tw-w-1 checked:before:tw-opacity-100 checked:before:tw-top-1/2 checked:before:tw-left-1/2 checked:before:tw-transform checked:before:tw--translate-x-1/2 checked:before:tw--translate-y-1/2" type="radio" name="useCaseContext" value="client"><span class="tw-inline-block tw-px-2 tw-border-solid tw-rounded-sm tw-py-[4px] tw-border-[2px] tw-border-gray-light tw-text-gray-darkest tw-font-medium hover:tw-bg-gray-lighter label-checked:tw-border-teal-darker label-focus:tw-bg-gray-lighter label-focus:tw-border-teal dark:tw-border-gray-dark dark:tw-text-gray-lightest dark:hover:tw-bg-gray-darker dark:label-checked:tw-border-teal-lighter dark:label-focus:tw-bg-gray-darker tw-cursor-pointer tw-text-base tw-text-gray-darkest tw-font-semibold dark:tw-text-gray-lightest">Client</span></label></div><p class="tw-italic tw-text-sm tw-mt-2 tw-ml-[4px] tw-flex tw-items-center"><svg height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg" class="tw-mr-[4px]"><path d="M10 .4C4.697.4.399 4.698.399 10A9.6 9.6 0 0 0 10 19.601c5.301 0 9.6-4.298 9.6-9.601S15.301.4 10 .4zm.896 3.466c.936 0 1.211.543 1.211 1.164 0 .775-.62 1.492-1.679 1.492-.886 0-1.308-.445-1.282-1.182 0-.621.519-1.474 1.75-1.474zM8.498 15.75c-.64 0-1.107-.389-.66-2.094l.733-3.025c.127-.484.148-.678 0-.678-.191 0-1.022.334-1.512.664l-.319-.523c1.555-1.299 3.343-2.061 4.108-2.061.64 0 .746.756.427 1.92l-.84 3.18c-.149.562-.085.756.064.756.192 0 .82-.232 1.438-.719l.362.486c-1.513 1.512-3.162 2.094-3.801 2.094z"></path></svg>Required field</p></div></fieldset><div class="tw-c-form-field tw-group tw-mt-3"><label class=""><div class="tw-c-form-field-label tw-text-gray-darker dark:tw-text-gray-lighter tw-font-regular tw-leading-very-chill tw-cursor-pointer">I'm a:</div><div class=""><div class=" css-2b097c-container"><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span><div class=" css-1gvr7rm-control"><div class=" css-1bi92cr"><div class=" css-rst613-singleValue">Hobby Developer</div><div class="css-1avudjy"><div class="" style="display: inline-block;"><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-2-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 0; outline: 0px; padding: 0px; color: inherit;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-weight: 500; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div></div><div class=" css-t2qd9c"><span class=" css-1hyfx7x"></span><div class=" css-35fwus-indicatorContainer" aria-hidden="true"><svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="m4 4 3.4 3.4c.3.4.9.4 1.2 0L11.9 4 14 6.2l-5.4 5.6c-.3.3-.9.3-1.2 0L2 6.2z"></path></svg></div></div></div></div></div></label></div><div class="tw-c-form-field tw-group tw-mt-3"><label class=""><div class="tw-c-form-field-label tw-text-gray-darker dark:tw-text-gray-lighter tw-font-regular tw-leading-very-chill tw-cursor-pointer">My first project will be:</div><div class=""><div class=" css-2b097c-container"><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span><div class=" css-1gvr7rm-control"><div class=" css-1bi92cr"><div class=" css-rst613-singleValue">Personal / portfolio site</div><div class="css-1avudjy"><div class="" style="display: inline-block;"><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-3-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 0; outline: 0px; padding: 0px; color: inherit;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-weight: 500; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div></div><div class=" css-t2qd9c"><span class=" css-1hyfx7x"></span><div class=" css-35fwus-indicatorContainer" aria-hidden="true"><svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="m4 4 3.4 3.4c.3.4.9.4 1.2 0L11.9 4 14 6.2l-5.4 5.6c-.3.3-.9.3-1.2 0L2 6.2z"></path></svg></div></div></div></div></div></label></div><div class="tw-c-form-field tw-group tw-mt-3"><label class=""><div class="tw-c-form-field-label tw-text-gray-darker dark:tw-text-gray-lighter tw-font-regular tw-leading-very-chill tw-cursor-pointer">I discovered Netlify from:</div><div class=""><div class=" css-2b097c-container"><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span><div class=" css-1gvr7rm-control"><div class=" css-1bi92cr"><div class=" css-rst613-singleValue">Using Netlify personally in the past</div><div class="css-1avudjy"><div class="" style="display: inline-block;"><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-4-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" value="" style="box-sizing: content-box; width: 2px; background: 0px center; border: 0px; font-size: inherit; opacity: 0; outline: 0px; padding: 0px; color: inherit;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-weight: 500; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div></div><div class=" css-t2qd9c"><span class=" css-1hyfx7x"></span><div class=" css-35fwus-indicatorContainer" aria-hidden="true"><svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="m4 4 3.4 3.4c.3.4.9.4 1.2 0L11.9 4 14 6.2l-5.4 5.6c-.3.3-.9.3-1.2 0L2 6.2z"></path></svg></div></div></div></div></div></label></div><div class="tw-c-form-field tw-group tw-mt-3"><label class=""><div class="tw-c-form-field-label tw-text-gray-darker dark:tw-text-gray-lighter tw-font-regular tw-leading-very-chill tw-cursor-pointer tw-sr-only">How did you discover Netlify?</div><div class=""><input id="nf_field_911951bd-da00-4be0-b1a5-2cdf6c5b7719" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" hidden="" name="signupAttributionOther" type="text" placeholder="I discovered netlify from" class="" value=""></div></label></div><hr><h2>Personalize your team space</h2><p class="tw-mt-2">Make your team your own.</p><div class="tw-c-form-field tw-group tw-mt-3"><label class=""><div class="tw-c-form-field-label tw-text-gray-darker dark:tw-text-gray-lighter tw-font-regular tw-leading-very-chill tw-cursor-pointer">Name your team</div><div class=""><input id="nf_field_42ad4976-6576-4da7-b6e6-b96f1ddc3f6e" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" name="teamName" maxlength="75" type="text" placeholder="Project name or your name" class="" value=""></div></label></div><p class="tw-text-sm tw-mt-2"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="tw-mr-[0.3rem] tw-align-middle"><path d="M12.836 10.208c.63 1.006.602 2.185-.116 2.882l-2.418 2.35c-.19.183-.458.265-.756.232a1.25 1.25 0 0 1-.209-.04 1.456 1.456 0 0 1-.617-.366 1.461 1.461 0 0 1-.271-.363l-1.38-2.593-1.432 1.37a.358.358 0 0 1-.278.094l-.028-.002c-.174-.02-1.118-.167-2.157-1.187-1.127-1.105-1.204-2.096-1.206-2.138a.34.34 0 0 1 .097-.271L3.46 8.842.962 7.559a1.537 1.537 0 0 1-.367-.266 1.419 1.419 0 0 1-.37-.605L.186 6.58c-.07-.197-.2-.564.07-.826L2.65 3.43c.438-.426 1.125-.623 1.885-.54.421.046.836.18 1.204.383 3.05 2.2 4.7 3.85 7.097 6.935Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.569 11.342c1.907 1.908 5.839 1.165 8.476-1.405 2.375-2.315 3.517-7.815 2.13-9.201C13.851-.588 8.191.703 5.992 2.848c-2.448 2.388-3.3 6.618-1.423 8.495Zm7.786-7.77a.974.974 0 0 1 0 1.398c-.19.187-.445.29-.715.29-.27 0-.525-.103-.715-.29a.973.973 0 0 1-.001-1.397 1.02 1.02 0 0 1 .716-.289c.27 0 .524.103.715.288Z"></path></svg>People who use Netlify for personal work often use a project name or their own name.</p><div class="tw-pt-4 tw-mt-5 tw-border-t-[2px] tw-border-t-solid tw-border-gray-light"><button class="btn btn-default btn-primary btn-primary--standard" type="submit">Set up and continue</button></div></form></div></section></div></main></div></div><script>// preload the critical path fetch requests that the app
+      // loads (some in a serial fashion) during bootstrap
+      (() => {
+        // we are confident the user is authenticated
+        // if we have the auth cookie hint.
+        if (document.cookie.includes('_nf-auth-hint')) {
+          // ParallelData allows for async loading and handoff to the app. It also
+          // allows us to pull data from a parallel loaded request to use to make other
+          // parallel requests.
+          // This is the fetch-only version (does not include XHR parallel loading)
+          // ParallelData v1.3.0 - https://github.com/sean-roberts/parallel-data
+          // prettier-ignore
+          !function(){"use strict";var e="ParallelData";function t(){try{for(var t,r=arguments.length,n=Array(r),o=0;o<r;o++)n[o]=arguments[o];(t=console).error.apply(t,[e].concat(n))}catch(e){}}function r(e,t){return Object.assign.apply(Object,arguments)}var n={},o={},a={},c=function(e,t){return e.toUpperCase()+"-"+t},i=function(){};i=function(e,n,i){var l=c(e,n);if(!o[l])var u=o[l]=fetch(n,r({},i,{__PDFetch__:!0,method:e,headers:r({},a.headers,i.headers||{}),credentials:i.credentials||"include",redirect:i.redirect||"follow"})).then(function(e){return i&&i.onParallelDataResponse&&i.onParallelDataResponse(e.clone(),{transferredToApp:!!u.__PDConsumed__}),e}).catch(function(e){throw t("fetch request failed",e),e})},window.ParallelData={version:"1.3.0",configure:function(e){var t;(e=e||{}).allRequests&&(t=e.allRequests,a=r({},a,t||{}))}},window.ParallelData.getForFetch=function(e,r){r=r||{};try{"fetch"in window&&"Promise"in window&&i("GET",e,r)}catch(e){t("fetch request failed",e)}},function(){try{var e=window.fetch;if(!e||!window.Promise)return;window.fetch=function(t,r){t=t||{},r=r||{};var a=void 0;"string"==typeof t?a=t:t.url&&(a=t.url);var i=function(e,t){if(e&&e.method&&e.url){var r=c(e.method,e.url);return"xhr"===t?n[r]:o[r]}}({method:r.method?r.method:t.method?t.method:"GET",url:a},"fetch");return r.__PDFetch__||!i||i.__PDConsumed__?e.apply(window,arguments):(i.__PDConsumed__=!0,i)}}catch(e){t("failed to run fetchInterceptor",e)}}()}();
+          // These requests were chosen because they were the most common critical path
+          // requests across all pages
+          ParallelData.getForFetch('/access-control/bb-api/api/v1/user');
+          ParallelData.getForFetch('/access-control/bb-api/api/v1/accounts');
+          ParallelData.getForFetch(
+            '/access-control/bb-api/api/v1/organizations'
+          );
+          ParallelData.getForFetch(
+            '/.netlify/functions/notifications?page=1&per_page=10'
+          );
+        }
+      })();</script><script>if (
+        window.location.host === 'app.netlify.com' ||
+        window.location.search.includes('force-load-segment')
+      ) {
+        // Segment snippet
+        // running snippet here because it will set up the initial mocked
+        // methods/properties for immediate use but we call analytics.load() later after the
+        // page has loaded so that segment is out of the critical path
+        // prettier-ignore
+        !function () {
+          var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+            analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "page", "once", "off", "on"]; analytics.factory = function (t) { return function () { var e = Array.prototype.slice.call(arguments); e.unshift(t); analytics.push(e); return analytics } }; for (var t = 0; t < analytics.methods.length; t++) { var e = analytics.methods[t]; analytics[e] = analytics.factory(e) } analytics.load = function (t) { var e = document.createElement("script"); e.async = !0; e.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(e, n) }; analytics.SNIPPET_VERSION = "3.1.0";
+          }
+        }();
+
+        window._asyncScriptsWaitingLoad = window._asyncScriptsWaitingLoad || [];
+        window._asyncScriptsWaitingLoad.push(() => {
+          // load Segment
+          if (window.analytics) {
+            analytics.load("bHbADSxnRvrpFMYP6pMNP38JC4J7Av75");
+          }
+        });
+      }</script><script>(() => {
+        // Snippet modified! Modifications: make the fn addressable and load it async
+        // prettier-ignore
+        function loadQualtrics(){var g=function(e,h,f,g){
+          this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+          this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+          this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+          this.go=function(){if(this.check()){var a=document.createElement("script");a.src=g;document.body&&document.body.appendChild(a)}};
+          this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+          try{(new g(100,"r","QSI_S_ZN_2fUBCKrIaC7UPsi","https://zn2fubckriac7upsi-netlify.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_2fUBCKrIaC7UPsi")).start()}catch(i){}
+        }
+
+        window._asyncScriptsWaitingLoad = window._asyncScriptsWaitingLoad || [];
+        window._asyncScriptsWaitingLoad.push(() => {
+          // This variable is used to determine if the script was
+          // invoked by the downstream logic that waits for it to load
+          window._qualtricsLoadInvoked = true;
+          loadQualtrics();
+        });
+      })();</script><div id="ZN_2fUBCKrIaC7UPsi"></div><script>// Failed to execute 'removeChild' on 'Node' workaround
+      // https://github.com/facebook/react/issues/11538#issuecomment-417504600
+      (() => {
+        var originalRemoveChild = Node.prototype.removeChild;
+        var originalInsertBefore = Node.prototype.insertBefore;
+        var log
+        var observer = new MutationObserver(function (event) {
+          if (document.documentElement.className.match('translated')) {
+            log = window.DD_RUM && window.DD_RUM.addAction
+              ? window.DD_RUM.addAction
+              : (name, data) => console.error(name, data);
+            log('PageTranslate');
+            if (typeof Node === 'function' && Node.prototype) {
+              Node.prototype.removeChild = function (child) {
+                if (child.parentNode !== this) {
+                  log('CustomError', { errorType: 'removeChild', child: child })
+                  return child;
+                }
+                return originalRemoveChild.apply(this, arguments);
+              }
+              Node.prototype.insertBefore = function (newNode, referenceNode) {
+                if (referenceNode && referenceNode.parentNode !== this) {
+                  log('CustomError', { errorType: 'insertBefore', node: referenceNode })
+                  return newNode;
+                }
+                return originalInsertBefore.apply(this, arguments);
+              }
+            }
+          } else {
+            log && log('PageUntranslate');
+            Node.prototype.removeChild = originalRemoveChild;
+            Node.prototype.insertBefore = originalInsertBefore;
+          }
+        });
+        // https://stackoverflow.com/a/58891538
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['class'],
+          childList: false,
+          characterData: false
+        });
+      })();</script><script src="./Get started _ Netlify_files/runtime.bundle.js.download"></script><script src="./Get started _ Netlify_files/react.vendor.bundle.js.download"></script><script src="./Get started _ Netlify_files/graphql.vendor.bundle.js.download"></script><script src="./Get started _ Netlify_files/lib.bundle.js.download"></script><script src="./Get started _ Netlify_files/actions.bundle.js.download"></script><script src="./Get started _ Netlify_files/ui.bundle.js.download"></script><script src="./Get started _ Netlify_files/helpers.bundle.js.download"></script><script src="./Get started _ Netlify_files/lodash.vendor.bundle.js.download"></script><script src="./Get started _ Netlify_files/monitoring.vendor.bundle.js.download"></script><script src="./Get started _ Netlify_files/markdown.vendor.bundle.js.download"></script><script src="./Get started _ Netlify_files/relayRouterRedux.vendor.bundle.js.download"></script><script src="./Get started _ Netlify_files/containers.bundle.js.download"></script><script src="./Get started _ Netlify_files/reactUiUtilities.vendor.bundle.js.download"></script><script src="./Get started _ Netlify_files/reactVirtualized.vendor.bundle.js.download"></script><script src="./Get started _ Netlify_files/9401.bundle.js.download"></script><script src="./Get started _ Netlify_files/app.bundle.js.download"></script><iframe id="CrossStorageClient-bf06e719-e991-42cb-8068-1f892bee2f58" style="display: none; position: absolute; top: -999px; left: -999px;" src="./Get started _ Netlify_files/storage.html"></iframe><script>(()=>{
+        // this script adds cnm to the app but only to a percentage of users.
+        // this will enable us to measure users with it on vs off.
+        let shouldAddCNM = false;
+        try{
+
+          if(window.location.origin !== 'https://app.netlify.com' && !window.location.origin.endsWith('-app.netlify.app')){
+            return;
+          }
+
+          const alreadyHasResult = !!localStorage.getItem('cnm-add-result');
+          if(alreadyHasResult){
+            shouldAddCNM = localStorage.getItem('cnm-add-result') === 'true';
+          }else {
+            // 50% rollout
+            shouldAddCNM = (Math.random() * 100) > 50;
+            localStorage.setItem('cnm-add-result', shouldAddCNM.toString());
+          }
+          if(shouldAddCNM){
+            const script = document.createElement('script');
+            script.async = true;
+            script.defer = true;
+            script.src = '/netlify-cnm/cnm.js';
+            document.body.appendChild(script);
+          }
+          if (window.DD_RUM) {
+            DD_RUM.addRumGlobalContext('use-cnm', shouldAddCNM);
+            DD_RUM.addRumGlobalContext('multi-visit-cnm', alreadyHasResult);
+          }
+        }catch(e){}
+      })();</script><script async="" defer="" src="./Get started _ Netlify_files/cnm.js.download"></script><noscript><div class="app"><div class="tw-flex tw-z-overlay tw-inset-0 tw-fixed tw-items-center tw-justify-center tw-m-0 tw-text-center tw-w-full tw-min-h-screen tw-bg-white"><div class="container"><h1>The Netlify dashboard needs JavaScript :(</h1><p>You can enable JavaScript in <a href="https://enable-javascript.com/" class="highlight-link" target="_blank">your browser settings</a>.</p></div></div></div></noscript><div id="netlify-rum-container" data-netlify-rum-site-id="5f9562c1-be9c-4898-bc6a-5b40de4e1450" data-netlify-deploy-branch="main" data-netlify-deploy-context="production" style="position:fixed">
+  <!-- This div is automatically inserted by Netlify for Real User Monitoring (RUM). -->
+  <script async="" src="./Get started _ Netlify_files/netlify.js.download"></script>
+</div>
+<script src="./Get started _ Netlify_files/cnm-main-client.js.download" async=""></script><div id="commandbar-wrapper" data-commandbar="1"><div id="commandbar" data-commandbar="1"><div><div class="rc-dialog-root"><div tabindex="-1" class="rc-dialog-wrap commandbar-modal" aria-label="commandbar" style="z-index: 2147483644; display: none;"></div></div><div><div></div></div><div style="position: absolute; top: 35vh; right: 50vw; z-index: 2147483647;"><div style="position: relative;"></div></div><div style="position: fixed; z-index: 2147483647; inset: 16px; pointer-events: none;"></div></div></div></div><script src="./Get started _ Netlify_files/saved_resource"></script><script src="./Get started _ Netlify_files/CoreModule.js.download" defer=""></script></body></html>

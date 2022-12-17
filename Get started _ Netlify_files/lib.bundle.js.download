@@ -1,0 +1,2149 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[5647],{42249:(ge,X,c)=>{c.d(X,{D4:()=>U,TR:()=>w,_O:()=>W,f4:()=>O,qj:()=>z,sw:()=>a,yx:()=>n});var y=c(81080),G=c.n(y),C=c(33640);const D=/(\d{1,4})/g,V={amex:/(\d{1,4})(\d{1,6})?(\d{1,5})?/},M={"american-express":"amex"},H={amex:4};function W(l){const b=G().number(l).card;if(!!b)return{...b,type:M[b.type]||b.type,cvcLength:[b.code.size]}}function x(l){return l.length>2?l:`${new Date().getFullYear().toString().slice(0,2)}${l}`}function J(l,b){if(l=l.trim(),b=x(b.trim()),!/^\d+$/.test(l)||!/^\d+$/.test(b)||!(parseInt(l,10)<=12))return!1;const I=new Date(b,l),Z=new Date;return I.setMonth(I.getMonth()-1),I.setMonth(I.getMonth()+1,1),I>Z}function z(l){l=l.replace(/\s/g,"");let[b,I]=l.split("/",2);return b=b&&parseInt(b,10),I=I&&parseInt(x(I),10),{month:b,year:I}}function U(l){return G().number(l).isValid}function w(l){const{month:b,year:I}=z(l);return J(String(b),String(I))}function O(l,b=""){const I=H[b]||[3,4];return G().cvv(l,I).isValid}function t(l){if(!l)return null;const b=W(l);return b&&b.type}function n(l){const b=W(l);if(!b)return l;const I=b.lengths[b.lengths.length-1];l=l.replace(/\D/g,""),l=l.slice(0,I);const Z=V[b.type]||D;if(Z.global){const v=l.match(Z);return v&&v.join(" ")}const Q=Z.exec(l);return Q&&Q.shift(),Q&&Q.join(" ")}const a=({number:l,name:b,expiration:I,cvv:Z,country:Q,addressLine1:v,city:$,state:f,zipCode:h})=>U(l)?(0,C.fp)(b)?{success:!1,reason:"The name is required"}:w(I)?O(Z)?(0,C.fp)(Q)?{success:!1,reason:"The country is required"}:(0,C.fp)(v)?{success:!1,reason:"The address is required"}:(0,C.fp)($)?{success:!1,reason:"The city is required"}:(0,C.fp)(f)?{success:!1,reason:"The state is required"}:(0,C.fp)(h)?{success:!1,reason:"The postal code is required"}:{success:!0,reason:"OK"}:{success:!1,reason:"The CVV provided is invalid"}:{success:!1,reason:"The expiration date provided is invalid"}:{success:!1,reason:"The card number provided is invalid"}},81441:(ge,X,c)=>{c.d(X,{K:()=>Me});var y=c(24246),G=c(27378),C=c(7266),D=c(62654),V=c.n(D),M=c(8167);const H=({children:u})=>u?(0,y.jsx)(V(),{allowedElements:["a","p","br","code","pre","em","strong"],components:{a:({href:i="",children:r})=>{let o;try{const{origin:s}=new URL(i);o=s!==window.location.origin}catch{o=!1}return(0,y.jsx)(M.Z,{href:i,action:o,subdued:!o,outset:"tw-mt-0",children:r})}},children:u}):null,W={type:"text",optionsSchema:{},render({key:u,value:i}){return(0,y.jsx)(H,{children:i},u)}},x={type:"card",optionsSchema:{},render({title:u="",description:i="",contents:r},o){var s;return r?(0,y.jsx)(C.Z,{title:u,description:(0,y.jsx)(H,{children:i}),children:(0,y.jsx)(C.Z.Panel,{children:(s=o==null?void 0:o.renderElements)==null?void 0:s.call(o,r,o)})}):null}};var J=c(46629);const z={type:"display",optionsSchema:{},render({id:u,value:i,label:r}){return(0,y.jsx)(J.Z,{label:r,value:i},u)}};var U=c(96764),w=c(61712),O=c(66664),t=c(50120),n=c(46016),a=c(83064),l=c(24305);const b={type:"enablement",optionsSchema:{},render:function({key:i,title:r,description:o,illustration:s},{site:d,packageContext:_}){const A=(0,t.I)(),{enabled:K,name:j,friendlyName:se}=_||{};if(!d||!j)return null;const fe=(0,O.hA)(d),de=(0,y.jsx)(H,{children:o}),Se=K?"Disable":"Enable",p=`${Se} ${se}`;function m(){const ie=d==null?void 0:d.get("plugins");let oe=(ie==null?void 0:ie.toJS())||[];K?(oe=oe.filter(be=>be.package!==j),A((0,w.L3)(d,{plugins:oe}))):A((0,U.QK)(d,j,oe,!1))}return K?(0,y.jsxs)(l.Z,{title:p,description:de,deleteLabel:Se,onDelete:m,challenge:{label:"Type in the site\u2019s name to confirm",value:fe},children:[de,(0,y.jsxs)("p",{children:["Are you sure you want to remove ",se," from ",fe,"?"]})]},i):(0,y.jsx)(a.Z,{title:r,illustration:s,action:(0,y.jsx)(n.Z,{onClick:m,children:p}),children:de},i)}};var I=c(42406),Z=c(70046);const Q=(u,i)=>Array.isArray(i)?i.filter(({key:r})=>r===u):i,v=(u,i)=>(Q(u,i)||[]).length>0,$=(u,i)=>(Q(u,i)||[]).map(({values:r})=>r.map(({value:o})=>o).join(",")),f={type:"env-var",optionsSchema:{},render:function(i,r){const[o,s]=(0,G.useState)(!1);if(!i.envVarName||!r||!r.envVars||!r.account||!r.site||!r.envVarOnDelete||!r.envVarOnCreate)return null;const d=Q(i.envVarName,r.envVars);function _(){s(!o)}return(0,y.jsxs)("div",{className:"table-body",children:[!o&&(0,y.jsxs)("dl",{children:[(0,y.jsx)("dt",{children:i.varSummaryName}),v(i.envVarName,r==null?void 0:r.envVars)?(0,y.jsxs)("dd",{className:"tw-flex tw-items-center tw-justify-between",children:[(0,y.jsx)("span",{children:$(i.envVarName,r.envVars).join(", ")}),(0,y.jsx)(n.Z,{level:"secondary",className:"tw-justify-self-end",onClick:_,children:"Edit"})]}):(0,y.jsxs)("dd",{className:"placeholder tw-flex tw-items-center tw-justify-between",children:[(0,y.jsx)("span",{children:"Not set"}),(0,y.jsx)(n.Z,{level:"secondary",className:"tw-justify-self-end",onClick:_,children:"Edit"})]})]}),(0,y.jsxs)(Z.ZP,{show:o,noLayout:!0,wide:!0,children:[(0,y.jsx)("hr",{className:"tw-m-0 tw-hr"}),(0,y.jsx)("h1",{className:"tw-c-h2",id:"modal-title",children:i.varSummaryName}),i.varDescription&&(0,y.jsx)("p",{children:i.varDescription}),d.length>0&&(0,y.jsxs)(y.Fragment,{children:["env var list",(0,y.jsx)(n.Z,{level:"secondary",className:"tw-justify-self-end",onClick:_,children:"Close"})]}),d.length===0&&(0,y.jsx)(I.Z,{account:r.account,handleCancel:_,handleSave:r.envVarOnCreate,initialKey:i.envVarName,shouldUpsell:!1,site:r.site})]})]})}};var h=c(24609);const P={type:"form",optionsSchema:{},render(u,i){var r;return u.contents?(0,y.jsx)("div",{className:h.k,children:u.contents&&((r=i==null?void 0:i.renderElements)==null?void 0:r.call(i,u.contents,i))}):null}};var R=c(31425),E=c(61599);const T=({value:u,label:i})=>(0,y.jsx)(J.Z,{label:i,value:u.map((r,o)=>(0,y.jsx)(N,{checkboxValue:r},`checkbox-${i}-${o}`))}),N=({checkboxValue:u})=>{const i=typeof u=="string",[r,o]=(0,G.useState)(i?!1:u.isSelected||!1),s=i?u:u.value;return(0,y.jsx)(E.Z,{type:"checkbox",name:`wfui_checkbox-${(0,R.Z)()}`,label:s,checked:r,onChange:()=>o(!r),required:!0,controlledChecked:void 0,title:void 0,helpText:void 0,disabled:void 0,loading:void 0,tabIndex:void 0,error:void 0,outset:void 0,value:void 0})},q={type:"input-checkbox",optionsSchema:{},render({value:u,label:i,type:r}){return(0,y.jsx)(T,{value:u,label:i,type:r})}};var L=c(33640),g=c(75981);const B=u=>{const{name:i,value:r}=u.target,{surfaceInputsData:o}=globalThis.netlifyContext.state;globalThis.netlifyContext.emit("INPUT_CHANGE",{surfaceInputsData:{...o,[i]:r}})},k=({id:u,label:i,value:r,helpText:o,required:s})=>(0,y.jsx)(g.Z,{name:u,label:i,value:r,leftLabel:!0,helpText:o,required:s,onChange:B}),te={type:"input-password",optionsSchema:{},render({id:u,helpText:i,value:r,label:o,type:s,required:d},{displayOnly:_}){return _?(0,y.jsx)(J.Z,{label:o,value:r&&L.Nw},u):(0,y.jsx)(k,{id:u,label:o,value:r,helpText:i,type:s,required:d},u)}},ae=({value:u,label:i,helpText:r})=>{const o=u.findLast(A=>A.isSelected===!0),[s,d]=(0,G.useState)(o.value||""),_=A=>{const K=A.target.value;d(K)};return(0,y.jsx)(J.Z,{label:i,value:u==null?void 0:u.map(A=>(0,y.jsx)(E.Z,{type:"radio",name:`wfui_${i}`,label:A.value,value:A.value,checked:s===A.value,onChange:_,helpText:r,required:!0,controlledChecked:void 0,title:void 0,disabled:void 0,loading:void 0,tabIndex:void 0,error:void 0,outset:void 0},A.value))})},ne={type:"input-radio",optionsSchema:{},render({id:u,helpText:i,value:r,label:o,type:s,checkedValue:d}){return(0,y.jsx)(ae,{id:u,helpText:i,value:r,label:o,checkedValue:d,type:s})}};var Y=c(3439);const S=({id:u,label:i,value:r,helpText:o,required:s})=>(0,y.jsx)(Y.Z,{name:u,label:i,value:r,type:"text",leftLabel:!0,helpText:o,required:s,onChange:B}),F={type:"input-text",optionsSchema:{},render({id:u,helpText:i,value:r,label:o,type:s,required:d},{displayOnly:_}){return _?(0,y.jsx)(J.Z,{label:o,value:r},u):(0,y.jsx)(S,{id:u,label:o,value:r,helpText:i,type:s,required:d},u)}};var pe=c(28563);const ce={type:"section",optionsSchema:{},render({key:u,title:i="",description:r="",contents:o},s){var d;return o?(0,y.jsx)(pe.Z,{title:i,description:(0,y.jsx)(H,{children:r}),children:(d=s==null?void 0:s.renderElements)==null?void 0:d.call(s,o,s)},u):null}};var me=c(60042),he=c.n(me),le=c(23192);const re=({id:u,label:i,value:r})=>{const o=r.findLast(A=>A.isSelected===!0),[s,d]=(0,G.useState)(o==null?void 0:o.value),_=A=>{const K=A.value;d(K)};return(0,y.jsx)("div",{className:he()(h.V,"tw-py-1"),children:(0,y.jsx)(Y.Z,{name:u,label:i,leftLabel:!0,control:(0,y.jsx)(le.Z,{name:u,label:i,onChange:_,value:s,options:r})},u)})},ve={type:"select",optionsSchema:{},render({id:u,label:i,value:r,type:o}){return(0,y.jsx)(re,{id:u,label:i,value:r,type:o})}},Te={[W.type]:W,[x.type]:x,[f.type]:f,[b.type]:b,[ve.type]:ve,[F.type]:F,[te.type]:te,[ne.type]:ne,[q.type]:q,[z.type]:z,[P.type]:P,[ce.type]:ce},ue=u=>Te[u];function ee(u,i){const r=u.trim().split(".").filter(Boolean);return r.reduce((s,d,_)=>{if(_===0)switch(r[0]){case"$PKG":s=i.packageContext;break}else typeof s!="object"||s===null?s=null:s=s[d];return s},null)}function ye(u,i){let r={...u};const o=u.if;let s=!1;return o&&i&&(o.truthy&&ee(o.truthy,i)&&(s=!0),o.falsy&&(ee(o.falsy,i)||(s=!0))),s&&(o==null?void 0:o.then)&&(r={...r,...o.then}),r}function _e(u,i){const r={...i,renderElements:_e};return u.map((o,s)=>{const d=[o.type,s].join("-");if(o.if&&(o=ye(o,i)),o.display==="hidden")return null;const _=ue(o.type);return _?_.render({key:d,...o},r):(console.error(`workflow ui element unknown: ${JSON.stringify(o)}`),null)})}const Ie=function({config:u,surfaceRouteConfig:i,envVars:r,envVarOnDelete:o,envVarOnCreate:s,site:d,account:_,surfaceData:A,displayOnly:K}){const j=d==null?void 0:d.get("plugins"),de={enabled:!!((j==null?void 0:j.toJS())||[]).find(Se=>Se.package===(u==null?void 0:u.package)),name:(u==null?void 0:u.package)||"",friendlyName:(u==null?void 0:u.friendlyName)||""};return(0,y.jsx)(y.Fragment,{children:_e(i,{envVars:r,envVarOnDelete:o,envVarOnCreate:s,site:d,account:_,packageContext:de,surfaceData:A,displayOnly:K})})};var Re=c(50343);class Ce extends Re.EventEmitter{constructor({surfaceName:i,exposedFunctions:r,state:o}){super(),this.surface={[i]:r},this.state=o,this.emit=(s,d)=>super.emit(s,{...this.state,...d}),this.on=(s,d)=>{const _=async(...A)=>{const K=await d(...A);K&&(this.state={...this.state,...K})};return super.on(s,_)}}}const Le=Ce;var we=c(49493);const De=async({surfaceName:u,packageKey:i,routeSplat:r=""})=>{const o=await(0,we.T)(u,i),s=r==null?void 0:r.split("/").filter(Boolean),d=o==null?void 0:o.surfaces.find(j=>j.surfaceName===u),A=s.reduce((j,se,fe)=>{const de=j[fe]||"";return j.push(`${de}/${se}`.replace("//","/")),j},["/"]).reverse().find(j=>!!(d!=null&&d.routes[j]))||"",K=d==null?void 0:d.routes[A];return await Promise.resolve({config:o,surfaceConfig:d,surfaceRouteConfig:K,matchedRouteKey:A})},Me=function({surfaceName:u,packageKey:i,envVars:r,envVarOnDelete:o,envVarOnCreate:s,site:d,account:_,notFoundFallbackComponent:A,routeSplat:K,surfaceData:j,displayOnly:se,exposedFunctions:fe}){var de;const[Se,p]=(0,G.useState)(!1),[m,ie]=(0,G.useState)(null),[oe,be]=(0,G.useState)(null);return(0,G.useEffect)(()=>{De({surfaceName:u,packageKey:i,routeSplat:K}).then(async({config:Pe,surfaceConfig:Ee,surfaceRouteConfig:Ae})=>{var Oe;globalThis.netlifyContext=new Le({surfaceName:u,exposedFunctions:fe,state:{surfaceConfig:Ee,surfaceRouteConfig:Ae,surfaceData:j}}),await Promise.all(((Oe=Ee==null?void 0:Ee.surfaceScripts)==null?void 0:Oe.map(ke=>new Promise((Ne,qe)=>{const $e=document.createElement("script");$e.type="text/javascript",$e.src=`/workflowui/${i}/${ke}`,$e.onload=Ne,$e.onerror=qe,document.body.appendChild($e)})))||[]).then(async()=>{globalThis.netlifyContext.on("INPUT_CHANGE",({surfaceInputsData:ke})=>({surfaceInputsData:ke})),await globalThis.netlifyContext.emit("LOAD")}).finally(()=>{ie(Pe||null),be(Ae||null),p(!0)})})},[]),Se?!m||!oe?A||(0,y.jsx)("div",{children:"surface package not found"}):(0,y.jsx)(Ie,{config:m,surfaceRouteConfig:oe,envVars:r,envVarOnDelete:o,envVarOnCreate:s,account:_,site:d,displayOnly:se,...(de=globalThis.netlifyContext)==null?void 0:de.state}):(0,y.jsx)("div",{children:"loading..."})}},57368:(ge,X,c)=>{c.d(X,{ZP:()=>J});var y=c(33640),G=c(52019),C=c(93967),D=c(1416);const V="http://analytics.services.netlify.com",M="v2",H=6,W=15,x=(0,y.cv)((0,G.EP)(new Date));class J{constructor(U){this.apiVersion=M,this.root=`${U.get("analyticsClientApiBase")}/${this.apiVersion}`||`${V}/${this.apiVersion}`}headers(U={}){return{"Content-Type":"application/json",...U}}parseJsonResponse(U){let w=!1;return U.json().then(O=>(w=!0,U.ok?O:Promise.reject(new C.Z(O||"Error fetching analytics data")))).catch(O=>w?Promise.reject(O):Promise.reject({status:U.status}))}parsePaginatedJsonResponse(U){let w=!1;return U.json().then(O=>{w=!0;const t=(0,D.f8)(O==null?void 0:O.next);return U.ok?{pagination:t,data:O}:Promise.reject(new C.Z(O||"Error fetching analytics data"))}).catch(O=>w?Promise.reject(O):Promise.reject({status:U.status}))}request(U,w={}){const O=w.parseJsonResponse||this.parseJsonResponse,t=this.headers(w.headers||{}),n=this.root+U;return fetch(n,{...{credentials:"include"},...w,headers:t}).then(O).catch(l=>{const{status:b,code:I,...Z}=l,Q=new C.Z({code:b||I,...Z});return Promise.reject(Q)})}pageviews(U,{from:w,to:O,resolution:t="day"}){return this.request(`/${U}/pageviews?from=${w}&to=${O}&timezone=${x}&resolution=${t}`)}uniqueVisitors(U,{from:w,to:O,resolution:t="day"}){return this.request(`/${U}/visitors?from=${w}&to=${O}&timezone=${x}&resolution=${t}`)}topLocations(U,{from:w,to:O,resolution:t="day"}){return this.request(`/${U}/ranking/countries?from=${w}&to=${O}&timezone=${x}`)}topSources(U,{from:w,to:O}){return this.request(`/${U}/ranking/sources?from=${w}&to=${O}&timezone=${x}&limit=${H}`)}topPages(U,{from:w,to:O}){return this.request(`/${U}/ranking/pages?from=${w}&to=${O}&timezone=${x}&limit=${W}`)}bandwidthUsed(U,{from:w,to:O,resolution:t="day"}){return this.request(`/${U}/bandwidth?from=${w}&to=${O}&timezone=${x}&resolution=${t}`)}notFound(U,{from:w,to:O}){return this.request(`/${U}/ranking/not_found?from=${w}&to=${O}&timezone=${x}&limit=${W}`)}async historicalFunctionLogs(U){const{branch:w,site_id:O,name:t,from:n,to:a,next_cursor:l,search:b}=U,I=(0,y.b4)({...l&&{cursor:l},...b&&{search:b},...n&&{from:String(n)},...a&&{to:String(a)}}),Z=w?`branch/${(0,y.cv)(w)}/`:"";return this.request(`/sites/${O}/${Z}function_logs/${(0,y.cv)(t)}?${I}`,{parseJsonResponse:this.parsePaginatedJsonResponse})}}},29861:(ge,X,c)=>{c.d(X,{CB:()=>C,TP:()=>W,aN:()=>M,au:()=>H,jN:()=>V,uI:()=>D});var y=c(90046),G=c.n(y);const C=Object.freeze({github:"github",bitbucket:"bitbucket",gitlab:"gitlab",gitlab_self_hosted:"gitlab_self_hosted",github_app:"github_app",github_enterprise:"github_enterprise",google:"google",email:"email",gitlab_self_managed:"gitlab_self_managed",azure_devops:"azure_devops"}),D=(0,y.fromJS)({github:{id:C.github,name:"GitHub",description:"Authenticate users with GitHub and access GitHub\u2019s REST API",iconName:"github",labels:{api_id:"Client ID",client_id:"Client ID",secret:"Client secret"},active:!0,supports:{search:!0}},bitbucket:{id:C.bitbucket,name:"Bitbucket",description:"Authenticate users with Bitbucket and access their REST API",iconName:"bitbucket",iconColoredName:"bitbucket-colored",labels:{api_id:"Key",client_id:"Key",secret:"Secret"},active:!0,supports:{search:!0},hideGitUserFromRepoList:!0},gitlab:{id:C.gitlab,name:"GitLab",iconName:"gitlab",iconColoredName:"gitlab-colored",labels:{api_id:"Application ID",client_id:"Application ID",secret:"Secret"},active:!0,supports:{search:!0}},gitlab_self_hosted:{id:C.gitlab_self_hosted,name:"GitLab self-managed",shortName:"GitLab",iconName:"gitlab",iconColoredName:"gitlab-colored",labels:{api_id:"Application ID",client_id:"Application ID",secret:"Secret"},supports:{search:!0},active:!1},github_app:{id:C.github_app,name:"GitHub App",shortName:"GitHub",iconName:"github",labels:{api_id:"App ID",secret:"Secret"},supports:{search:!0},active:!1},github_enterprise:{id:C.github_enterprise,name:"GitHub Enterprise",shortName:"GitHub",iconName:"github",labels:{api_id:"App ID",secret:"Secret"},supports:{search:!0},selfhosted:!0,active:!1},google:{id:C.google,name:"Google",iconColoredName:"google-colored",labels:{client_id:"Client ID",secret:"Client secret"},active:!1},email:{id:C.email,name:"Email",active:!1},gitlab_self_managed:{id:C.gitlab_self_managed,name:"GitLab self-managed",shortName:"GitLab",iconName:"gitlab",iconColoredName:"gitlab-colored",labels:{api_id:"Application ID",client_id:"Application ID",secret:"Secret"},active:!1,selfhosted:!0,supports:{search:!0}},azure_devops:{id:C.azure_devops,name:"Azure DevOps",iconName:"azure-devops",iconColoredName:"azure-devops-colored",active:!1,supports:{search:!0},hideGitUserFromRepoList:!0}}),V=D.toList().filter(x=>x.get("active")),M=D.toList().filter(x=>x.get("selfhosted")),H=x=>V.filterNot(J=>x&&x.find(z=>z.get("name")===J.get("id"))),W=x=>D.get(x)||(0,y.Map)({id:x,name:x,active:!1})},49173:(ge,X,c)=>{c.d(X,{Z:()=>x});var y=c(5780),G=c.n(y),C=c(25994),D=c.n(C);function V(){return/^deploy-preview-/.test(window.location.hostname)?"deploy-preview":/--app.netlify.app$/.test(window.location.hostname)?"branch-deploy":(["staging","prod"].includes("prod"),"production")}const M={apiKey:"9b0542315c347c80d64e228583ec6dc2",appVersion:"639cf6ef13ed8d000aa5c7a8",releaseStage:V(),collectUserIp:!1,enabledReleaseStages:["production","staging","branch-deploy","deploy-preview"],onError:J=>{var z;if(/pbjs\.|MetaMask/.test(J.errors[0].errorMessage)||J.errors[0].errorClass==="ChunkLoadError")return!1;const U=sessionStorage.getItem("routePath");U&&(J.context=U),(z=J.request.url)!=null&&z.includes("#")&&(J.request.url=J.request.url.split("#")[0])}};["development","test"].includes("production")&&(M.enabledBreadcrumbTypes=[]),M.enabledReleaseStages.includes("production")||(M.logger=null);const x={start:()=>{G().start({...M,plugins:[new(D())]})}}},23229:(ge,X,c)=>{c.d(X,{Z:()=>x});var y=c(34740),G=c(1054),C=c(90956),D=c(1800);const V="af6750c6",M=(...J)=>{};class H{constructor(){this.context={},this.didInit=!1,this.instance={addCallback:M,addContext:(z,U,w)=>{this.context[z]={value:U,searchOptions:w}},addEventHandler:M,addRouter:M,boot:M,open:M,removeContext:z=>{delete this.context[z]},shutdown:M,setCustomComponent:M,setSummonHotkey:M,setTheme:M,shareCallbacks:M}}setInstance(z){this.instance=z}async launch({accountSlug:z,dispatch:U,themePreference:w,setThemePreference:O,user:t}){if(this.didInit)return;this.didInit=!0;const n=t.get("id");if(!n){console.error("Attempted to launch command bar without a user id");return}const a=t.get("command_bar_signed_user_id"),{init:l}=await c.e(9016).then(c.t.bind(c,78767,23));await l(V),this.setInstance(window.CommandBar),Object.entries(this.context).forEach(([Q,v])=>{const{value:$,searchOptions:f}=v;this.instance.removeContext(Q),this.instance.addContext(Q,$,f)}),this.setContext("accountSlug",z),this.setContext("add",[{label:"Add site from git",route:"/start"},{label:"Add site from a template",route:"/start-with-template"},{label:"Add site by manual deploy (drag and drop)",route:"/drop"}]),this.setContext("docs",[],D.$o),this.setContext("support",[],D.NK);const{Dark:b,Light:I,OS:Z}=C.Bv;return this.instance.addContext("theme",w),this.setTheme((0,G.g)(w)),this.instance.addCallback("theme",(Q,v)=>{const f=(0,G.g)(v.theme)===b?I:b;O(f),this.setContext("theme",f),this.setTheme(f)}),this.instance.addCallback("theme-os",(Q,v)=>{O(Z);const $=(0,G.g)(Z);this.setContext("theme",$),this.setTheme($)}),this.setContext("internal",(t.get("email")||"").endsWith("@netlify.com")),this.instance.addCallback("feedback",(Q,v)=>{this.instance.shareCallbacks()["commandbar-open-feedback"]()}),this.instance.setCustomComponent("footer",D._7),this.instance.addEventHandler((Q,v)=>(0,D.Zm)(U,{eventType:Q,eventData:v,userId:n,accountSlug:z})),this.instance.addRouter(Q=>y.mW.push(Q)),this.instance.boot(n,{},{hmac:a})}setContext(z,U,w){this.instance.removeContext(z);const O=w?{searchOptions:{searchFunction:w}}:void 0;this.instance.addContext(z,U,O)}setTheme(z){this.instance.setTheme(`netlify-theme-${z}`)}setSummonHotkey(z){this.instance.setSummonHotkey(z)}open(){this.instance.open()}shutdown(){this.instance.shutdown(),this.didInit=!1}}const x=new H},43971:(ge,X,c)=>{c.d(X,{Ck:()=>J,DA:()=>W,L9:()=>R,N9:()=>z,Sd:()=>C,X:()=>G,ZP:()=>x,cz:()=>V,hh:()=>E,kB:()=>T,me:()=>M,p4:()=>U,sC:()=>H,ub:()=>N,w6:()=>w,yz:()=>D});var y=c(16662);const G="INVALID_FQDN",C="^[a-zA-Z0-9-.]+$",D="NETLIFY_ADDRESS_ERROR",V="NETLIFY",M="NETLIFYv6",H="MX",W="SPF",x="TXT",J="SRV",z="CAA",U="CNAME",w="tag",O="hostname",t="value",n="(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9(\\-)]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9](\\.?))$",a=`^${n}`,l=`^@$|^(\\*)$|^(\\*\\.)?${n}`,b=`^@$|${a}`,I="^(\\*)$|^(\\*\\.)?(([a-zA-Z0-9_]|[a-zA-Z0-9_][a-zA-Z0-9_\\-]*[a-zA-Z0-9_])\\.)*([A-Za-z0-9_]|[A-Za-z0-9_][A-Za-z0-9_\\-]*[A-Za-z0-9_](\\.?))$",Z=`^@$|${I}`,Q="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$",v="^\\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))(%.+)?\\s*$",$="(^issue$)|(^issuewild$)|(^iodef$)",h={A:Q,AAAA:v,ALIAS:a,CNAME:I,MX:a,NS:a,SPF:"^(v=spf1).*$",SRV:a},P={CNAME:I,TXT:Z,NS:b};function R(k,te=t){switch(te){case t:return h[k]||"";case w:return $;case O:return P[k]||l;default:return""}}function E(k){return k?Promise.all([c.e(7802).then(c.bind(c,4038)),Promise.resolve().then(c.bind(c,28770))]).then(([te,ae])=>[te.default||te,ae.default||ae]).then(([te,ae])=>{const ne=te.parseDomain(te.fromUrl(k));if(ne.type!==y.xj.Listed)return null;let{subDomains:Y,domain:S,topLevelDomains:F}=ne;return S||(Y=ne.icann.subDomains,S=ne.icann.domain,F=ne.icann.topLevelDomains),S?{subdomain:ae.toASCII(Y.join(".")),domain:ae.toASCII(S),tld:ae.toASCII(F.join("."))}:null}):Promise.resolve(null)}function T(k){return E(k).then(te=>{const{subdomain:ae,domain:ne,tld:Y}=te||{};return ne?ae==="www"?`${ne}.${Y}`:ae?null:`www.${ne}.${Y}`:null})}function N(k){return E(k).then(te=>te?Promise.resolve(te):Promise.reject(G))}function q(k){return(k||"").toLowerCase().replace(/[^a-z0-9-]/,"").substr(0,35)}function L(k){return(k||"").toLowerCase().replace(/[^a-z0-9*.\n-]/,"").substr(0,255)}function g(k){const te=(k||"").toLowerCase().replace(/[^0-9]+/,"").substr(0,255);return te?parseInt(te):0}function B(k){return k}},82734:(ge,X,c)=>{c.d(X,{t:()=>G});function y(C,D){return`/favicon-prod-remote-${C}-${D}.png`}function G(C){var D;const V=document.querySelector("link[rel='icon'][type='image/x-icon']");V&&((D=V.parentNode)==null||D.removeChild(V));const M="link[rel='icon'][sizes]";(document.querySelectorAll(M)||[]).forEach(W=>{const x=W.getAttribute("sizes");W.setAttribute("href",y(C,x))})}},10345:(ge,X,c)=>{c.d(X,{Ev:()=>De,Wx:()=>Me,TR:()=>u,yU:()=>we});var y=c(29861),G=c(87883),C=c(33640);const D="https://app.vssps.visualstudio.com",V="https://dev.azure.com",M="7.0";function H(i){return{login:i.id,full_name:i.displayName,name:i.displayName}}function W(i){return{id:i.accountId,api_id:i.accountName,login:i.accountName,full_name:i.accountName}}function x(i){return i.value.map(W)}function J(i){return r=>{var o,s,d;return{id:r.id,api_id:r.id,full_name:`${i}/${r.project.name}/_git/${r.name}`,full_name_encoded:`${i}/${(0,C.cv)(r.project.name)}/_git/${(0,C.cv)(r.name)}`,full_name_ui:`${i}/${r.project.name}/${r.name}`,name:r.name,default_branch:t(r.defaultBranch),private:((o=r.project)==null?void 0:o.visibility)!=="public",project_name:(s=r.project)==null?void 0:s.name,project_id:(d=r.project)==null?void 0:d.id,organization_name:i}}}function z(i){return r=>{var o;return(o=r.value)==null?void 0:o.map(J(i))}}const U=["git.push","git.pullrequest.created","git.pullrequest.merged","git.pullrequest.updated"];function w(i){return t(i.name)}function O(i){var r;return(r=i.value)==null?void 0:r.map(w)}function t(i){return i==null?void 0:i.replace(/^refs\/heads\//,"")}function n(i){var r;return(r=i.value)==null?void 0:r.filter(o=>o.gitObjectType==="blob").map(o=>({...o,path:o.path.replace(/^\//,"")}))}function a(i){return i.content}function l(i){const r=i.headers.get("x-ms-continuationtoken");return r?{next:r}:null}class b{constructor(r,o,s){this.addDeployKey=(d,_,A)=>Promise.resolve(_),this.token=r,this.root=o||D,this.apiVersion=s||M}headers(r={}){return new Headers({"Content-Type":"application/json",Authorization:`Bearer ${this.token}`,...r})}parseJsonResponse(r,o){return r.json().then(s=>r.ok?{data:o?o(s):s,pagination:l(r)}:Promise.reject(s))}request(r,o={}){const s=this.headers(o.headers||{}),d=(0,C.b4)({...o.queryParams||{},"api-version":this.apiVersion});return fetch(`${o.root||this.root}${r}?${d}`,{method:o.method||"GET",headers:s,...o.body&&{body:o.body}}).then(_=>{var A,K;return(K=(A=_.headers)==null?void 0:A.get("Content-Type"))!=null&&K.match(/json/)?this.parseJsonResponse(_,o.format):_.text().then(j=>({data:j}))})}user(){return this.request("/_apis/profile/profiles/me",{format:H})}organizations({userLogin:r}){return this.request("/_apis/accounts",{queryParams:{memberId:r},format:x})}repos({organization:r}){return this.request(`/${(0,C.cv)(r)}/_apis/git/repositories`,{root:V,format:z(r)}).catch(()=>({data:[]}))}searchRepos(r){const{search:o}=r;return this.repos(r).then(s=>typeof s.data=="string"?s:{data:s.data.filter(({name:d,organization_name:_,project_name:A})=>`${_}/${A}/${d}`.toLowerCase().includes(o.toLowerCase()))})}branches({api_id:r,page:o,organization_name:s}){const d={$top:1e3,filter:"heads"};return o&&(d.continuationToken=o),this.request(`/${(0,C.cv)(s)}/_apis/git/repositories/${(0,C.cv)(r)}/refs`,{root:V,queryParams:d,format:O})}addWebhook({api_id:r,site:o,organization_name:s,project_id:d}){const _=j=>this.request(`/${(0,C.cv)(s)}/_apis/hooks/subscriptions`,{method:"GET",root:V,queryParams:{publisherId:"tfs",consumerId:"webHooks",consumerActionId:"httpRequest",eventType:j}}).then(se=>({eventType:j,subscriptions:se==null?void 0:se.data})),A=({subscriptions:j})=>Array.isArray(j==null?void 0:j.value)?!j.value.some(se=>{var fe,de,Se;return((fe=se==null?void 0:se.publisherInputs)==null?void 0:fe.projectId)===d&&((de=se==null?void 0:se.publisherInputs)==null?void 0:de.repository)===r&&((Se=se==null?void 0:se.consumerInputs)==null?void 0:Se.url)===o.deploy_hook}):!0,K=({eventType:j})=>{const se={publisherId:"tfs",resourceVersion:"1.0",consumerId:"webHooks",consumerActionId:"httpRequest",eventType:j,publisherInputs:{projectId:d,repository:r},consumerInputs:{url:o.deploy_hook}};return j==="git.pullrequest.updated"&&(se.publisherInputs.notificationType="PushNotification"),this.request(`/${(0,C.cv)(s)}/_apis/hooks/subscriptions`,{method:"POST",body:JSON.stringify(se),root:V})};return Promise.all(U.map(_)).then(j=>j.filter(A)).then(j=>Promise.all(j.map(K))).then(()=>o).catch(function(j){return j.typeKey==="AccessCheckException"?{...o,webhooks_inactive:!0}:Promise.reject(j)})}dir({organization_name:r,api_id:o,branch:s,filepath:d=""}){return this.request(`/${(0,C.cv)(r)}/_apis/git/repositories/${(0,C.cv)(o)}/items`,{root:V,queryParams:{"versionDescriptor.version":s,scopePath:d,recursionLevel:"oneLevel"},format:n})}read({organization_name:r,api_id:o,branch:s,filepath:d}){return this.request(`/${(0,C.cv)(r)}/_apis/git/repositories/${(0,C.cv)(o)}/items`,{root:V,queryParams:{"versionDescriptor.version":s,path:d,$format:"json",includeContent:!0},format:a})}}const I="https://api.bitbucket.org";function Z(i){return i}function Q(i){const{page:r,next:o,previous:s}=i;if(r&&(o||s))return{current:r,next:r+1,nextUrl:o}}function v(i){var r;return{id:i.full_name,api_id:i.full_name,full_name:i.full_name,name:i.name,description:i.description,private:i.is_private,scm:i.scm,default_branch:(r=i.mainbranch)==null?void 0:r.name}}function $(i){return{data:i.data.values.map(v),pagination:i.pagination}}function f(i){return{id:i.slug,api_id:i.slug,login:i.slug,full_name:i.name,avatar:i.links.avatar.href}}function h(i){return{data:i.data.values.map(f).reverse(),pagination:i.pagination}}function P({data:i,pagination:r}){return{data:i.values.map(o=>o.name),pagination:r}}function R(i){return{data:i.data.values}}function E(i){return{login:i.username,full_name:i.username,name:i.display_name,avatar:i.links.avatar.href}}class T{constructor(r){this.token=r,this.root=I}headers(r={}){return{Authorization:`Bearer ${this.token}`,"Content-Type":"application/json",...r}}parseJsonResponse(r,o){return r.json().then(s=>{if(!r.ok)return Promise.reject(s);const d=Q(s);return{data:o(s),pagination:d}})}request(r,o={}){const s=this.headers(o.headers||{});return fetch(this.root+r,{...o,headers:s}).then(d=>{var _,A,K;return(K=(A=(_=d.headers).get)==null?void 0:A.call(_,"Content-Type"))!=null&&K.match(/json/)?this.parseJsonResponse(d,o.format||Z):d.text().then(j=>({data:j}))})}user(){return this.request("/2.0/user",{format:E})}repos({organization:r,page:o,per_page:s,search:d}){const _="/2.0/repositories";let K=r?`${_}/${r}?pagelen=${100}&role=admin`:`${_}?pagelen=${100}&role=admin`;return d&&(K+=`&q=${(0,C.cv)(`name~"${d}"`)}`),this.request(K).then($)}repo(r){return this.request(`/2.0/repositories/${r}`,{format:v})}searchRepos(r){return this.repos(r)}branches({api_id:r,page:o=1}){return this.request(`/2.0/repositories/${r}/refs/branches?pagelen=100&page=${o}`).then(P)}organizations(){return this.request("/2.0/workspaces?role=owner").then(h)}fetchAndFormatDir(r,o,s="",d="",_=[]){const A=d?`?page=${d}`:"";return this.request(`/2.0/repositories/${r}/src/${o}/${s}${A}`).then(K=>{var j;const se=R(K),fe=(j=K.pagination)==null?void 0:j.nextUrl,de=fe&&new URLSearchParams(fe.split("?")[1]).get("page");return de?this.fetchAndFormatDir(r,o,s,de,_.concat(se.data)):{data:_.concat(se.data)}})}dir({full_name:r,branch:o,filepath:s=""}){return this.fetchAndFormatDir(r,o,s,"",[])}read({full_name:r,branch:o,filepath:s=""}){return this.request(`/2.0/repositories/${r}/src/${o}/${s}`).then(d=>({data:d.data,path:s}))}addDeployKey(r,o){return this.request(`/2.0/repositories/${r}/deploy-keys`,{method:"POST",body:JSON.stringify({label:"Netlify Deploy Key",key:o.public_key})}).then(()=>o)}addWebhook({api_id:r,site:o}){const s=`/2.0/repositories/${r}/hooks`;return this.request(s).then(d=>d.data==="Forbidden"?Promise.reject(new Error("We couldn\u2019t set up continuous deployment for this repository. This typically happens when you don\u2019t have admin rights to the repository.")):d.data.values.filter(_=>_.url===o.deploy_hook).length?o:this.request(s,{method:"POST",body:JSON.stringify({description:"Netlify Deploy Hook",url:o.deploy_hook,active:!0,events:["repo:push"]})}).then(()=>o))}}var N=c(93967),q=c(1416);const L="https://api.github.com";function g(i){return i}function B(i){return{id:i.id,api_id:i.full_name,full_name:i.full_name,name:i.name,description:i.description,private:i.private,default_branch:i.default_branch,owner_type:i.owner.type}}function k(i){return i.map(B)}function te(i){return k(i.items)}function ae(i){return{id:i.id,api_id:i.login,login:i.login,full_name:i.full_name,avatar:i.avatar_url}}function ne(i){return i.map(ae)}function Y(i){return{login:i.login,full_name:i.login,name:i.name,avatar:i.avatar_url}}class S{constructor(r,o){this.token=r,this.root=(o||L).replace(/\/$/,"")}headers(r={}){const o=new Headers({"Content-Type":"application/json",...r});return this.token&&o.set("Authorization",`token ${this.token}`),o}parseJsonResponse(r,o){return r.json().then(s=>{if(!r.ok)return Promise.reject(s);const d=(0,q.ot)(r);return{data:o(s),pagination:d}})}request(r,o={}){const s=this.headers(o.headers||{});return fetch(this.root+r,{...o,headers:s}).then(d=>{var _,A;return(A=(_=d.headers)==null?void 0:_.get("Content-Type"))!=null&&A.match(/json/)?this.parseJsonResponse(d,o.format||g):d.text().then(K=>({data:K}))})}user(){return this.request("/user",{format:Y})}repos({organization:r,page:o,per_page:s}){let d=r?`/orgs/${r}/repos`:"/user/repos";return d+=`?page=${o}&per_page=${s}`,this.request(d,{format:k})}repo(r){return this.request(`/repos/${r}`,{format:B})}searchRepos({search:r,organization:o}){let s=`/search/repositories?q=${(0,C.cv)(r)}`;return o?(s+=`+user:${o}+fork:true`,this.request(s,{format:te})):this.user().then(d=>(s+=`+user:${d.data.login}+fork:true`,this.request(s,{format:te})))}branches({api_id:r,page:o=1}){return this.request(`/repos/${r}/branches?page=${o}&per_page=100`).then(({data:s,pagination:d})=>({data:s.map(_=>_.name),pagination:d}))}organizations(){return this.request("/user/orgs?page=1&per_page=100",{format:ne})}dir({full_name:r,branch:o,filepath:s=""}){let d=`/repos/${r}/contents/${s}`;return o&&(d+=`?ref=${o}`),this.request(d)}read({full_name:r,branch:o="",filepath:s=""}){const d={Accept:"application/vnd.github.VERSION.raw"};let _=`/repos/${r}/contents/${s}`;return o&&(_+=`?ref=${o}`),this.request(_,{headers:d}).then(A=>({data:A.data,path:s}))}addDeployKey(r,o,s){const d={title:"Netlify Deploy Key",key:o.public_key,read_only:s};return this.request(`/repos/${r}/keys`,{method:"POST",body:JSON.stringify(d)}).then(()=>o)}addWebhook({api_id:r,site:o}){const s={name:"web",active:!0,events:["delete","push","pull_request","create","issue_comment","pull_request_review","pull_request_review_comment"],config:{url:o.deploy_hook,content_type:"json"}};return this.request(`/repos/${r}/hooks`,{method:"POST",body:JSON.stringify(s)}).then(()=>o).catch(d=>d.errors&&d.errors[0]&&d.errors[0].message&&d.errors[0].message.match(/already/)?o:Promise.reject(d))}createRepo(r){const o={name:r.name,description:r.description,homepage:r.url,private:!!r.private};return this.request("/user/repos",{method:"POST",body:JSON.stringify(o)}).then(s=>B(s.data)).catch(s=>{const d=s.errors&&s.errors[0]&&/already exists/.test(s.errors[0].message)?"Repository name already exists on this account":s.message||"Repository creation failed";throw new N.Z(d)})}}const F=i=>r=>({id:r.id,api_id:r.full_name,full_name:r.full_name,name:r.name,description:r.description,private:r.private,installation_id:i,default_branch:r.default_branch,owner_type:r.owner.type}),pe=i=>r=>r.repositories.map(F(i)),ce=(i,r)=>{const o=new RegExp(i,"i");return s=>d=>d.repositories.reduce((_,A)=>(o.test(A.full_name)&&_.push(F(s)(A)),_),r)},me=i=>{const r=i.account;return{id:i.id,api_id:r.login,login:r.login,full_name:r.login,avatar:r.avatar_url,installation_id:i.id,target_type:i.target_type,repository_selection:i.repository_selection}},he=i=>i.installations.map(me),le=(i,r)=>{const o=i.full_name.toUpperCase(),s=r.full_name.toUpperCase();return o<s?-1:o>s?1:0},re=()=>new Date().getTime();class ve{constructor(r,o){this.request=(s,d)=>this.github.request(s,d),this.installations=()=>this.request(`/user/installations?page=1&per_page=100&v=${re()}`,{headers:{Accept:"application/vnd.github.machine-man-preview+json"},format:he}).catch(s=>({data:[],pagination:{}})),this.findInstallation=(s,d)=>this.installations().then(_=>_.data).then(_=>_.find(A=>s===A.login)||d&&_.find(A=>A.target_type==="Organization")),this.findInstallationId=({login:s,installationId:d})=>d?Promise.resolve(d):this.findInstallation(s).then(_=>_&&_.id),this.findInstallationRepos=({installationId:s,page:d,per_page:_,format:A})=>s?this.request(`/user/installations/${s}/repositories?page=${d}&per_page=${_}&v=${re()}`,{headers:{Accept:"application/vnd.github.machine-man-preview+json"},format:A(s)}).catch(K=>({data:[],pagination:{}})):Promise.resolve({data:[],pagination:{}}),this.user=()=>this.github.user().then(({data:s})=>this.findInstallation(s.login,!0).then(d=>({data:{...s,installation_id:d&&d.login===s.login&&d.id,installation:d}}))),this.organizations=()=>this.installations().then(s=>({data:s.data.filter(d=>d.target_type==="Organization"),pagination:{}})),this.repos=({organization:s,page:d,per_page:_,installationId:A,gitUser:K,format:j=pe})=>this.findInstallationId({login:s||K.get("login"),installationId:A}).then(se=>this.findInstallationRepos({installationId:se,page:d,per_page:_,format:j})),this.searchRepos=({search:s,...d})=>{if(!s)return this.repos(...d);const _=[],A={...d,per_page:100,format:ce(s,_)};return this.repos({...A,page:1}).then(({pagination:K})=>{const j=[],se=(K==null?void 0:K.last)||1;for(let fe=2;fe<=se;fe++)j.push(this.repos({...A,page:fe}));return Promise.all(j)}).then(K=>({data:_.sort(le),pagination:{}}))},this.repo=s=>this.github.repo(s),this.createRepo=s=>s.template?this.github.createRepo(s):this.user().then(d=>{const{installation_id:_,repository_selection:A}=d.data;if(A!=="all")throw new N.Z("Can't create a repo for the current app installation.");return this.request("/user/repos",{method:"POST",body:JSON.stringify({name:s.name,description:s.description,homepage:s.url})}).then(K=>F(_)(K.data))}),this.dir=({full_name:s,branch:d,filepath:_})=>this.github.dir({full_name:s,branch:d,filepath:_}),this.read=({full_name:s,branch:d,filepath:_})=>this.github.read({full_name:s,branch:d,filepath:_}),this.branches=({api_id:s,page:d})=>this.github.branches({api_id:s,page:d}),this.addDeployKey=(s,d,_)=>Promise.resolve(d),this.addWebhook=({site:s})=>Promise.resolve(s),this.github=new S(r,o)}}const Te="https://gitlab.com/api/v4";function ue(i){return i}function ee(i){return{id:i.id,api_id:i.id,full_name:i.path_with_namespace,name:i.name,description:i.description,default_branch:i.default_branch,private:i.visibility==="private"}}function ye(i){return i.map(ee)}function _e(i){return{id:String(i.id),api_id:String(i.id),login:i.name,full_name:i.full_name,avatar:i.avatar_url}}function Ie(i){return i.map(_e)}function Re(i){return{login:i.username,full_name:i.username,name:i.name,avatar:i.avatar_url}}class Ce{constructor(r,o){this.token=r,this.root=o||Te}headers(r={}){return{"Content-Type":"application/json",...this.token?{Authorization:`Bearer ${this.token}`}:{},...r}}parseJsonResponse(r,o){return r.json().then(s=>{if(!r.ok)return Promise.reject(s);const d=(0,q.ot)(r);return{data:o(s),pagination:d}})}request(r,o={}){const s=this.headers(o.headers||{});return fetch(this.root+r,{...o,headers:s}).then(d=>{var _,A;return(A=(_=d==null?void 0:d.headers)==null?void 0:_.get("Content-Type"))!=null&&A.match(/json/)?this.parseJsonResponse(d,o.format||ue):d.text().then(K=>({data:K}))})}user(){return this.request("/user",{format:Re})}repos({organization:r,page:o,per_page:s,search:d,scopeCurrentUser:_=!0}){let A=r?`/groups/${r}/projects?`:"/projects?min_access_level=40&";return A+=`page=${o}&per_page=${s}`,d&&(A+=`&search=${(0,C.cv)(d)}`),_&&!r?this.user().then(K=>{const j=`/users/${K.data.login}${A}`;return this.request(j,{format:ye})}):this.request(A,{format:ye})}repo(r){return this.request(`/projects/${(0,C.cv)(r)}`,{format:ee})}searchRepos(r){return this.repos(r)}branches({api_id:r,page:o=1}){return this.request(`/projects/${(0,C.cv)(r)}/repository/branches?per_page=100&page=${o}`).then(({data:s,pagination:d})=>({data:s.map(_=>_.name),pagination:d}))}organizations({per_page:r=5e3}={}){return this.request(`/groups?per_page=${r}`,{format:Ie})}dir({full_name:r,branch:o,filepath:s=""}){let d=`/projects/${(0,C.cv)(r)}/repository/tree?per_page=100`,_="";const A=[];return o&&A.push(`ref=${o}`),s&&(A.push(`path=${s}`),_=s+"/"),A&&(d+=`&${A.join("&")}`),this.request(d).then(K=>({data:K.data.map(j=>({path:_+j.name}))}))}read({full_name:r,branch:o,filepath:s=""}){let d;return new RegExp(/^.*\.[^\\]+$/).test(s)?(d=`/projects/${(0,C.cv)(r)}/repository/files`,s&&(d+=`/${(0,C.cv)(s)}`),d+=`?ref=${o}`):(d=`/projects/${(0,C.cv)(r)}/repository/tree?path=${s}`,d+=`&ref=${o}`),this.request(d).then(A=>{if(A.data.length){const K=A.data.find(j=>(j==null?void 0:j.type)==="tree");return{data:[{path:K==null?void 0:K.path,type:"dir"}],path:s}}return{data:window.atob(A.data.content),path:s}})}addDeployKey(r,o,s){const d=`/projects/${(0,C.cv)(r)}/deploy_keys`,_={title:"Netlify Deploy Key",key:o.public_key,can_push:!s};return this.request(d,{method:"POST",body:JSON.stringify(_)}).then(new Promise(A=>{setTimeout(()=>{A(o)},1e4)})).then(()=>o)}addWebhook({api_id:r,site:o}){const s=`/projects/${(0,C.cv)(r)}/hooks`,d={url:o.deploy_hook,push_events:!0,merge_requests_events:!0,note_events:!0,enable_ssl_verification:!0};return this.request(s,{method:"POST",body:JSON.stringify(d)}).then(()=>o).catch(function(_){return Promise.reject(_)})}checkErrorForInvalidToken(r){if(r.error==="invalid_token")return{code:401,message:"Your access token has expired. Please reconnect to GitLab to continue."}}createRepo(r){const o={name:r.name,description:r.description};return r.private&&(o.visibility="private"),this.request("/projects",{method:"POST",body:JSON.stringify(o)}).then(s=>ee(s.data)).catch(s=>{const d=this.checkErrorForInvalidToken(s);if(d)throw new N.Z(d);const _=s.message&&/taken/.test(String(s.message.name))?"Repository name already exists on this account":"Repository creation failed";throw new N.Z(_)})}}const Le={github:S,github_app:ve,github_enterprise:ve,gitlab:Ce,gitlab_self_hosted:Ce,bitbucket:T,azure_devops:b};function we(i){return{"github.com":y.CB.github,"gitlab.com":y.CB.gitlab,"bitbucket.org":y.CB.bitbucket,"dev.azure.com":y.CB.azure_devops}[i]}function De(i){const r=(0,G.oI)(i),o=(0,G.Gu)(i),s=(0,G.qq)(i);return Me(r,o,s)}function Me(i,r,o){const s=Le[i];if(s){const d=new s(r,o);return d.provider=i,d}}function u(i,r){return{github:`https://github.com/${r}`,gitlab:`https://gitlab.com/${r}`,bitbucket:`https://bitbucket.org/${r}`,azure_devops:void 0}[i]}},23178:(ge,X,c)=>{c.d(X,{q:()=>C});var y=c(73274);function G(){}class C{constructor({appId:V,onAppInstall:M,enterpriseUrl:H=""}){this.messageHandler=W=>{const x=W&&W.data;if(/^installation:ready:/.test(x)){const[J,z,U]=x.match(/^installation:ready:(\d+):([\w-]+)$/);this.onAppInstall({installationId:Number(z),login:U}),this.close()}},this.open=()=>{window.addEventListener("message",this.messageHandler,!1),(0,y.xw)({provider:this.provider,url:this.url})},this.close=()=>{this.cleanup()},this.cleanup=()=>{window.removeEventListener("message",this.messageHandler,!1),(0,y.on)()},this.appId=V||"netlify",this.onAppInstall=M||G,this.url=H?`${H.replace(/\/$/,"")}/github-apps/netlify/installations/new`:`https://github.com/apps/${this.appId}/installations/new`,this.provider=H?"github_enterprise":"github_app"}}},81073:(ge,X,c)=>{c.d(X,{ZP:()=>R,yl:()=>W});var y=c(5780),G=c.n(y),C=c(75033),D=c.n(C);const V=()=>c.e(9689).then(c.t.bind(c,92133,23)),H={listFrameworks:async function(E){return(await V()).listFrameworks(E)}},W=["netlify.toml","package.json",".nvmrc",".node_version","netlify","functions",".lfsconfig","Gemfile"],x="dist/",J="v12.18.0",z={"jekyll with no gemfile":`It looks like this is a **Jekyll** site, but you don't have a **Gemfile**.
+This will most likely lead to a broken build.
+Check out our [Migrating your Jekyll site to Netlify](https://www.netlify.com/blog/2017/05/11/migrating-your-jekyll-site-to-netlify/)
+guide to fix this issue before deploying your site.`,"jekyll not in gemfile":`It looks like this is a **Jekyll** site, but your **Gemfile** doesn\u2019t list
+Jekyll as a dependency. This will most likely lead to a broken build.
+Check out our [Migrating your Jekyll site to Netlify](https://www.netlify.com/blog/2017/05/11/migrating-your-jekyll-site-to-netlify/)
+guide to fix this issue before deploying your site.`,"error parsing package.json":`You have a malformed package.json in your folder. This will most likely lead to a
+broken build when attempting to install your npm dependencies.`,"repository uses large media":`**This repository uses Netlify Large Media**
+
+Repository files tracked by the Large Media service are stored with the original site. These files cannot be accessed in clones or forks. Contact the original repository owner for possible alternatives.`},t=[(E,T)=>{if(!!T["package.json"])try{JSON.parse(T["package.json"])}catch{return z["error parsing package.json"]}},(E,T)=>{if(!!E.includes("_config.yml")&&!(E.includes("_config.yml")&&T["package.json"]&&T["package.json"].match(/hexo/))){if(!T.Gemfile)return z["jekyll with no gemfile"];if(!T.Gemfile.match(/('jekyll'|"jekyll"|'github-pages'|"github-pages")/))return z["jekyll not in gemfile"]}},(E,T,N)=>{if(!T[".lfsconfig"]||!N)return;if(/\.netlify\/large-media/.test(T[".lfsconfig"]))return z["repository uses large media"]}];function n(E=[],T={},N){for(const q in t){const L=t[q](E,T,N);if(L)return L}}const a=({plugins:E=[],context:T={}})=>{const N=E;return Object.keys(T).forEach(q=>{T[q].plugins&&N.push(...T[q].plugins)}),[...new Set(N.map(q=>q.package))]},l=E=>{var T,N;if(!E)return{};const q={};let L;try{L=D().parse(E)}catch(B){return G().notify(B,k=>{k.context="getNetlifyTomlSettings => TOML.parse",k.severity="info"}),q}L!=null&&L.build&&(q.cmd=L.build.command,q.dir=L.build.publish),q.functions_dir=((T=L==null?void 0:L.build)==null?void 0:T.functions)||((N=L==null?void 0:L.functions)==null?void 0:N.directory),L!=null&&L.template&&(q.template=L.template);const g=a(L);return g.length&&(q.plugins_installed=g),q},b=(E,T)=>{var N;if(!T["package.json"])return{};let q;try{q=JSON.parse(T["package.json"])}catch{return{}}const L=E.includes("yarn.lock")?"yarn":"npm run";return(N=q==null?void 0:q.scripts)!=null&&N.build?{cmd:`${L} build`}:{}},I=(E,T)=>{var N;const q=B=>{const k=B.startsWith("./")?B.slice(2):B;return E.includes(k)},L=((N=T[".nvmrc"])==null?void 0:N.trim())||J;let g;try{g=T["package.json"]?JSON.parse(T["package.json"]):{}}catch{g={}}return{pathExists:q,packageJson:g,nodeVersion:L}},Z=async(E,T)=>{try{const N=I(E,T),q=await H.listFrameworks(N),L={};if(q.length){const{build:g,id:B,name:k,plugins:te}=q[0];L.cmd=g.commands[0],L.dir=g.directory,L.framework=B,L.frameworkName=k,L.plugins_recommended=te}return L}catch(N){throw new Error(`Error getting framework information: ${N}`)}};function Q(E){const T=E.netlify,N=E.functions;if((!T||!Array.isArray(T))&&(!N||!Array.isArray(N)))return null;if(T){for(const q of T)if(q.path==="netlify/functions"&&q.type==="dir")return{functions_dir:q.path};if(!N)return null}return{functions_dir:"functions"}}const v=E=>{const T={},N=Q(E);return N||T},$=(E,T,N,q)=>{const L=[E,T,N,q],g={cmd:void 0,dir:void 0,template:void 0,functions_dir:void 0,plugins_installed:void 0,plugins_recommended:void 0,framework:void 0,frameworkName:void 0};return L.forEach(B=>{B&&Object.keys(B).forEach(k=>{g[k]=g[k]||B[k]})}),!g.dir&&g.cmd&&(g.dir=x),g},f=(E=[],T=[],N=[])=>T.reduce((q,L)=>E.includes(L)&&!N.includes(L)?q:[...q,{package:L}],[]),h=async(E=[],T={})=>{const N=l(T["netlify.toml"]),q=b(E,T),L=await Z(E,T),g=v(T),B=$(N,q,L,g),k=["@netlify/plugin-nextjs"];return B.plugins=f(N==null?void 0:N.plugins_installed,L==null?void 0:L.plugins_recommended,k),B},R=async(E,T,N)=>{const q=n(E,T,N);return{settings:await h(E,T),warning:q}}},92115:(ge,X,c)=>{c.d(X,{u:()=>U});var y=c(93967);const G=2e4,C={authDomain:"netlify.firebaseapp.com",projectId:"firebase-netlify",storageBucket:"firebase-netlify.appspot.com",messagingSenderId:"344466503271"};function D(w){const{databaseURL:O}=w;return new Promise((t,n)=>{Promise.all([c.e(1326).then(c.bind(c,25353)),c.e(1326).then(c.bind(c,76545))]).then(([a,l])=>{const{getApp:b,initializeApp:I}=a;let Z;try{Z=b(O)}catch{Z=I({...C,...w},O)}return[Z,l]}).then(t).catch(a=>{console.error("Error loading Firebase",a),n(a)})})}function V(w){console.error(w)}class M{constructor(O){this.endpoint=O.endpoint,this.path=O.path.replace(/\./g,"-"),this.startAt=O.startAt,this.token=O.token}listen(O,t=V){let n=!1;setTimeout(()=>{!n&&t(new y.Z("Connection timed out"))},G);const a={apiKey:this.token,databaseURL:this.endpoint};D(a).then(([l,b])=>{const{getDatabase:I,query:Z,ref:Q,orderByChild:v,startAt:$,onChildAdded:f,onValue:h}=b,P=I(l);this.api=Z(Q(P,this.path),v("ts"),$(this.startAt)),f(this.api,R=>{n=!0,O(R.val())}),h(this.api,()=>{n||(n=!0,O())})})}close(){this.api&&this.api.off&&this.api.off()}}var H=c(73274),W=c(15949);function x(w){console.error(w)}class J{constructor(O){switch(O.resource){case W.Z.BUILD:this._initBuildLog(O);break;case W.Z.FUNCTION:this._initFunctionLog(O);break;case W.Z.EDGE_FUNCTION:this._initEdgeFunctionLog(O);break;default:throw new Error("unknown log type")}}_initBuildLog(O){this.path="/build/logs",this.subscribeMsg={deploy_id:O.deployId,site_id:O.siteId}}_initFunctionLog(O){this.path="/function/logs",this.subscribeMsg={account_id:O.awsAccountId,function_id:O.functionId,site_id:O.siteId,from:O.fromDatetime,to:O.toDatetime}}_initEdgeFunctionLog(O){this.path="/edge-function/logs",this.subscribeMsg={deploy_id:O.deployId,site_id:O.siteId,use_v2:O.useV2}}listen(O,t=x){const n=`wss://socketeer.services.netlify.com${this.path}`;this.ws=new WebSocket(n),this.ws.addEventListener("open",()=>{(0,H.$f)().then(a=>{this.subscribeMsg&&a&&(this.subscribeMsg.access_token=a),this.ws.send(JSON.stringify(this.subscribeMsg))}).catch(a=>{console.error(a)})}),this.ws.addEventListener("message",({data:a})=>{try{const{ts:l,message:b,type:I,request_id:Z,level:Q,request_path:v,function:$,section:f}=JSON.parse(a);if(I==="start")return;O({ts:l,type:I,log:b,requestId:Z,level:Q,requestPath:v,functionName:$,...f&&{section:f}})}catch(l){t(l)}}),this.ws.addEventListener("error",t)}close(){!this.ws||this.ws.readyState===WebSocket.CLOSED||(this.ws.close(),this.ws=null)}}const z={firebase:M,socketeer:J};function U(w){const O=z[w.type];return O&&new O(w)}},15949:(ge,X,c)=>{c.d(X,{Z:()=>G});const G={BUILD:"build",FUNCTION:"function",EDGE_FUNCTION:"edgeFunction"}},42320:(ge,X,c)=>{c.d(X,{Z:()=>w});var y=c(67491),G=c(21809),C=c(33640),D=c(93967),V=c(1416);const M="https://api.netlify.com",H="/api/v1",W="/api/experiments",x="netlify.app",J=15,z=["headers","parseJsonResponse","request","postRequest"],U=`We\u2019re having some trouble connecting you to Netlify.
+
+This error may be caused by an ad blocker or browser extension. You can try disabling blocking on this page or running in incognito`;class w{constructor(t){return this.token=t.get("accessToken"),this.apiBase=t.get("apiBase"),this.root=t.get("clientApiBase")||t.get("apiBase")||M,this.mockRoot=t.get("mockApiBase"),this.siteDomain=t.get("siteDomain")||x,this.siteId=t.get("siteId"),new Proxy(this,{get(n,a,...l){if(typeof n[a]=="function"&&!z.includes(a.toString())){const b=Reflect.get(n,a,...l),I=a.toString();return function(...Q){const v=(0,G.I7)(`api-${I}-start`),$=b.apply(n,Q);return $.then?new Promise((f,h)=>{$.then(P=>{const R=(0,G.I7)(`api-${I}-end`,{rejected:!1});return(0,G.KT)(`api-${I}-complete`,v,R),f(P)}).catch((...P)=>{const R=(0,G.I7)(`api-${I}-end`,{rejected:!0});return(0,G.KT)(`api-${I}-complete`,v,R),h(...P)})}):$}}return Reflect.get(n,a,...l)}})}headers(t={},n,a){const l={};return(this.token||a)&&!n&&(l.Authorization=`Bearer ${a||this.token}`),{"Content-Type":"application/json",...l,...t}}parseJsonResponse(t){let n=!1;return t.json().then(a=>(n=!0,t.ok?{data:a,pagination:(0,V.ot)(t)}:Promise.reject(a))).catch(a=>n?Promise.reject(a):Promise.reject({status:t.status}))}async request(t,n={}){const a=!n.forceUseApiBase;let l;n.forceUseApiBase&&(0,y.W8)()&&(l=await(0,y.ZD)());const b=this.headers(n.headers||{},a,l);b["Content-Type"]==="delete"&&delete b["Content-Type"];let I=n.forceUseApiBase&&this.apiBase?this.apiBase:this.root;n.retryWithMockServer&&this.mockRoot&&(I=this.mockRoot);let Z=n.noPrefix?I+t:I+(n.prefix||H)+t;const Q={};return a&&(Q.credentials="include"),fetch(Z,{...Q,...n,headers:b}).then(v=>{if(n.raw&&v.ok)return v.arrayBuffer();const $=v.headers.get("Content-Type");if($&&$.match(/json/))return this.parseJsonResponse(v);const f=$&&$.match(/(text|javascript|xml|svg)/i)?"text":"arrayBuffer";return v[f]().then(h=>v.ok?{data:h}:Promise.reject(v))}).catch(v=>{let $;if(/Failed to fetch/.test(v))$=new D.Z(U);else{const{status:f,code:h,...P}=v;$=new D.Z({code:f||h,...P})}return Promise.reject($)})}postRequest(t,n){const a={method:"POST"};return n&&(a.body=n),this.request(t,a)}enableAnalytics(t){return this.request(`/sites/${t}/analytics`,{method:"POST"})}deleteAnalytics(t,n){return this.request(`/sites/${t}/analytics/${n}`,{method:"DELETE"})}site(t){return this.request(`/sites/${t}.${this.siteDomain}`)}unlinkSiteRepository(t){return this.request(`/sites/${t}/unlink_repo`,{method:"PUT"})}siteById(t){return this.request(`/sites/${t}`)}sites({page:t,perPage:n,searchTerm:a,searchGlobally:l,sortBy:b,accountSlug:I,token:Z}){let Q="";return!l&&I&&(Q+=`/${I}`),Q+=`/sites?filter=all&sort_by=${b||"updated_at"}&page=${t||1}&per_page=${n||J}`,a&&(Q+=`&name=${a}`),Z&&(Q+=`&token=${Z}`),Q+="&include_favorites=true",this.request(Q)}siteSnippets(t){return this.request(`/sites/${t}/snippets`)}siteSnippetRemove(t,n){return this.request(`/sites/${t}/snippets/${n}`,{method:"DELETE"})}siteSnippetAdd(t,n){return this.postRequest(`/sites/${t}/snippets`,JSON.stringify(n))}siteBuildHooks(t){return this.request(`/sites/${t}/build_hooks`)}addBuildHook(t,n){return this.request(`/sites/${t}/build_hooks`,{method:"POST",body:JSON.stringify(n)})}removeBuildHook(t,n){return this.request(`/sites/${t}/build_hooks/${n}`,{method:"DELETE"})}branches(t){return this.request(`/sites/${t}/deployed-branches`)}getEnvVarsFromEnvelope({accountId:t="",siteId:n="",scope:a="all",context:l="all",merge:b=!0}){const I=[n&&`site_id=${n}`,`scope=${a}`,`context=${l}`,b&&"level=all"].filter(Boolean).join("&");return this.request(`/accounts/${t}/env?${I}`)}migrateEnvVarsToEnvelope({accountId:t="",siteId:n=""}){return this.request(`/accounts/${t}/migrate/site/env?site_id=${n}`,{method:"POST"})}createEnvVarsForEnvelope({accountId:t="",siteId:n="",envVars:a=[]}){const l=[n&&`site_id=${n}`].filter(Boolean);return this.request(`/accounts/${t}/env?${l}`,{method:"POST",body:JSON.stringify(a)})}updateEnvVarInEnvelope({accountId:t="",siteId:n="",oldKey:a="",newKey:l="",scopes:b=[],values:I=[]}){const Z=[n&&`site_id=${n}`].filter(Boolean);return this.request(`/accounts/${t}/env/${a}?${Z}`,{method:"PUT",body:JSON.stringify({key:l,scopes:b,values:I})})}deleteEnvVarFromEnvelope({accountId:t="",siteId:n="",key:a="",id:l=""}){const b=[n&&`site_id=${n}`].filter(Boolean);return this.request(`/accounts/${t}/env/${a}${l?`/value/${l}`:""}?${b}`,{method:"DELETE"})}deploy(t){return this.request(`/deploys/${t}`)}deploys(t,{page:n,perPage:a,filter:l,state:b}){let I=`/sites/${t}/deploys?page=${n||1}&per_page=${a||J}`;if(l)switch(l){case"deploy previews":I+="&deploy-previews=true";break;default:I+=`&branch=${l}`}return b&&(I+=`&state=${b}`),this.request(I)}deployLog(t){return this.request(`/deploys/${t}/log`).then(n=>{var a;return((a=n==null?void 0:n.data)==null?void 0:a.url)&&fetch(n.data.url).then(l=>l.json())})}deploySummary(t){return this.request(`/deploys/${t}/summary`)}deployCommitters(t){return this.request(`/deploys/${t}/committers`,{prefix:W})}fetchPullRequest(t){return this.request(`/cdp/deploys/${t}`)}deployActivity(t){return this.request(`/cdp/deploys/${t}/events`)}inviteCommitter(t,n){return this.request(`/deploys/${t}/invite`,{prefix:W,method:"POST",body:JSON.stringify({committer:n})})}deployPluginRuns(t){return this.request(`/deploys/${t}/plugin_runs`)}buildHooks(t){return this.request(`/sites/${t}/build_hooks`)}publishDeploy(t){const n=`/deploys/${t}/restore`;return this.request(n,{method:"POST"})}triggerDeploy(t,n,a){return this.request(`/sites/${t}/builds`,{method:"POST",body:JSON.stringify({clear_cache:n,template_id:a})})}createDeployKey(){return this.request("/deploy_keys",{method:"POST"})}getDeployKey(t){return this.request(`/deploy_keys/${t}`)}createSite(t={}){const{account_slug:n}=t,a=n?`/${n}/sites`:"/sites";return this.request(a,{method:"POST",body:JSON.stringify(t)})}createDeploy(t,n={}){return this.request(`/sites/${t}/deploys`,{method:"POST",body:JSON.stringify(n)})}siteDeploy(t,n){return this.request(`/sites/${t}/deploys/${n}`)}updateSite(t,n){return this.request(`/sites/${t}`,{method:"PUT",body:JSON.stringify(n)})}deleteSite(t){return this.request(`/sites/${t}`,{method:"DELETE"})}uploadFile(t,n,a,l){const b=`/deploys/${t}/files${n}`,I={"Content-Type":"application/octet-stream"};return l&&(I.Authorization=`Bearer ${l}`),this.request(b,{method:"PUT",body:a,headers:I,forceUseApiBase:!0})}waitForDeploy(t){return new Promise((n,a)=>{const l=()=>{this.deploy(t).then(b=>{var I;if(((I=b.data)==null?void 0:I.state)==="ready")return n(b);setTimeout(l,1e3)}).catch(a)};l()})}waitForSiteDeploy(t){return new Promise((n,a)=>{const l=()=>{this.site(t).then(b=>{var I;if((I=b.data)!=null&&I.deploy_id)return n(b);setTimeout(l,1e3)}).catch(a)};l()})}dnsZones(t){return this.request(t?`/dns_zones?account_slug=${t}`:"/dns_zones")}dnsZonePath(t){return`/dns_zones/${t.replace(/\./g,"_")}`}dnsZone(t){return this.request(this.dnsZonePath(t))}createDnsZone(t,n,a={}){return this.request("/dns_zones",{method:"POST",body:JSON.stringify({...a,name:t,account_slug:n})})}enableDnsZoneIPv6(t){const n=this.dnsZonePath(t);return this.request(`${n}/enable-ipv6`,{method:"PUT"})}enableDedicatedDns(t){const n=this.dnsZonePath(t);return this.request(`${n}/expand`,{method:"PUT"})}destroyDnsZone(t){return this.request(this.dnsZonePath(t),{method:"DELETE"})}transferDnsZone(t,{account_id:n,transfer_account_id:a,transfer_user_id:l}){return this.request(`${this.dnsZonePath(t)}/transfer`,{method:"PUT",body:JSON.stringify({account_id:n,transfer_account_id:a,transfer_user_id:l})})}domainsPath(t){return`/domains-next/${t.replace(/\./g,"_")}`}toggleDomainAutoRenew(t,n,a){return this.request(`${this.domainsPath(t)}/auto-renew`,{method:"PUT",body:JSON.stringify({account_id:n,auto_renew:a})})}dnsRecords(t){return this.request(`${this.dnsZonePath(t)}/dns_records`)}dnsRecord(t,n){return this.request(`${this.dnsZonePath(t)}/dns_records/${n}`)}createDnsRecord(t,n){return this.request(`${this.dnsZonePath(t)}/dns_records`,{method:"POST",body:JSON.stringify(n)})}destroyDnsRecord(t,n){return this.request(`${this.dnsZonePath(t)}/dns_records/${n}`,{method:"DELETE"})}deployFiles(t){return this.request(`/deploys/${t}/files`)}deployFile(t,n){return this.request(`/deploys/${t}/files${n}`,{forceUseApiBase:!0,raw:!0,headers:{"Content-Type":"application/vnd.bitballoon.v1.raw"}})}largeMediaAssets(t,{page:n,perPage:a,filter:l}){return this.request(`/large_media_assets/?site_id=${t}&page=${n||1}&per_page=${a||J}${l?`&name=${l}`:""}`)}user(){return this.request("/user")}updateUser(t){return this.request("/user",{method:"PUT",body:JSON.stringify(t)})}updateUserQuestionnaireTelemetry(t){return this.request(`/users/${t.userId}/questionnaire`,{method:"PUT",body:JSON.stringify(t)})}updateUserAvatar(t){const n=new FormData;n.append("file",t);const a={method:"POST",body:n,headers:{"Content-Type":"delete"}};return this.request("/users/avatar",a)}deleteUserAvatar(){return this.request("/users/avatar",{method:"DELETE"})}paymentMethods({provider:t,accountId:n}){return this.request(`/billing/payment_methods${t==="zuora"&&n?`?account_id=${n}`:""}`)}receiptPdf(t){return this.request(`/billing/receipts/${t}`,{raw:!0,headers:{Accept:"application/pdf"}})}getPromo(t){return this.request(`/billing/promo_codes/${t}`)}updateBilling(t){return this.request("/billing",{method:"PUT",body:JSON.stringify(t)})}getSubscriptions(t){return this.request(`/billing/subscriptions?site_id=${t}`)}cancelSubscription(t){return this.request(`/billing/subscriptions/${t}`,{method:"DELETE"})}newSubscription(t){return this.request("/billing/subscriptions",{method:"POST",body:JSON.stringify(t)})}updateSubscription(t,n){return this.request(`/billing/subscriptions/${t}`,{method:"PUT",body:JSON.stringify(n)})}paymentProviderToken({sandbox:t,accountId:n,enterpriseException:a,secure:l}){let b=`/billing/client_token?sandbox=${~~!!t}&legacy=0`;return n&&(b+=`&account_id=${n}`),a&&(b+=`&enterprise_exception=${~~!!a}`),l&&(b+="&token_type=rsa_signature"),this.request(b,{method:"POST"})}braintreeToken(){return this.request("/billing/client_token?legacy=1&sandbox=0",{method:"POST"})}paymentMethod(t){return this.request(`/billing/payment_methods/${t}`)}savePaymentMethod(t){const{customer_id:n,sandbox:a,enterpriseException:l}=t;if(!n)return Promise.reject("Missing customer_id in attributes");let b=`/accounts/payments?customer_id=${n}&gateway=zuora_${a?"sandbox":"production"}`;return l&&(b+=`&enterprise_exception=${~~!!l}`),this.postRequest(b,JSON.stringify(t))}members(t){return this.request(`/sites/${t}/members`)}inviteMember(t,n){return this.postRequest(`/sites/${t}/members`,JSON.stringify({email:n}))}createShareableInvite(t){return this.request(`/${t}/shareable_invite`,{prefix:W,method:"POST"})}getShareableInvite(t){return this.request(`/${t}/shareable_invite`,{prefix:W,method:"GET"})}updateShareableInvite(t){return this.request(`/${t}/shareable_invite`,{prefix:W,method:"PUT"})}deleteShareableInvite(t){return this.request(`/${t}/shareable_invite`,{prefix:W,method:"DELETE"})}joinShareableInvite(t){return this.request("/accounts/join",{prefix:W,method:"POST",body:JSON.stringify({code:t})})}checkShareableInvite(t){return this.request(`/${t}/shareable_invite`,{prefix:W,method:"HEAD"})}getAccountCreator(t){return this.request(`/${t}/creator`,{prefix:W,method:"GET"})}certificate(t){return this.request(`/sites/${t}/ssl`)}updateSsl(t,n,a){let l=`/sites/${t}/ssl`;return a&&(l+=`/${a}`),this.postRequest(l,JSON.stringify(n))}verifySsl(t){return this.request(`/sites/${t}/ssl/verify_custom_domain`)}removeMember(t,n){return this.request(`/sites/${t}/members/${n}`,{method:"DELETE"})}acceptInvite(t){return this.postRequest(`/invites/${t}/accept`)}hooks(t){return this.request(`/hooks?site_id=${t}`)}hookTypes(t){return this.request(`/hooks/types?site_id=${t}`)}addHook(t){return this.request("/hooks",{method:"POST",body:JSON.stringify(t)})}updateHook(t,n){return this.request(`/hooks/${t}`,{method:"PUT",body:JSON.stringify(n)})}deleteHook(t){return this.request(`/hooks/${t}`,{method:"DELETE"})}enableHook(t){return this.request(`/hooks/${t}/enable`,{method:"POST"})}siteForms(t){const n=`/sites/${t}/forms`;return this.request(n)}siteForm(t){return this.request(`/forms/${t}`)}formSubmissions(t,{formId:n,page:a,perPage:l,filter:b}){let I=n?`/sites/${t}/forms/${n}/submissions?`:`/sites/${t}/submissions?`;return I+=`state=${b||"ham"}&`,I+=`page=${a||1}&per_page=${l||J}`,this.request(I)}markSubmissionAsHam(t,n){return this.request(`/submissions/${n}/ham`,{method:"PUT"})}markSubmissionAsSpam(t,n){return this.request(`/submissions/${n}/spam`,{method:"PUT"})}functions(t,n){let a=`/sites/${t}/functions`;return n&&(a+=`?filter=${encodeURIComponent(n)}`),this.request(a)}fetchEdgeAccessToken(t,n){return this.request("/auth/edge-access",{noPrefix:!0,method:"POST",body:JSON.stringify({site_id:t,domain:n})})}edgeFunctions(t){const n=`/deploys/${t}/edge_functions`;return this.request(n)}authProviders(t){return this.request(`/sites/${t}/authentication_providers`)}createAuthProvider(t,n,a,l){return this.request(`/sites/${t}/authentication_providers`,{method:"POST",body:JSON.stringify({name:n,provider:n,api_id:a,api_secret:l})})}removeAuthProvider(t,n){return this.request(`/sites/${t}/authentication_providers/${n}`,{method:"DELETE"})}setupMultiFactorAuth(){return this.request("/user/multifactor_auth/setup")}enableMultiFactorAuth({otp:t,token:n}){return this.request("/user/multifactor_auth",{method:"POST",body:JSON.stringify({otp:t,token:n})})}disableMultiFactorAuth({otp:t}){return this.request("/user/multifactor_auth",{method:"DELETE",body:JSON.stringify({otp:t})})}verifyLogin({otp:t,token:n}){return this.request("/user/multifactor_auth/verify_login",{method:"POST",body:JSON.stringify({otp:t}),headers:{Authorization:`Bearer ${n}`}})}application(t){return this.request(`/oauth/applications/${t}`)}applications(){return this.request("/oauth/applications")}createApplication(t){return this.request("/oauth/applications",{method:"POST",body:JSON.stringify(t)})}updateApplication(t,n){return this.request(`/oauth/applications/${t}`,{method:"PUT",body:JSON.stringify(n)})}removeApplication(t){return this.request(`/oauth/applications/${t}`,{method:"DELETE"})}verifyUserByToken(t){const[n,a]=t.split("-");return this.request("/auth/verify",{noPrefix:!0,method:"POST",body:JSON.stringify({code_id:n,code:a})})}verifySamlUserByToken(t,n){return this.request("/auth/verify-saml",{noPrefix:!0,method:"POST",body:JSON.stringify({code_id:t,code:n})})}verifyUser(t,n){return this.request(`/users/${t}/confirm_email`,{method:"PUT",body:JSON.stringify({secret:n})})}resetPasswordEmail(t){return this.request("/password_reset",{method:"POST",body:JSON.stringify({email:t})})}resetPassword(t,n,a){const l={token:t,password:n,password_confirmation:a};return this.request("/password_reset",{method:"PUT",body:JSON.stringify(l)})}authorizeApplication(t){return this.request("/oauth/authorize",{noPrefix:!0,body:JSON.stringify({client_id:t.clientID,redirect_uri:t.redirectURI,response_type:t.responseType,scope:t.scope,state:t.state,grant_saml:t.grantSaml}),method:"POST"})}authorizedApplications(t){let n="/oauth/applications/authorized";return t&&(n+=`?administrator_id=${t}`),this.request(n)}revokeAuthorizedApplication(t,n){let a=`/oauth/applications/${t}/revoke`;return n&&(a+=`?administrator_id=${n}`),this.request(a,{method:"DELETE"})}createPersonalToken(t,n,a){const l="/oauth/applications/create_token";return this.postRequest(l,JSON.stringify({name:t,grant_saml:n,administrator_id:a||null}))}ticket(t){return this.request(`/oauth/tickets/${t}`)}authorizeTicket(t,n){let a=`/oauth/tickets/${t}/authorize`;return n&&(a+="?grant_saml=true"),this.request(a,{method:"POST"})}createTemplate(t){return this.postRequest("/templates",JSON.stringify(t))}verifyPubstorm(t){return this.postRequest("/pubstorm/verify",JSON.stringify(t))}claimPubstorm(t){return this.postRequest("/pubstorm/claim",JSON.stringify(t))}requestPubstormRecovery(t){return this.postRequest("/pubstorm/recover",JSON.stringify({email:t}))}deployLogLocation(t){return this.request(`/deploys/${t}/log`)}deployLogAccessCheck(t){return this.request(`/deploys/${t}/check_access`)}lockDeploy(t){return this.postRequest(`/deploys/${t}/lock`)}unlockDeploy(t){return this.postRequest(`/deploys/${t}/unlock`)}retryDeploy(t,n){return this.postRequest(`/deploys/${t}/retry`,JSON.stringify(n||{}))}acceptDeploy(t){return this.postRequest(`/deploys/${t}/accept`)}rejectDeploy(t){return this.postRequest(`/deploys/${t}/reject`)}cancelDeploy(t){return this.postRequest(`/deploys/${t}/cancel`)}deleteDeploy(t){return this.request(`/deploys/${t}`,{method:"DELETE"})}organizations(){return this.request("/organizations")}organization(t){return this.request(`/organizations/${t}`)}organizationAccounts(t){return this.request(`/organizations/${t}/accounts`)}organizationInvoices(t){return this.request(`/organizations/${t}/invoices`)}organizationInvoice(t,n){return this.request(`/organizations/${t}/invoices/${n}`)}organizationReceipts(t){return this.request(`/organizations/${t}/receipts`)}organizationReceipt(t,n){return this.request(`/organizations/${t}/receipts/${n}`,{raw:!0,headers:{Accept:"application/pdf"}})}organizationClientToken(t){return this.request(`/organizations/${t}/client_token`)}organizationSamlConnection(t){return this.request(`/organizations/${t}/workos`)}organizationSamlDashboard(t){return this.request(`/organizations/${t}/workos`,{method:"POST",body:JSON.stringify({})})}organizationSamlDeleteConnection(t){return this.request(`/organizations/${t}/workos`,{method:"DELETE"})}updateOrganization(t,n){return this.request(`/organizations/${t}`,{method:"PUT",body:JSON.stringify(n)})}updateOrganizationLogo(t,n){const a=new FormData;a.append("file",n);const l={method:"POST",body:a,headers:{"Content-Type":"delete"}};return this.request(`/organizations/${t}/logo`,l)}updateOrganizationPaymentMethod(t,n){return this.postRequest(`/organizations/${t}/payments`,JSON.stringify(n))}deleteOrganizationLogo(t){return this.request(`/organizations/${t}/logo`,{method:"DELETE"})}accounts(){return this.request("/accounts")}account(t){return this.request(`/accounts/${t}`)}accountBandwidth(t){return this.request(`/accounts/${t}/bandwidth`)}accountBandwidthRanking(t,n){return this.request(`/accounts/${t}/bandwidth/ranking?limit=${n}`)}accountCompliance(t){return this.request(`/accounts/${t}/compliance`)}accountCommitters(t,n={}){return n.billingPeriod?this.request(`/accounts/${t}/committers?billing_period=current`):this.request(`/${t}/committers`)}createCommitter(t,n,a){return this.request(`/${t}/committers`,{method:"POST",body:JSON.stringify({build_id:n,member_id:a})})}updateCommitter(t,n,a,l){return this.request(`/${t}/committers/${n}`,{method:"PATCH",body:JSON.stringify({member_id:a,invite_id:l})})}accountTypes(){return this.request("/accounts/types")}createAccount(t){return this.request("/accounts",{method:"POST",body:JSON.stringify(t)})}deleteAccount(t){return this.request(`/accounts/${t}`,{method:"DELETE"})}disableUser(){return this.request("/users/disable",{method:"POST"})}updateAccount(t,n){return this.request(`/accounts/${t}`,{method:"PUT",body:JSON.stringify(n)})}updateAccountLogo(t,n){const a=new FormData;a.append("file",n);const l={method:"POST",body:a,headers:{"Content-Type":"delete"}};return this.request(`/accounts/${t}/logo`,l)}deleteAccountLogo(t){return this.request(`/accounts/${t}/logo`,{method:"DELETE"})}accountBuilds(t,n){return n={page:1,per_page:J,...n},this.request(`/${t}/builds?${(0,C.b4)(n)}`)}accountBuildStatus(t){return this.request(`/${t}/builds/status`)}accountBuildQueueBump(t,n){return this.postRequest(`/${t}/builds/${n}/prioritize`)}accountBuildStatusPerSite(t){return this.request(`/${t}/builds/per_site`)}accountBuildsPerDay(t){return this.request(`/${t}/builds/per_day`)}accountMember(t,n){return this.request(`/${t}/members/${n}`)}accountMembers(t){return this.request(`/${t}/members?sort_by=updated_at`)}inviteAccountMember(t,{email:n,role:a,site_ids:l,site_access:b,build_id:I}){return this.postRequest(`/${t}/members`,JSON.stringify({email:n,role:a,site_ids:l,site_access:b,build_id:I}))}removeAccountMember(t,n){return this.request(`/${t}/members/${n}`,{method:"DELETE"})}updateAccountMember(t,n,{role:a,site_access:l,site_ids:b}){return this.request(`/${t}/members/${n}`,{method:"PUT",body:JSON.stringify({role:a,site_access:l,site_ids:b})})}accountReviewers(t){return this.request(`/${t}/reviewers`)}updateAccountReviewer(t,n,{state:a,site_access:l}){return this.request(`/${t}/reviewers/${n}`,{method:"PUT",body:JSON.stringify({state:a,site_access:l})})}promoteAccountReviewer(t,n,{role:a}){return this.request(`/${t}/reviewers/${n}/promote`,{method:"POST",body:JSON.stringify({role:a})})}removeAccountReviewer(t,n){return this.request(`/${t}/reviewers/${n}`,{method:"DELETE"})}accountBillingSummary(t){return this.request(`/${t}/billing`)}accountSubscriptions(t){return this.request(`/${t}/billing/subscriptions`)}accountInvoices(t,n={}){return this.request(`/${t}/billing/invoices?${(0,C.b4)(n)}`)}accountReceipts(t){return this.request(`/${t}/receipts`)}accountReceiptPdf(t,n){return this.request(`/${t}/receipts/${n}`,{raw:!0,headers:{Accept:"application/pdf"}})}accountReceiptHtml(t,n){return this.request(`/${t}/receipts/${n}`,{headers:{Accept:"text/html"}})}transferSite(t,n){return this.postRequest(`/sites/${t}/transfer?account_id=${n}`)}trafficSplits(t){return this.request(`/sites/${t}/traffic_splits`)}trafficSplit(t,n){return this.request(`/sites/${t}/traffic_splits/${n}`)}createTrafficSplit(t,n){return this.postRequest(`/sites/${t}/traffic_splits`,JSON.stringify(n))}updateTrafficSplit(t,n,a){return this.request(`/sites/${t}/traffic_splits/${n}`,{method:"PUT",body:JSON.stringify(a)})}startTrafficSplit(t,n){return this.postRequest(`/sites/${t}/traffic_splits/${n}/publish`)}stopTrafficSplit(t,n){return this.postRequest(`/sites/${t}/traffic_splits/${n}/unpublish`)}teamAudit({page:t,perPage:n,search:a,accountId:l}){return this.request(`/accounts/${l}/audit?page=${t||1}&per_page=${n||J}${a?`&query=${a}`:""}`)}destroyAccessToken(){return this.request("/access_tokens/revoke",{method:"DELETE"})}identity(t,n){return this.request(`/sites/${t}/identity/${n}`)}createIdentity(t,n){return this.postRequest(`/sites/${t}/identity`,JSON.stringify(n))}updateIdentity(t,n,a){return this.request(`/sites/${t}/identity/${n}`,{method:"PUT",body:JSON.stringify(a)})}deleteIdentity(t,n){return this.request(`/sites/${t}/identity/${n}`,{method:"DELETE"})}identityUsers(t,n,{page:a,per_page:l,sort:b,filter:I}){return this.request(`/sites/${t}/identity/${n}/users?page=${a||1}&per_page=${l||J}&sort=${b||"created_at"}${I?`&filter=${I}`:""}`)}identityUser(t,n,a){return this.request(`/sites/${t}/identity/${n}/users/${a}`)}createIdentityUser(t,n,a){return this.postRequest(`/sites/${t}/identity/${n}/users`,JSON.stringify(a))}updateIdentityUser(t,n,a,l){return this.request(`/sites/${t}/identity/${n}/users/${a}`,{method:"PUT",body:JSON.stringify(l)})}deleteIdentityUser(t,n,a){return this.request(`/sites/${t}/identity/${n}/users/${a}`,{method:"DELETE"})}sendIdentityInvites(t,n,a){return this.postRequest(`/sites/${t}/identity/${n}/users/invite`,JSON.stringify(a))}sendIdentityRecovery(t,n,a){return this.postRequest(`/sites/${t}/identity/${n}/users/${a}/recover`)}identityAudit({page:t,perPage:n,search:a,siteId:l,identityId:b}){return this.request(`/sites/${l}/identity/${b}/audit?page=${t||1}&per_page=${n||J}${a?`&query=${a}`:""}`)}services(t){return this.request(`/sites/${t}/service-instances`)}createService(t,n,a={}){return this.postRequest(`/sites/${t}/services/${n}/instances`,JSON.stringify(a))}updateService(t,n,a,l){return this.request(`/sites/${t}/services/${n}/instances/${a}`,{method:"PUT",body:JSON.stringify(l)})}deleteService(t,n,a){return this.request(`/sites/${t}/services/${n}/instances/${a}`,{method:"DELETE"})}deleteForm(t,n){return this.request(`/sites/${t}/forms/${n}`,{method:"DELETE"})}deleteFormSubmission(t,n){return this.request(`/submissions/${n}`,{method:"DELETE"})}claim({id:t,token:n}){const a=t?`/sites/${t}/claim`:"/sites/claim";return this.postRequest(a,JSON.stringify({token:n}))}updateSamlConfig(t,n,a){return this.request(`/saml/${t}/parse-idp-metadata`,{method:"PUT",body:JSON.stringify({url:n,data:a})})}deleteSamlConfig(t){return this.request(`/saml/${t}`,{method:"DELETE"})}getSamlStartUrl(t){return this.request(`/saml/account-lookup?id=${t}`,{method:"GET"})}siteUsage(t){return this.request(`/sites/${t}/usage`)}changeAddonPlan(t,n){return this.request(`/usage_records/${t}/change_plan?plan=${n}`,{method:"PUT"})}billingPreview(t){return this.request(`/billing/subscriptions/preview?account_id=${t}`)}searchDomain(t,n){return this.request(`/domains-next/search?account_id=${n}&domain=${t}`)}buyDomain(t,n,a){return this.request("/domains-next",{method:"POST",body:JSON.stringify({account_id:n,domain:t,site_id:a})})}dropToken(){return this.request("/drop/token",{method:"POST"})}dropFiles(t,n){return this.request("/drop",{method:"POST",body:JSON.stringify({files:t,token:n})})}dropClaim(t,n){return this.request("/drop/claim",{method:"POST",body:JSON.stringify({site:t,token:n})})}authLink({provider:t}){return this.request(`/auth/link?provider=${t}&site_id=${this.siteId}`,{noPrefix:!0})}authUnlink({provider:t}){return this.request(`/auth/unlink?provider=${t}&site_id=${this.siteId}`,{method:"POST",noPrefix:!0})}updateSelfHostedGitConfig(t,n,a){const l=a==="github_enterprise"?`/accounts/${t}/github_enterprise_config`:`/accounts/${t}/gitlab_self_hosted_config`;return this.request(l,{method:"PUT",body:JSON.stringify(n)})}deleteSelfHostedGitConfig(t,n){const a=n==="github_enterprise"?`/accounts/${t}/github_enterprise_config`:`/accounts/${t}/gitlab_self_hosted_config`;return this.request(a,{method:"DELETE"})}logDrains(t){return this.request(`/sites/${t}/log_drains`)}async createLogDrain(t,n={}){try{return await this.postRequest(`/sites/${t}/log_drains`,JSON.stringify(n))}catch(a){throw/^access denied$/i.test(a.message)?new D.Z("You don't have the necessary permissions to create a log drain."):a}}async verifyLogDrain(t,n,a){try{return await this.postRequest(`/sites/${t}/log_drains/${n}/verify`,JSON.stringify({token:a}))}catch(l){throw/^access denied$/i.test(l.message)?new D.Z("You don't have the necessary permissions to verify a log drain."):l}}async updateLogDrain(t,n,a){try{return await this.request(`/sites/${t}/log_drains/${n}`,{method:"PUT",body:JSON.stringify(a)})}catch(l){throw/^access denied$/i.test(l.message)?new D.Z("You don't have the necessary permissions to edit a log drain."):l}}async deleteLogDrain(t,n){try{return await this.request(`/sites/${t}/log_drains/${n}`,{method:"DELETE"})}catch(a){throw/^access denied$/i.test(a.message)?new D.Z("You don't have the necessary permissions to delete a log drain."):a}}graphJwt(t){return this.request(`/sites/${t}/jwt`)}}},73274:(ge,X,c)=>{c.d(X,{$f:()=>b,ZP:()=>$,on:()=>Q,sV:()=>a,vH:()=>l,xw:()=>Z});var y=c(5780),G=c.n(y),C=c(34740),D=c(29861),V=c(76352),M=c(93967);const H="https://api.netlify.com";function W(){try{const{utm_campaign:f="",utm_source:h="",utm_medium:P=""}=window.location.search.substr(1).split("&").reduce((R,E)=>{const[T,N]=E.split("=");return R[T]=N,R},{});return f&&{utm_campaign:f,utm_source:h,utm_medium:P}}catch{return null}}function x(){try{const f=sessionStorage.getItem("nf.utm"),{utm_campaign:h="",utm_source:P="",utm_medium:R=""}=JSON.parse(f||"{}");return h&&{utm_campaign:h,utm_source:P,utm_medium:R}}catch{}}function J(f){(0,V.D9)("nf.utm",JSON.stringify(f))}function z(){const f=[],h=W()||x();if(h){J(h);for(const P in h)f.push(`${P}=${h[P]}`)}return f.join("&")}const U=W();U&&J(U);class w{constructor(h){this.err=h}toString(){return this.err&&this.err.message}}const O={[D.CB.github_app]:{width:1200,height:800,closeWindow:!1},[D.CB.github_enterprise]:{width:1200,height:800,closeWindow:!1},[D.CB.github]:{width:960,height:600,closeWindow:!0},[D.CB.gitlab]:{width:960,height:600,closeWindow:!0},[D.CB.gitlab_self_hosted]:{width:960,height:600,closeWindow:!0},[D.CB.bitbucket]:{width:960,height:600,closeWindow:!0},[D.CB.azure_devops]:{width:960,height:600,closeWindow:!0},[D.CB.email]:{width:500,height:400,closeWindow:!0}};function t(f){const h=O[f]||O.github,P=Math.min(window.screen.width,h.width),R=h.height,E=(window.screen.width-P)/2;return{top:Math.max((window.screen.height-R)/2,0),left:E,width:P,height:R}}function n({url:f,data:h,signup:P},R){return fetch(f,{method:"post",headers:{"Content-Type":"application/json"},body:JSON.stringify(h)}).then(E=>E.json()).then(E=>{if(E.state==="success"||E.redirect_uri)R(null,E.data||E);else{const T=E.message;P&&/No user found/.test(T)&&(E.message="An account with this email already exists"),R(new M.Z(E))}}).catch(E=>R(new M.Z(E)))}async function a({access_token:f}){if((await fetch("/access-control/set-auth",{headers:{Authorization:`Bearer ${f}`},credentials:"include"})).status!==200)throw new Error("failed to set-auth for user")}function l(){return document.cookie="_nf-auth-hint=user-likely-authed; Max-Age=-99999999; Path=/; Domain=.netlify.com",document.cookie=`_nf-auth-hint=user-likely-authed; Max-Age=-99999999; Path=/; Domain=${window.location.hostname}`,document.cookie=`_nf-auth-hint=user-likely-authed; Max-Age=-99999999; Path=/; Domain=${window.location.hostname.split(".").slice(1).join(".")}`,a({access_token:"unset"})}async function b(){const f=await fetch("/access-control/generate-access-control-token",{credentials:"include"});if(f.status!==200)throw new Error("failed to access control token for user");const{accessControlToken:h}=await f.json();return h}let I;function Z({provider:f="github",url:h=""}){const{top:P,left:R,width:E,height:T}=t(f);I=window.open(h,"auth",`toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no,width=${E},height=${T},top=${P},left=${R}`),I&&I.focus()}function Q(){I&&I.close()}class v{constructor(h){this.site_id=h.site_id||h.siteId,this.base_url=h.base_url||h.apiBase||H,this.useAuthWindow=h.useAuthWindow}open({url:h,provider:P},R){this.handshake(P,R),Z({provider:P,url:h})}done({provider:h}){O[h].closeWindow&&Q()}postMessage(h,P){try{I.postMessage(h,P)}catch(R){G().notify(R,E=>{E.context="netlify-auth \uFE65 postMessage"})}}handshake(h,P){const R=E=>{const{origin:T,data:N}=E;T===this.base_url&&N===`authorizing:${h}`&&(window.removeEventListener("message",R,!1),this.authorize(h,P),this.postMessage(N,T))};window.addEventListener("message",R,!1)}authorize(h,P){const R=E=>{const{origin:T,data:N}=E;if(T===this.base_url){if(N.indexOf(`authorization:${h}:success:`)===0){const q=JSON.parse(N.match(new RegExp(`^authorization:${h}:success:(.+)$`))[1]);window.removeEventListener("message",R,!1),this.done({provider:h}),P(null,q)}if(N.indexOf(`authorization:${h}:error:`)===0){const q=JSON.parse(N.match(new RegExp(`^authorization:${h}:error:(.+)$`))[1]);window.removeEventListener("message",R,!1),this.done({provider:h}),P(new w(q))}}};window.addEventListener("message",R,!1)}getSiteID(){if(this.site_id)return this.site_id;const h=document.location.host.split(":")[0];return h==="localhost"?null:h}authenticate(h,P){const R=this.getSiteID(),E=h.provider,T=!this.useAuthWindow&&h.redirect,N=z(),q=(0,V.St)("tracking_session_id");let L;if(!E)return P(new w({message:"You must specify a provider when calling netlify.authenticate"}));if(!R)return P(new w({message:'You must set a site_id with netlify.configure({site_id: "your-site-id"}) to make authentication work from localhost'}));if(T&&E==="email"&&!h.email)return L=h.signup?"/signup":"/login",L+="/email",N&&(L+="?"+N),C.mW.push(L);if(L=`${this.base_url}/auth`,T&&E==="email"&&(L+=h.reviewer?"/signup":"/login"),L+=`?provider=${E}&site_id=${R}&tracking_session_id=${q}`,h.accountId&&(L+="&account_id="+h.accountId),h.scope&&(L+="&scope="+h.scope),h.login===!0&&(L+="&login=true"),h.beta_invite&&(L+="&beta_invite="+h.beta_invite),h.invite_code&&(L+="&invite_code="+h.invite_code),h.shareable_invite_code&&(L+="&shareable_invite_code="+h.shareable_invite_code),N&&(L+="&"+N),T){const k=/^http/.test(T)?window.encodeURIComponent(T):`${window.location.origin}${T===!0?"/":T}`;L+="&redirect="+k}const g={email:h.email,password:h.password,no_autosignup:!h.signup,redirect:window.location.origin,shareable_invite_code:h.shareable_invite_code};h.reviewer&&(g.full_name=h.full_name,g.jobrole=h.jobrole,g.reviewer_signup=h.reviewer_signup,g.redirect=h.redirect),T?E==="email"?n({url:L,data:g,signup:h.signup},P):window.location.href=L:this.open({url:L,provider:E},P)}}const $=v},41782:(ge,X,c)=>{c.d(X,{Xc:()=>j,_i:()=>_,E3:()=>A,Nn:()=>d,PT:()=>fe,p9:()=>s});var y={};c.r(y),c.d(y,{default:()=>u,executeAddAuthsMutation:()=>N,executeAddCORSOriginMutation:()=>ye,executeAddExternalGraphQLSchemaMutation:()=>Ie,executeCreateCLISessionEventMutation:()=>te,executeCreateCLISessionMutation:()=>b,executeCreateEmptyPersonalTokenMutation:()=>F,executeCreateNewSchemaMutation:()=>q,executeCreatePersistedQueryMutation:()=>g,executeDeleteServiceAuthMutation:()=>L,executeDestroyTokenMutation:()=>P,executeRemoveCORSOriginMutation:()=>_e,executeRemoveExternalGraphQLSchemaMutation:()=>Ce,executeSetServiceAuthMutation:()=>k,executeSignOutServicesMutation:()=>R,executeUpdateCLISessionMetadataMutation:()=>Q,executeUpdateExternalGraphQLSchemaMutation:()=>Re,executeUpsertAppForSiteMutation:()=>ee,fetchAppSchemaQuery:()=>f,fetchAuthlifyTokenIdForPersonalToken:()=>le,fetchCLISessionQuery:()=>I,fetchCORSOriginsQuery:()=>Le,fetchCliSessionByIdQuery:()=>ae,fetchCliSessionsByAppIdQuery:()=>Te,fetchDeprecated_FindLoggedInServicesQuery:()=>Y,fetchFindLoggedInServicesQuery:()=>B,fetchGraphQLSchemaByIdQuery:()=>h,fetchHygraphExample:()=>De,fetchListNetlifyEnabledServicesQuery:()=>pe,fetchListOAuthServicesQuery:()=>ue,fetchListServiceAuthsByAppIdQuery:()=>v,fetchListSharedDocumentsQuery:()=>Z,fetchNetlifyGraph:()=>l,fetchNpmPackageInfoQuery:()=>ce,fetchPersistedQueryQuery:()=>ve,fetchSharedDocumentQuery:()=>S,fetchToolshopAllCategoryPages:()=>he,fetchToolshopAllCollections:()=>re,fetchToolshopAllPartners:()=>$,fetchToolshopAllTools:()=>me,fetchToolshopBuildPluginBySlug:()=>T,fetchToolshopNpmPackageInfoQuery:()=>ne,fetchToolshopPartnerBySlug:()=>we,fetchToolshopTemplateBySlug:()=>E});var G=c(39532),C=c(88369),D=c(21809),V=c(53529);const M=p=>({max:p,cache:new Map}),H=p=>p.keys().next().value,W=(p,m)=>{const ie=p.cache.get(m);return ie&&(p.cache.delete(m),p.cache.set(m,ie)),ie},x=(p,m,ie)=>{if(p.cache.has(m)&&p.cache.delete(m),p.cache.size==p.max){const oe=H(p);oe&&p.cache.delete(oe)}p.cache.set(m,ie)},J=M(100),z=p=>JSON.stringify(p),U="c6cfcd7a-9ef9-433b-82b4-e9e0a2870dd1",w="5f9562c1-be9c-4898-bc6a-5b40de4e1450";w||console.warn("No SITE_ID found in env, please be sure to run using ntl dev or yarn start");function O(p){return p.join("")}const t="https://graph.netlify.com/graphql?app_id="+w+"&schema_id="+U,n=p=>{const m=p.method,ie=p.headers||{};ie.Accept="application/json",m!=="GET"&&(ie["Content-Type"]="application/json");const oe=3e4,be={method:p.method,headers:ie,timeout:oe};p.body&&(be.body=p.body);const Pe=new URL(t);if(p.queryParams)for(const[Ee,Ae]of Object.entries(p.queryParams))Pe.searchParams.append(Ee,Ae);return fetch(Pe.toString(),be).then(Ee=>Ee.text().then(Ae=>{const Oe={};return Ee.headers.forEach((ke,Ne)=>Oe[ke]=Ne),{body:Ae,headers:Oe,status:Ee.status}}))};function a(p){if(!p||typeof p!="object")return p;if(Array.isArray(p))return p.map(a);const m=Object.keys(p).sort(),ie={};for(let oe=0;oe<m.length;oe++)ie[m[oe]]=a(p[m[oe]]);return ie}const l=function(m){const ie=m.query,oe=m.doc_id,be=m.operationName,Pe=m.variables,Ae=(m.options||{}).accessToken,Oe={query:ie,doc_id:oe,variables:Pe,operationName:be};return new Promise(Ne=>{const qe=z(Oe),$e=W(J,qe);let Ge={},Fe;if($e){const[Ue,Be]=$e;Ge={"If-None-Match":Ue},Fe=Be}const xe={...Ge,Authorization:Ae?"Bearer "+Ae:void 0},Ve=m.fetchStrategy==="GET"&&oe?{method:"GET",headers:xe,queryParams:{doc_id:oe,operationName:be,variables:JSON.stringify(a(Pe))}}:{method:"POST",headers:xe,body:JSON.stringify(Oe)};n(Ve).then(Ue=>{if(Ue.status===304)Ne(Fe);else if(Ue.status===200){const Be=Ue.headers.etag,je=JSON.parse(Ue.body);Be&&x(J,qe,[Be,je]),Ne(je)}else return Ue.json().then(Be=>{Ne(Be)})})})},b=(p,m)=>l({query:`mutation CreateCLISessionMutation($appId: String!, $name: String!, $status: OneGraphNetlifyCliSessionStatus, $metadata: JSONObject) {
+  oneGraph {
+    createNetlifyCliSession(
+      input: {appId: $appId, name: $name, metadata: $metadata, status: $status}
+    ) {
+      session {
+        id
+        appId
+        netlifyUserId
+        name
+        cliHeartbeatIntervalMs
+      }
+    }
+  }
+}`,operationName:"CreateCLISessionMutation",variables:p,options:m,fetchStrategy:"POST"}),I=(p,m)=>l({query:`query CLISessionQuery($sessionId: String!) {
+  oneGraph {
+    netlifyCliSession(id: $sessionId) {
+      ...FullCliSessionFragment
+    }
+  }
+}
+
+fragment FullCliSessionEventFragment on OneGraphNetlifyCliSessionEvent @netlify(id: """  42d4bb8b-2fb5-48d8-b051-db6027224145""", doc: """  A CLI session event.""") {
+  __typename
+  id
+  sessionId
+  createdAt
+  ... on OneGraphNetlifyCliSessionLogEvent {
+    ...SessionLogEventFragment
+  }
+  ... on OneGraphNetlifyCliSessionTestEvent {
+    ...SessionTestEventFragment
+  }
+}
+
+fragment FullCliSessionFragment on OneGraphNetlifyCliSession @netlify(id: """  33d4bb8b-2fb5-48d8-b051-db6027224145""", doc: """  The data necessary to render a full CLI session.""") {
+  id
+  name
+  netlifyUserId
+  events(first: 100) {
+    ...FullCliSessionEventFragment
+  }
+  status
+  createdAt
+  lastEventAt
+  updatedAt
+  metadata
+}
+
+fragment SessionLogEventFragment on OneGraphNetlifyCliSessionLogEvent @netlify(id: """  4454bb8b-2fb5-48d8-b051-db6027224145""", doc: """  A CLI session log event.""") {
+  __typename
+  id
+  message
+  sessionId
+  createdAt
+}
+
+fragment SessionTestEventFragment on OneGraphNetlifyCliSessionTestEvent @netlify(id: """  6354bb8b-2fb5-48d8-b051-db6027224145""", doc: """  A CLI session test event - TODO: split out into the actual events (generate handler, etc.)
+""") {
+  __typename
+  id
+  createdAt
+  payload
+  sessionId
+}`,operationName:"CLISessionQuery",variables:p,options:m,fetchStrategy:"POST"}),Z=(p,m)=>l({query:`query ListSharedDocumentsQuery($first: Int = 10, $status: OneGraphSharedDocumentModerationStatusEnum, $graphQLFields: [String!]!) {
+  oneGraph {
+    sharedDocuments(
+      first: $first
+      filter: {moderationStatus: {equalTo: $status}, graphQLFieldsFilter: {in: $graphQLFields}}
+    ) {
+      nodes {
+        ...ExampleOperation
+      }
+    }
+  }
+}
+
+fragment ExampleOperation on OneGraphSharedDocument @netlify(id: """  9245fdea-9ccd-4124-a731-5e697b155001""", doc: """  A shared operation""") {
+  __typename
+  body
+  createdAt
+  title
+  description
+  id
+  moderationStatus
+  operationName
+  exampleVariables
+  updatedAt
+  services {
+    logoUrl(style: ROUNDED_RECTANGLE)
+    friendlyServiceName
+    id
+    graphQLField
+    slug
+  }
+}`,operationName:"ListSharedDocumentsQuery",variables:p,options:m,fetchStrategy:"POST"}),Q=(p,m)=>l({query:`mutation UpdateCLISessionMetadataMutation($sessionId: String!, $metadata: JSONObject!) {
+  oneGraph {
+    updateNetlifyCliSession(input: {id: $sessionId, metadata: $metadata}) {
+      session {
+        id
+        name
+        metadata
+        status
+        createdAt
+        updatedAt
+        lastEventAt
+      }
+    }
+  }
+}`,operationName:"UpdateCLISessionMetadataMutation",variables:p,options:m,fetchStrategy:"POST"}),v=(p,m)=>l({query:`query ListServiceAuthsByAppIdQuery($siteId: String!) {
+  oneGraph {
+    app(id: $siteId) {
+      serviceAuths {
+        ...ServiceAuthFragment
+      }
+    }
+  }
+}
+
+fragment ServiceAuthFragment on OneGraphServiceAuth @netlify(id: """  12b5bdea-9bab-4164-a731-5e697b1553be""", doc: """  Basic info on a Service Auth""") {
+  id
+  service
+  clientId
+  revealTokens
+  scopes
+  redirectUri
+}`,operationName:"ListServiceAuthsByAppIdQuery",variables:p,options:m,fetchStrategy:"POST"}),$=(p,m)=>l({query:`query ToolshopAllPartners {
+  toolshop {
+    allPartner(sort: {orderRank: ASC}) {
+      ...ToolshopPartner
+    }
+  }
+}
+
+fragment ToolshopImage on ToolshopNetlifyImage @netlify(id: """  f7ec6de4-459a-41c6-8e28-ea4abaaa348b""", doc: """  An empty fragment to start from""") {
+  __typename
+  asset {
+    label
+    title
+    description
+    url
+  }
+  alt
+}
+
+fragment ToolshopPartner on ToolshopPartner @netlify(id: """  23de2abf-3c06-4454-ae25-321706ac9395""", doc: """  Partner fragment for partner details page in toolshop""") {
+  __typename
+  id: _id
+  _type
+  title
+  description
+  body
+  relatedContent {
+    url
+    type
+    title
+    page {
+      ... on ToolshopBlogPost {
+        id: _id
+        _type
+        title
+        slug {
+          current
+        }
+      }
+    }
+  }
+  slug {
+    current
+  }
+  logo {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+}
+
+fragment ToolshopTag on ToolshopTag @netlify(id: """  d20b802f-735f-44cf-822f-9db9608d104b""", doc: """  An empty fragment to start from""") {
+  title
+  slug {
+    current
+  }
+  parentTags {
+    slug {
+      current
+    }
+  }
+}`,operationName:"ToolshopAllPartners",variables:p,options:m,fetchStrategy:"POST"}),f=(p,m)=>l({query:`query AppSchemaQuery($appId: String!, $logoStyle: OneGraphAppLogoStyleEnum = ROUNDED_RECTANGLE) {
+  oneGraph {
+    app(id: $appId) {
+      graphQLSchema {
+        appId
+        createdAt
+        id
+        externalGraphQLSchemas {
+          nodes {
+            id
+            serviceInfo {
+              id
+              friendlyServiceName
+              graphQLField
+            }
+            endpoint
+          }
+        }
+        services {
+          friendlyServiceName
+          logoUrl(style: $logoStyle)
+          id
+          graphQLField
+          slug
+          supportsCustomRedirectUri
+          supportsCustomServiceAuth
+          supportsOauthLogin
+          netlifyGraphEnabled
+          netlifyApiAuthenticationEnabled
+        }
+        updatedAt
+      }
+    }
+  }
+}`,operationName:"AppSchemaQuery",variables:p,options:m,fetchStrategy:"POST"}),h=(p,m)=>l({query:`query GraphQLSchemaByIdQuery($appId: String!, $schemaId: String!, $logoStyle: OneGraphAppLogoStyleEnum = ROUNDED_RECTANGLE) {
+  oneGraph {
+    graphQLSchema(appId: $appId, id: $schemaId) {
+      appId
+      createdAt
+      id
+      externalGraphQLSchemas {
+        nodes {
+          id
+          serviceInfo {
+            id
+            graphQLField
+            friendlyServiceName
+          }
+          endpoint
+        }
+      }
+      services {
+        friendlyServiceName
+        logoUrl(style: $logoStyle)
+        id
+        graphQLField
+        slug
+        supportsCustomRedirectUri
+        supportsCustomServiceAuth
+        supportsOauthLogin
+        netlifyGraphEnabled
+        netlifyApiAuthenticationEnabled
+      }
+      updatedAt
+    }
+  }
+}`,operationName:"GraphQLSchemaByIdQuery",variables:p,options:m,fetchStrategy:"POST"}),P=(p,m)=>l({query:`mutation DestroyTokenMutation($token: String, $authlifyTokenId: String) {
+  oneGraph {
+    destroyToken(token: $token, authlifyTokenId: $authlifyTokenId)
+  }
+}`,operationName:"DestroyTokenMutation",variables:p,options:m,fetchStrategy:"POST"}),R=(p,m)=>l({query:`mutation SignOutServicesMutation($graphQLFields: [String!]!, $authlifyTokenId: String!) {
+  signoutServices(
+    data: {services: [], servicesGraphQLFields: $graphQLFields, authlifyTokenId: $authlifyTokenId}
+  ) {
+    me {
+      serviceMetadata {
+        loggedInServices {
+          ...LoggedInServicesFragment
+        }
+      }
+    }
+  }
+}
+
+fragment LoggedInServicesFragment on OneGraphServiceMetadata @netlify(id: """  12b5bdea-9bab-4124-a731-5e697b1553be""", doc: """  Subset of LoggedInServices""") {
+  friendlyServiceName
+  isLoggedIn
+  usedTestFlow
+  serviceInfo {
+    logoUrl(style: ROUNDED_RECTANGLE)
+    availableScopes {
+      category
+      scope
+      display
+      isDefault
+      isRequired
+      description
+      title
+    }
+    id
+    friendlyServiceName
+    graphQLField
+  }
+  grantedScopes {
+    scope
+  }
+  foreignUserId
+}`,operationName:"SignOutServicesMutation",variables:p,options:m,fetchStrategy:"POST"}),E=(p,m)=>l({query:`query ToolshopTemplateBySlug($slug: String!) {
+  toolshop {
+    allTemplate(where: {slug: {current: {eq: $slug}}}) {
+      ...ToolshopTemplate
+      partner {
+        ...ToolshopPartner
+      }
+      screenshots {
+        ...ToolshopImage
+      }
+      thumbnail {
+        ...ToolshopImage
+      }
+      tags {
+        ...ToolshopTag
+      }
+      recommendedIntegrations {
+        ...ToolshopRecommendedTools
+        ...RecommendedRibbon
+      }
+    }
+  }
+}
+
+fragment RecommendedRibbon on ToolshopAddOnOrApiAuthenticationOrBuildPluginOrCDPOrGitProviderOrGraphqlOrLogDrainOrNetlifyAPIOrSetupGuideOrTemplateOrWebhook @netlify(id: """  0c415d02-5efe-46d3-8a99-4b7b3cc200c9""", doc: """  An empty fragment to start from""") {
+  __typename
+  ... on ToolshopBuildPlugin {
+    ...ToolshopPlugin
+  }
+  ... on ToolshopTemplate {
+    ...ToolshopTemplate
+  }
+}
+
+fragment ToolshopImage on ToolshopNetlifyImage @netlify(id: """  f7ec6de4-459a-41c6-8e28-ea4abaaa348b""", doc: """  An empty fragment to start from""") {
+  __typename
+  asset {
+    label
+    title
+    description
+    url
+  }
+  alt
+}
+
+fragment ToolshopPartner on ToolshopPartner @netlify(id: """  23de2abf-3c06-4454-ae25-321706ac9395""", doc: """  Partner fragment for partner details page in toolshop""") {
+  __typename
+  id: _id
+  _type
+  title
+  description
+  body
+  relatedContent {
+    url
+    type
+    title
+    page {
+      ... on ToolshopBlogPost {
+        id: _id
+        _type
+        title
+        slug {
+          current
+        }
+      }
+    }
+  }
+  slug {
+    current
+  }
+  logo {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+}
+
+fragment ToolshopPlugin on ToolshopBuildPlugin @netlify(id: """  72245975-d92f-40b5-a68c-12920de32865""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  netlifyVerified
+  partnerVerified
+  status
+  packageName
+  installUrl
+  screenshots {
+    ...ToolshopImage
+  }
+  partner {
+    ...ToolshopPartner
+  }
+  tags {
+    ...ToolshopTag
+  }
+  slug {
+    current
+  }
+}
+
+fragment ToolshopRecommendedTools on ToolshopAddOnOrApiAuthenticationOrBuildPluginOrCDPOrGitProviderOrGraphqlOrLogDrainOrNetlifyAPIOrSetupGuideOrTemplateOrWebhook @netlify(id: """  76223b73-61be-4c88-bd47-b72a80b22e7b""", doc: """  An empty fragment to start from""") {
+  ... on ToolshopBuildPlugin {
+    id: _id
+    _type
+    slug {
+      current
+    }
+    title
+    description
+    partner {
+      logo {
+        asset {
+          url
+        }
+      }
+      slug {
+        current
+      }
+    }
+    packageName
+  }
+  ... on ToolshopTemplate {
+    id: _id
+    _type
+    slug {
+      current
+    }
+    title
+    description
+    partner {
+      logo {
+        asset {
+          url
+        }
+      }
+      slug {
+        current
+      }
+    }
+    repoName
+  }
+}
+
+fragment ToolshopTag on ToolshopTag @netlify(id: """  d20b802f-735f-44cf-822f-9db9608d104b""", doc: """  An empty fragment to start from""") {
+  title
+  slug {
+    current
+  }
+  parentTags {
+    slug {
+      current
+    }
+  }
+}
+
+fragment ToolshopTemplate on ToolshopTemplate @netlify(id: """  c8c4ea33-c6cf-459f-b1b9-c2ca5865d51e""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  templateUrl
+  version
+  prioritized
+  partnerVerified
+  status
+  repoId
+  repoName
+  repoOwner
+  partner {
+    ...ToolshopPartner
+  }
+  slug {
+    current
+  }
+  screenshots {
+    ...ToolshopImage
+  }
+  thumbnail {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+  recommendedIntegrations {
+    ... on ToolshopBuildPlugin {
+      id: _id
+      _type
+      description
+      title
+      partner {
+        title
+        description
+        slug {
+          current
+        }
+        logo {
+          asset {
+            url
+          }
+        }
+      }
+      slug {
+        current
+      }
+    }
+    ... on ToolshopTemplate {
+      id: _id
+      _type
+      title
+      description
+      partner {
+        logo {
+          asset {
+            url
+          }
+        }
+        description
+        title
+        slug {
+          current
+        }
+      }
+      slug {
+        current
+      }
+    }
+  }
+}`,operationName:"ToolshopTemplateBySlug",variables:p,options:m,fetchStrategy:"POST"}),T=(p,m)=>l({query:`query ToolshopBuildPluginBySlug($slug: String!) {
+  toolshop {
+    allBuildPlugin(where: {slug: {current: {eq: $slug}}}) {
+      ...ToolshopPlugin
+      recommendedIntegrations {
+        ...ToolshopRecommendedTools
+        ...RecommendedRibbon
+      }
+    }
+  }
+}
+
+fragment RecommendedRibbon on ToolshopAddOnOrApiAuthenticationOrBuildPluginOrCDPOrGitProviderOrGraphqlOrLogDrainOrNetlifyAPIOrSetupGuideOrTemplateOrWebhook @netlify(id: """  0c415d02-5efe-46d3-8a99-4b7b3cc200c9""", doc: """  An empty fragment to start from""") {
+  __typename
+  ... on ToolshopBuildPlugin {
+    ...ToolshopPlugin
+  }
+  ... on ToolshopTemplate {
+    ...ToolshopTemplate
+  }
+}
+
+fragment ToolshopImage on ToolshopNetlifyImage @netlify(id: """  f7ec6de4-459a-41c6-8e28-ea4abaaa348b""", doc: """  An empty fragment to start from""") {
+  __typename
+  asset {
+    label
+    title
+    description
+    url
+  }
+  alt
+}
+
+fragment ToolshopPartner on ToolshopPartner @netlify(id: """  23de2abf-3c06-4454-ae25-321706ac9395""", doc: """  Partner fragment for partner details page in toolshop""") {
+  __typename
+  id: _id
+  _type
+  title
+  description
+  body
+  relatedContent {
+    url
+    type
+    title
+    page {
+      ... on ToolshopBlogPost {
+        id: _id
+        _type
+        title
+        slug {
+          current
+        }
+      }
+    }
+  }
+  slug {
+    current
+  }
+  logo {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+}
+
+fragment ToolshopPlugin on ToolshopBuildPlugin @netlify(id: """  72245975-d92f-40b5-a68c-12920de32865""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  netlifyVerified
+  partnerVerified
+  status
+  packageName
+  installUrl
+  screenshots {
+    ...ToolshopImage
+  }
+  partner {
+    ...ToolshopPartner
+  }
+  tags {
+    ...ToolshopTag
+  }
+  slug {
+    current
+  }
+}
+
+fragment ToolshopRecommendedTools on ToolshopAddOnOrApiAuthenticationOrBuildPluginOrCDPOrGitProviderOrGraphqlOrLogDrainOrNetlifyAPIOrSetupGuideOrTemplateOrWebhook @netlify(id: """  76223b73-61be-4c88-bd47-b72a80b22e7b""", doc: """  An empty fragment to start from""") {
+  ... on ToolshopBuildPlugin {
+    id: _id
+    _type
+    slug {
+      current
+    }
+    title
+    description
+    partner {
+      logo {
+        asset {
+          url
+        }
+      }
+      slug {
+        current
+      }
+    }
+    packageName
+  }
+  ... on ToolshopTemplate {
+    id: _id
+    _type
+    slug {
+      current
+    }
+    title
+    description
+    partner {
+      logo {
+        asset {
+          url
+        }
+      }
+      slug {
+        current
+      }
+    }
+    repoName
+  }
+}
+
+fragment ToolshopTag on ToolshopTag @netlify(id: """  d20b802f-735f-44cf-822f-9db9608d104b""", doc: """  An empty fragment to start from""") {
+  title
+  slug {
+    current
+  }
+  parentTags {
+    slug {
+      current
+    }
+  }
+}
+
+fragment ToolshopTemplate on ToolshopTemplate @netlify(id: """  c8c4ea33-c6cf-459f-b1b9-c2ca5865d51e""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  templateUrl
+  version
+  prioritized
+  partnerVerified
+  status
+  repoId
+  repoName
+  repoOwner
+  partner {
+    ...ToolshopPartner
+  }
+  slug {
+    current
+  }
+  screenshots {
+    ...ToolshopImage
+  }
+  thumbnail {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+  recommendedIntegrations {
+    ... on ToolshopBuildPlugin {
+      id: _id
+      _type
+      description
+      title
+      partner {
+        title
+        description
+        slug {
+          current
+        }
+        logo {
+          asset {
+            url
+          }
+        }
+      }
+      slug {
+        current
+      }
+    }
+    ... on ToolshopTemplate {
+      id: _id
+      _type
+      title
+      description
+      partner {
+        logo {
+          asset {
+            url
+          }
+        }
+        description
+        title
+        slug {
+          current
+        }
+      }
+      slug {
+        current
+      }
+    }
+  }
+}`,operationName:"ToolshopBuildPluginBySlug",variables:p,options:m,fetchStrategy:"POST"}),N=(p,m)=>l({query:`mutation AddAuthsMutation($siteId: String!, $authlifyTokenId: String, $sToken: String!) {
+  oneGraph {
+    addAuthsToPersonalToken(
+      input: {sacrificialToken: $sToken, authlifyTokenId: $authlifyTokenId, appId: $siteId}
+    ) {
+      accessToken {
+        netlifyId
+        token
+      }
+    }
+  }
+}`,operationName:"AddAuthsMutation",variables:p,options:m,fetchStrategy:"POST"}),q=(p,m)=>l({query:`mutation CreateNewSchemaMutation($input: OneGraphCreateGraphQLSchemaInput!, $logoStyle: OneGraphAppLogoStyleEnum = ROUNDED_RECTANGLE) {
+  oneGraph {
+    createGraphQLSchema(input: $input) {
+      app {
+        graphQLSchema {
+          id
+        }
+      }
+      graphQLSchema {
+        id
+        services {
+          id
+          friendlyServiceName
+          logoUrl(style: $logoStyle)
+          graphQLField
+          slug
+          supportsCustomRedirectUri
+          supportsCustomServiceAuth
+          supportsOauthLogin
+        }
+      }
+    }
+  }
+}`,operationName:"CreateNewSchemaMutation",variables:p,options:m,fetchStrategy:"POST"}),L=(p,m)=>l({query:`mutation DeleteServiceAuthMutation($siteId: String!, $serviceAuthId: String!) {
+  oneGraph {
+    destroyServiceAuth(data: {appId: $siteId, serviceAuthId: $serviceAuthId}) {
+      app {
+        serviceAuths {
+          ...ServiceAuthFragment
+        }
+      }
+    }
+  }
+}
+
+fragment ServiceAuthFragment on OneGraphServiceAuth @netlify(id: """  12b5bdea-9bab-4164-a731-5e697b1553be""", doc: """  Basic info on a Service Auth""") {
+  id
+  service
+  clientId
+  revealTokens
+  scopes
+  redirectUri
+}`,operationName:"DeleteServiceAuthMutation",variables:p,options:m,fetchStrategy:"POST"}),g=(p,m)=>l({query:`mutation CreatePersistedQueryMutation($appId: String!, $query: String!, $tags: [String!]!, $description: String!, $parent: OneGraphCreatePersistedQueryParentInput) {
+  oneGraph {
+    createPersistedQuery(
+      input: {query: $query, appId: $appId, tags: $tags, description: $description, parent: $parent}
+    ) {
+      persistedQuery {
+        id
+      }
+    }
+  }
+}`,operationName:"CreatePersistedQueryMutation",variables:p,options:m,fetchStrategy:"POST"}),B=(p,m)=>l({query:`query FindLoggedInServicesQuery($authlifyTokenId: String!) {
+  oneGraph {
+    authlifyToken(authlifyTokenId: $authlifyTokenId) {
+      serviceMetadata {
+        loggedInServices {
+          usedTestFlow
+          friendlyServiceName
+          ...LoggedInServicesFragment
+        }
+      }
+    }
+  }
+}
+
+fragment LoggedInServicesFragment on OneGraphServiceMetadata @netlify(id: """  12b5bdea-9bab-4124-a731-5e697b1553be""", doc: """  Subset of LoggedInServices""") {
+  friendlyServiceName
+  isLoggedIn
+  usedTestFlow
+  serviceInfo {
+    logoUrl(style: ROUNDED_RECTANGLE)
+    availableScopes {
+      category
+      scope
+      display
+      isDefault
+      isRequired
+      description
+      title
+    }
+    id
+    friendlyServiceName
+    graphQLField
+  }
+  grantedScopes {
+    scope
+  }
+  foreignUserId
+}`,operationName:"FindLoggedInServicesQuery",variables:p,options:m,fetchStrategy:"POST"}),k=(p,m)=>l({query:`mutation SetServiceAuthMutation($graphQLField: String!, $clientId: String!, $clientSecret: String!, $siteId: String!) {
+  oneGraph {
+    createServiceAuth(
+      data: {serviceGraphQLField: $graphQLField, clientId: $clientId, clientSecret: $clientSecret, appId: $siteId, revealTokens: true, cname: "graph.netlify.com", useFixedRedirectUri: true}
+    ) {
+      app {
+        serviceAuths {
+          ...ServiceAuthFragment
+        }
+      }
+    }
+  }
+}
+
+fragment ServiceAuthFragment on OneGraphServiceAuth @netlify(id: """  12b5bdea-9bab-4164-a731-5e697b1553be""", doc: """  Basic info on a Service Auth""") {
+  id
+  service
+  clientId
+  revealTokens
+  scopes
+  redirectUri
+}`,operationName:"SetServiceAuthMutation",variables:p,options:m,fetchStrategy:"POST"}),te=(p,m)=>l({query:`mutation CreateCLISessionEventMutation($sessionId: String!, $payload: JSON!) {
+  oneGraph {
+    createNetlifyCliTestEvent(
+      input: {data: {payload: $payload}, sessionId: $sessionId}
+    ) {
+      event {
+        id
+        createdAt
+        sessionId
+      }
+    }
+  }
+}`,operationName:"CreateCLISessionEventMutation",variables:p,options:m,fetchStrategy:"POST"}),ae=(p,m)=>l({query:`query CliSessionByIdQuery($id: String!) {
+  oneGraph {
+    netlifyCliSession(id: $id) {
+      ...FullCliSessionFragment
+    }
+  }
+}
+
+fragment FullCliSessionEventFragment on OneGraphNetlifyCliSessionEvent @netlify(id: """  42d4bb8b-2fb5-48d8-b051-db6027224145""", doc: """  A CLI session event.""") {
+  __typename
+  id
+  sessionId
+  createdAt
+  ... on OneGraphNetlifyCliSessionLogEvent {
+    ...SessionLogEventFragment
+  }
+  ... on OneGraphNetlifyCliSessionTestEvent {
+    ...SessionTestEventFragment
+  }
+}
+
+fragment FullCliSessionFragment on OneGraphNetlifyCliSession @netlify(id: """  33d4bb8b-2fb5-48d8-b051-db6027224145""", doc: """  The data necessary to render a full CLI session.""") {
+  id
+  name
+  netlifyUserId
+  events(first: 100) {
+    ...FullCliSessionEventFragment
+  }
+  status
+  createdAt
+  lastEventAt
+  updatedAt
+  metadata
+}
+
+fragment SessionLogEventFragment on OneGraphNetlifyCliSessionLogEvent @netlify(id: """  4454bb8b-2fb5-48d8-b051-db6027224145""", doc: """  A CLI session log event.""") {
+  __typename
+  id
+  message
+  sessionId
+  createdAt
+}
+
+fragment SessionTestEventFragment on OneGraphNetlifyCliSessionTestEvent @netlify(id: """  6354bb8b-2fb5-48d8-b051-db6027224145""", doc: """  A CLI session test event - TODO: split out into the actual events (generate handler, etc.)
+""") {
+  __typename
+  id
+  createdAt
+  payload
+  sessionId
+}`,operationName:"CliSessionByIdQuery",variables:p,options:m,fetchStrategy:"POST"}),ne=(p,m)=>l({query:`query ToolshopNpmPackageInfoQuery($name: String = "") {
+  npm {
+    package(name: $name) {
+      description
+      author {
+        name
+      }
+      distTags {
+        latest {
+          versionString
+        }
+      }
+      downloads {
+        lastMonth {
+          count
+        }
+      }
+      homepage
+      name
+      readme
+      time {
+        modified
+        created
+      }
+    }
+  }
+}`,operationName:"ToolshopNpmPackageInfoQuery",variables:p,options:m,fetchStrategy:"POST"}),Y=(p,m)=>l({query:`query Deprecated_FindLoggedInServicesQuery {
+  me {
+    serviceMetadata {
+      loggedInServices {
+        ...LoggedInServicesFragment
+      }
+    }
+  }
+}
+
+fragment LoggedInServicesFragment on OneGraphServiceMetadata @netlify(id: """  12b5bdea-9bab-4124-a731-5e697b1553be""", doc: """  Subset of LoggedInServices""") {
+  friendlyServiceName
+  isLoggedIn
+  usedTestFlow
+  serviceInfo {
+    logoUrl(style: ROUNDED_RECTANGLE)
+    availableScopes {
+      category
+      scope
+      display
+      isDefault
+      isRequired
+      description
+      title
+    }
+    id
+    friendlyServiceName
+    graphQLField
+  }
+  grantedScopes {
+    scope
+  }
+  foreignUserId
+}`,operationName:"Deprecated_FindLoggedInServicesQuery",variables:p,options:m,fetchStrategy:"POST"}),S=(p,m)=>l({query:`query SharedDocumentQuery($id: String!) {
+  oneGraph {
+    sharedDocument(id: $id) {
+      ...ExampleOperation
+    }
+  }
+}
+
+fragment ExampleOperation on OneGraphSharedDocument @netlify(id: """  9245fdea-9ccd-4124-a731-5e697b155001""", doc: """  A shared operation""") {
+  __typename
+  body
+  createdAt
+  title
+  description
+  id
+  moderationStatus
+  operationName
+  exampleVariables
+  updatedAt
+  services {
+    logoUrl(style: ROUNDED_RECTANGLE)
+    friendlyServiceName
+    id
+    graphQLField
+    slug
+  }
+}`,operationName:"SharedDocumentQuery",variables:p,options:m,fetchStrategy:"POST"}),F=(p,m)=>l({query:`mutation CreateEmptyPersonalTokenMutation($siteId: String!) {
+  oneGraph {
+    createPersonalTokenWithNetlifySiteAnchor(
+      input: {name: "Netlify AuthManager Token", netlifySiteId: $siteId}
+    ) {
+      accessToken {
+        token
+        name
+        anchor
+        netlifyId
+      }
+    }
+  }
+}`,operationName:"CreateEmptyPersonalTokenMutation",variables:p,options:m,fetchStrategy:"POST"}),pe=(p,m)=>l({query:`query ListNetlifyEnabledServicesQuery($logoStyle: OneGraphAppLogoStyleEnum = ROUNDED_RECTANGLE, $betaServicesGraphQLFields: [String!] = []) {
+  oneGraph {
+    services(
+      filter: {or: [{service: {graphQLFieldsIn: $betaServicesGraphQLFields}}, {supportsNetlifyGraph: true}, {supportsNetlifyApiAuthentication: true}]}
+    ) {
+      friendlyServiceName
+      logoUrl(style: $logoStyle)
+      id
+      graphQLField
+      slug
+      supportsCustomRedirectUri
+      supportsCustomServiceAuth
+      supportsOauthLogin
+      netlifyGraphEnabled
+      netlifyApiAuthenticationEnabled
+    }
+  }
+}`,operationName:"ListNetlifyEnabledServicesQuery",variables:p,options:m,fetchStrategy:"POST"}),ce=(p,m)=>l({query:`query NpmPackageInfoQuery($name: String!) {
+  npm {
+    package(name: $name) {
+      name
+      license {
+        type
+      }
+      homepage
+      description
+      repository {
+        url
+      }
+      downloads {
+        lastMonth {
+          count
+        }
+      }
+      distTags {
+        latest {
+          versionString
+        }
+      }
+      author {
+        name
+      }
+      keywords
+      time {
+        modified
+      }
+    }
+  }
+}`,operationName:"NpmPackageInfoQuery",variables:p,options:m,fetchStrategy:"POST"}),me=(p,m)=>l({query:`query ToolshopAllTools {
+  toolshop {
+    allBuildPlugin {
+      ...ToolshopPlugin
+    }
+    allTemplate {
+      ...ToolshopTemplate
+    }
+    allGraphql {
+      ...ToolshopOperation
+    }
+    allPartner(sort: {orderRank: ASC}) {
+      ...ToolshopPartner
+      logo {
+        ...ToolshopImage
+      }
+      tags {
+        ...ToolshopTag
+      }
+    }
+  }
+}
+
+fragment ToolshopImage on ToolshopNetlifyImage @netlify(id: """  f7ec6de4-459a-41c6-8e28-ea4abaaa348b""", doc: """  An empty fragment to start from""") {
+  __typename
+  asset {
+    label
+    title
+    description
+    url
+  }
+  alt
+}
+
+fragment ToolshopOperation on ToolshopGraphql @netlify(id: """  9a8b0a90-deee-44ed-899c-489111809031""", doc: """  An empty fragment to start from""") {
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  version
+  netlifyVerified
+  partnerVerified
+  status
+  partner {
+    ...ToolshopPartner
+  }
+  screenshots {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+}
+
+fragment ToolshopPartner on ToolshopPartner @netlify(id: """  23de2abf-3c06-4454-ae25-321706ac9395""", doc: """  Partner fragment for partner details page in toolshop""") {
+  __typename
+  id: _id
+  _type
+  title
+  description
+  body
+  relatedContent {
+    url
+    type
+    title
+    page {
+      ... on ToolshopBlogPost {
+        id: _id
+        _type
+        title
+        slug {
+          current
+        }
+      }
+    }
+  }
+  slug {
+    current
+  }
+  logo {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+}
+
+fragment ToolshopPlugin on ToolshopBuildPlugin @netlify(id: """  72245975-d92f-40b5-a68c-12920de32865""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  netlifyVerified
+  partnerVerified
+  status
+  packageName
+  installUrl
+  screenshots {
+    ...ToolshopImage
+  }
+  partner {
+    ...ToolshopPartner
+  }
+  tags {
+    ...ToolshopTag
+  }
+  slug {
+    current
+  }
+}
+
+fragment ToolshopTag on ToolshopTag @netlify(id: """  d20b802f-735f-44cf-822f-9db9608d104b""", doc: """  An empty fragment to start from""") {
+  title
+  slug {
+    current
+  }
+  parentTags {
+    slug {
+      current
+    }
+  }
+}
+
+fragment ToolshopTemplate on ToolshopTemplate @netlify(id: """  c8c4ea33-c6cf-459f-b1b9-c2ca5865d51e""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  templateUrl
+  version
+  prioritized
+  partnerVerified
+  status
+  repoId
+  repoName
+  repoOwner
+  partner {
+    ...ToolshopPartner
+  }
+  slug {
+    current
+  }
+  screenshots {
+    ...ToolshopImage
+  }
+  thumbnail {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+  recommendedIntegrations {
+    ... on ToolshopBuildPlugin {
+      id: _id
+      _type
+      description
+      title
+      partner {
+        title
+        description
+        slug {
+          current
+        }
+        logo {
+          asset {
+            url
+          }
+        }
+      }
+      slug {
+        current
+      }
+    }
+    ... on ToolshopTemplate {
+      id: _id
+      _type
+      title
+      description
+      partner {
+        logo {
+          asset {
+            url
+          }
+        }
+        description
+        title
+        slug {
+          current
+        }
+      }
+      slug {
+        current
+      }
+    }
+  }
+}`,operationName:"ToolshopAllTools",variables:p,options:m,fetchStrategy:"POST"}),he=(p,m)=>l({query:`query ToolshopAllCategoryPages {
+  toolshop {
+    allIntegrationsPage(sort: {orderRank: ASC}) {
+      title
+      introduction
+      slug {
+        current
+      }
+      collections {
+        ...EcoCollections
+      }
+    }
+  }
+}
+
+fragment EcoCollections on ToolshopIntegrationCollection @netlify(id: """  959e90dd-1a6d-4b17-bcf9-c844ccd1dd85""", doc: """  An empty fragment to start from""") {
+  integrations {
+    ...EcoRibbon
+  }
+  slug {
+    current
+  }
+  title
+  tag {
+    ...ToolshopTag
+  }
+  description
+}
+
+fragment EcoRibbon on ToolshopAddOnOrApiAuthenticationOrBuildPluginOrCDPOrGitProviderOrGraphqlOrLogDrainOrNetlifyAPIOrPartnerOrSetupGuideOrTemplateOrWebhook @netlify(id: """  0c415d02-5efe-46d3-8a99-4b7b3cc242c9""", doc: """  An empty fragment to start from""") {
+  __typename
+  ... on ToolshopBuildPlugin {
+    ...ToolshopPlugin
+  }
+  ... on ToolshopPartner {
+    ...ToolshopPartner
+  }
+  ... on ToolshopTemplate {
+    ...ToolshopTemplate
+  }
+}
+
+fragment ToolshopImage on ToolshopNetlifyImage @netlify(id: """  f7ec6de4-459a-41c6-8e28-ea4abaaa348b""", doc: """  An empty fragment to start from""") {
+  __typename
+  asset {
+    label
+    title
+    description
+    url
+  }
+  alt
+}
+
+fragment ToolshopPartner on ToolshopPartner @netlify(id: """  23de2abf-3c06-4454-ae25-321706ac9395""", doc: """  Partner fragment for partner details page in toolshop""") {
+  __typename
+  id: _id
+  _type
+  title
+  description
+  body
+  relatedContent {
+    url
+    type
+    title
+    page {
+      ... on ToolshopBlogPost {
+        id: _id
+        _type
+        title
+        slug {
+          current
+        }
+      }
+    }
+  }
+  slug {
+    current
+  }
+  logo {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+}
+
+fragment ToolshopPlugin on ToolshopBuildPlugin @netlify(id: """  72245975-d92f-40b5-a68c-12920de32865""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  netlifyVerified
+  partnerVerified
+  status
+  packageName
+  installUrl
+  screenshots {
+    ...ToolshopImage
+  }
+  partner {
+    ...ToolshopPartner
+  }
+  tags {
+    ...ToolshopTag
+  }
+  slug {
+    current
+  }
+}
+
+fragment ToolshopTag on ToolshopTag @netlify(id: """  d20b802f-735f-44cf-822f-9db9608d104b""", doc: """  An empty fragment to start from""") {
+  title
+  slug {
+    current
+  }
+  parentTags {
+    slug {
+      current
+    }
+  }
+}
+
+fragment ToolshopTemplate on ToolshopTemplate @netlify(id: """  c8c4ea33-c6cf-459f-b1b9-c2ca5865d51e""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  templateUrl
+  version
+  prioritized
+  partnerVerified
+  status
+  repoId
+  repoName
+  repoOwner
+  partner {
+    ...ToolshopPartner
+  }
+  slug {
+    current
+  }
+  screenshots {
+    ...ToolshopImage
+  }
+  thumbnail {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+  recommendedIntegrations {
+    ... on ToolshopBuildPlugin {
+      id: _id
+      _type
+      description
+      title
+      partner {
+        title
+        description
+        slug {
+          current
+        }
+        logo {
+          asset {
+            url
+          }
+        }
+      }
+      slug {
+        current
+      }
+    }
+    ... on ToolshopTemplate {
+      id: _id
+      _type
+      title
+      description
+      partner {
+        logo {
+          asset {
+            url
+          }
+        }
+        description
+        title
+        slug {
+          current
+        }
+      }
+      slug {
+        current
+      }
+    }
+  }
+}`,operationName:"ToolshopAllCategoryPages",variables:p,options:m,fetchStrategy:"POST"}),le=(p,m)=>l({query:`query AuthlifyTokenIdForPersonalToken($personalToken: String!) {
+  oneGraph {
+    personalToken(accessToken: $personalToken) {
+      netlifyId
+    }
+  }
+}`,operationName:"AuthlifyTokenIdForPersonalToken",variables:p,options:m,fetchStrategy:"POST"}),re=(p,m)=>l({query:`query ToolshopAllCollections {
+  toolshop {
+    allIntegrationCollection {
+      ...EcoCollections
+    }
+  }
+}
+
+fragment EcoCollections on ToolshopIntegrationCollection @netlify(id: """  959e90dd-1a6d-4b17-bcf9-c844ccd1dd85""", doc: """  An empty fragment to start from""") {
+  integrations {
+    ...EcoRibbon
+  }
+  slug {
+    current
+  }
+  title
+  tag {
+    ...ToolshopTag
+  }
+  description
+}
+
+fragment EcoRibbon on ToolshopAddOnOrApiAuthenticationOrBuildPluginOrCDPOrGitProviderOrGraphqlOrLogDrainOrNetlifyAPIOrPartnerOrSetupGuideOrTemplateOrWebhook @netlify(id: """  0c415d02-5efe-46d3-8a99-4b7b3cc242c9""", doc: """  An empty fragment to start from""") {
+  __typename
+  ... on ToolshopBuildPlugin {
+    ...ToolshopPlugin
+  }
+  ... on ToolshopPartner {
+    ...ToolshopPartner
+  }
+  ... on ToolshopTemplate {
+    ...ToolshopTemplate
+  }
+}
+
+fragment ToolshopImage on ToolshopNetlifyImage @netlify(id: """  f7ec6de4-459a-41c6-8e28-ea4abaaa348b""", doc: """  An empty fragment to start from""") {
+  __typename
+  asset {
+    label
+    title
+    description
+    url
+  }
+  alt
+}
+
+fragment ToolshopPartner on ToolshopPartner @netlify(id: """  23de2abf-3c06-4454-ae25-321706ac9395""", doc: """  Partner fragment for partner details page in toolshop""") {
+  __typename
+  id: _id
+  _type
+  title
+  description
+  body
+  relatedContent {
+    url
+    type
+    title
+    page {
+      ... on ToolshopBlogPost {
+        id: _id
+        _type
+        title
+        slug {
+          current
+        }
+      }
+    }
+  }
+  slug {
+    current
+  }
+  logo {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+}
+
+fragment ToolshopPlugin on ToolshopBuildPlugin @netlify(id: """  72245975-d92f-40b5-a68c-12920de32865""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  netlifyVerified
+  partnerVerified
+  status
+  packageName
+  installUrl
+  screenshots {
+    ...ToolshopImage
+  }
+  partner {
+    ...ToolshopPartner
+  }
+  tags {
+    ...ToolshopTag
+  }
+  slug {
+    current
+  }
+}
+
+fragment ToolshopTag on ToolshopTag @netlify(id: """  d20b802f-735f-44cf-822f-9db9608d104b""", doc: """  An empty fragment to start from""") {
+  title
+  slug {
+    current
+  }
+  parentTags {
+    slug {
+      current
+    }
+  }
+}
+
+fragment ToolshopTemplate on ToolshopTemplate @netlify(id: """  c8c4ea33-c6cf-459f-b1b9-c2ca5865d51e""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  templateUrl
+  version
+  prioritized
+  partnerVerified
+  status
+  repoId
+  repoName
+  repoOwner
+  partner {
+    ...ToolshopPartner
+  }
+  slug {
+    current
+  }
+  screenshots {
+    ...ToolshopImage
+  }
+  thumbnail {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+  recommendedIntegrations {
+    ... on ToolshopBuildPlugin {
+      id: _id
+      _type
+      description
+      title
+      partner {
+        title
+        description
+        slug {
+          current
+        }
+        logo {
+          asset {
+            url
+          }
+        }
+      }
+      slug {
+        current
+      }
+    }
+    ... on ToolshopTemplate {
+      id: _id
+      _type
+      title
+      description
+      partner {
+        logo {
+          asset {
+            url
+          }
+        }
+        description
+        title
+        slug {
+          current
+        }
+      }
+      slug {
+        current
+      }
+    }
+  }
+}`,operationName:"ToolshopAllCollections",variables:p,options:m,fetchStrategy:"POST"}),ve=(p,m)=>l({query:`query PersistedQueryQuery($appId: String!, $id: String!) {
+  oneGraph {
+    persistedQuery(appId: $appId, id: $id) {
+      id
+      query
+      allowedOperationNames
+      description
+      freeVariables
+      fixedVariables
+      tags
+    }
+  }
+}`,operationName:"PersistedQueryQuery",variables:p,options:m,fetchStrategy:"POST"}),Te=(p,m)=>l({query:`query CliSessionsByAppIdQuery($appId: String!, $first: Int = 10) {
+  oneGraph {
+    netlifyCliSessionsByAppId(appId: $appId, first: $first) {
+      id
+      name
+      netlifyUserId
+      events {
+        createdAt
+      }
+      status
+      createdAt
+      updatedAt
+      lastEventAt
+      metadata
+    }
+  }
+}`,operationName:"CliSessionsByAppIdQuery",variables:p,options:m,fetchStrategy:"POST"}),ue=(p,m)=>l({query:`query ListOAuthServicesQuery($logoStyle: OneGraphAppLogoStyleEnum = ROUNDED_RECTANGLE) {
+  oneGraph {
+    services(filter: {supportsOauthLogin: true}) {
+      friendlyServiceName
+      id
+      graphQLField
+      slug
+      logoUrl(style: $logoStyle)
+      availableScopes {
+        category
+        scope
+        display
+        isDefault
+        isRequired
+        description
+        title
+      }
+      netlifyGraphEnabled
+      netlifyApiAuthenticationEnabled
+    }
+  }
+}`,operationName:"ListOAuthServicesQuery",variables:p,options:m,fetchStrategy:"POST"}),ee=(p,m)=>l({query:`mutation UpsertAppForSiteMutation($siteId: String!) {
+  oneGraph {
+    upsertAppForNetlifySite(input: {netlifySiteId: $siteId}) {
+      org {
+        id
+        name
+      }
+      app {
+        id
+        name
+        corsOrigins
+        customCorsOrigins {
+          friendlyServiceName
+          displayName
+          encodedValue
+        }
+      }
+    }
+  }
+}`,operationName:"UpsertAppForSiteMutation",variables:p,options:m,fetchStrategy:"POST"}),ye=(p,m)=>l({query:`mutation AddCORSOriginMutation($input: OneGraphAddCORSOriginToAppInput!) {
+  oneGraph {
+    addCORSOriginToApp(input: $input) {
+      app {
+        ...AppCORSOriginFragment
+      }
+    }
+  }
+}
+
+fragment AppCORSOriginFragment on OneGraphApp @netlify(id: """  e3d4bb8b-2fb5-48d8-b051-db6027224145""", doc: """  Allowed CORS origins for calls to a site's Graph.""") {
+  id
+  corsOrigins
+  customCorsOrigins {
+    friendlyServiceName
+    displayName
+    encodedValue
+  }
+  netlifySiteNames
+}`,operationName:"AddCORSOriginMutation",variables:p,options:m,fetchStrategy:"POST"}),_e=(p,m)=>l({query:`mutation RemoveCORSOriginMutation($input: OneGraphRemoveCORSOriginFromAppInput!) {
+  oneGraph {
+    removeCORSOriginFromApp(input: $input) {
+      app {
+        ...AppCORSOriginFragment
+      }
+    }
+  }
+}
+
+fragment AppCORSOriginFragment on OneGraphApp @netlify(id: """  e3d4bb8b-2fb5-48d8-b051-db6027224145""", doc: """  Allowed CORS origins for calls to a site's Graph.""") {
+  id
+  corsOrigins
+  customCorsOrigins {
+    friendlyServiceName
+    displayName
+    encodedValue
+  }
+  netlifySiteNames
+}`,operationName:"RemoveCORSOriginMutation",variables:p,options:m,fetchStrategy:"POST"}),Ie=(p,m)=>l({query:`mutation AddExternalGraphQLSchemaMutation($input: OneGraphAddExternalGraphQLSchemaInput!) {
+  oneGraph {
+    addExternalGraphQLSchema(input: $input) {
+      app {
+        id
+        graphQLSchema {
+          externalGraphQLSchemas {
+            nodes {
+              id
+              serviceInfo {
+                id
+                friendlyServiceName
+                graphQLField
+              }
+              endpoint
+              createdAt
+              updatedAt
+            }
+          }
+        }
+      }
+    }
+  }
+}`,operationName:"AddExternalGraphQLSchemaMutation",variables:p,options:m,fetchStrategy:"POST"}),Re=(p,m)=>l({query:`mutation UpdateExternalGraphQLSchemaMutation($input: OneGraphUpdateExternalGraphQLSchemaInput!) {
+  oneGraph {
+    updateExternalGraphQLSchema(input: $input) {
+      app {
+        id
+        graphQLSchema {
+          externalGraphQLSchemas {
+            nodes {
+              id
+              serviceInfo {
+                id
+                friendlyServiceName
+                graphQLField
+              }
+              endpoint
+              createdAt
+              updatedAt
+            }
+          }
+        }
+      }
+    }
+  }
+}`,operationName:"UpdateExternalGraphQLSchemaMutation",variables:p,options:m,fetchStrategy:"POST"}),Ce=(p,m)=>l({query:`mutation RemoveExternalGraphQLSchemaMutation($input: OneGraphRemoveExternalGraphQLSchemaInput!) {
+  oneGraph {
+    removeExternalGraphQLSchema(input: $input) {
+      app {
+        id
+        graphQLSchema {
+          externalGraphQLSchemas {
+            nodes {
+              id
+              serviceInfo {
+                id
+                graphQLField
+                friendlyServiceName
+              }
+              endpoint
+              createdAt
+              updatedAt
+            }
+          }
+        }
+      }
+    }
+  }
+}`,operationName:"RemoveExternalGraphQLSchemaMutation",variables:p,options:m,fetchStrategy:"POST"}),Le=(p,m)=>l({query:`query CORSOriginsQuery($siteId: String!) {
+  oneGraph {
+    app(id: $siteId) {
+      ...AppCORSOriginFragment
+    }
+  }
+}
+
+fragment AppCORSOriginFragment on OneGraphApp @netlify(id: """  e3d4bb8b-2fb5-48d8-b051-db6027224145""", doc: """  Allowed CORS origins for calls to a site's Graph.""") {
+  id
+  corsOrigins
+  customCorsOrigins {
+    friendlyServiceName
+    displayName
+    encodedValue
+  }
+  netlifySiteNames
+}`,operationName:"CORSOriginsQuery",variables:p,options:m,fetchStrategy:"POST"}),we=(p,m)=>l({query:`query ToolshopPartnerBySlug($slug: String!) {
+  toolshop {
+    allPartner(where: {slug: {current: {eq: $slug}}}) {
+      ...ToolshopPartner
+      logo {
+        ...ToolshopImage
+      }
+      tags {
+        ...ToolshopTag
+      }
+      relatedContent {
+        url
+        title
+        type
+        page {
+          ... on ToolshopBlogPost {
+            id: _id
+            _type
+            title
+            slug {
+              current
+            }
+            _createdAt
+          }
+        }
+      }
+      recommendedIntegrations {
+        __typename
+        ... on ToolshopBuildPlugin {
+          id: _id
+          _type
+          slug {
+            current
+          }
+          title
+          description
+          partner {
+            logo {
+              asset {
+                url
+              }
+            }
+            slug {
+              current
+            }
+          }
+          packageName
+        }
+        ... on ToolshopTemplate {
+          id: _id
+          _type
+          slug {
+            current
+          }
+          title
+          description
+          partner {
+            logo {
+              asset {
+                url
+              }
+            }
+            slug {
+              current
+            }
+          }
+          repoName
+        }
+        ...RecommendedRibbon
+      }
+    }
+  }
+}
+
+fragment RecommendedRibbon on ToolshopAddOnOrApiAuthenticationOrBuildPluginOrCDPOrGitProviderOrGraphqlOrLogDrainOrNetlifyAPIOrSetupGuideOrTemplateOrWebhook @netlify(id: """  0c415d02-5efe-46d3-8a99-4b7b3cc200c9""", doc: """  An empty fragment to start from""") {
+  __typename
+  ... on ToolshopBuildPlugin {
+    ...ToolshopPlugin
+  }
+  ... on ToolshopTemplate {
+    ...ToolshopTemplate
+  }
+}
+
+fragment ToolshopImage on ToolshopNetlifyImage @netlify(id: """  f7ec6de4-459a-41c6-8e28-ea4abaaa348b""", doc: """  An empty fragment to start from""") {
+  __typename
+  asset {
+    label
+    title
+    description
+    url
+  }
+  alt
+}
+
+fragment ToolshopPartner on ToolshopPartner @netlify(id: """  23de2abf-3c06-4454-ae25-321706ac9395""", doc: """  Partner fragment for partner details page in toolshop""") {
+  __typename
+  id: _id
+  _type
+  title
+  description
+  body
+  relatedContent {
+    url
+    type
+    title
+    page {
+      ... on ToolshopBlogPost {
+        id: _id
+        _type
+        title
+        slug {
+          current
+        }
+      }
+    }
+  }
+  slug {
+    current
+  }
+  logo {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+}
+
+fragment ToolshopPlugin on ToolshopBuildPlugin @netlify(id: """  72245975-d92f-40b5-a68c-12920de32865""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  netlifyVerified
+  partnerVerified
+  status
+  packageName
+  installUrl
+  screenshots {
+    ...ToolshopImage
+  }
+  partner {
+    ...ToolshopPartner
+  }
+  tags {
+    ...ToolshopTag
+  }
+  slug {
+    current
+  }
+}
+
+fragment ToolshopTag on ToolshopTag @netlify(id: """  d20b802f-735f-44cf-822f-9db9608d104b""", doc: """  An empty fragment to start from""") {
+  title
+  slug {
+    current
+  }
+  parentTags {
+    slug {
+      current
+    }
+  }
+}
+
+fragment ToolshopTemplate on ToolshopTemplate @netlify(id: """  c8c4ea33-c6cf-459f-b1b9-c2ca5865d51e""", doc: """  An empty fragment to start from""") {
+  __typename
+  id: _id
+  _type
+  _createdAt
+  _updatedAt
+  title
+  description
+  body
+  templateUrl
+  version
+  prioritized
+  partnerVerified
+  status
+  repoId
+  repoName
+  repoOwner
+  partner {
+    ...ToolshopPartner
+  }
+  slug {
+    current
+  }
+  screenshots {
+    ...ToolshopImage
+  }
+  thumbnail {
+    ...ToolshopImage
+  }
+  tags {
+    ...ToolshopTag
+  }
+  recommendedIntegrations {
+    ... on ToolshopBuildPlugin {
+      id: _id
+      _type
+      description
+      title
+      partner {
+        title
+        description
+        slug {
+          current
+        }
+        logo {
+          asset {
+            url
+          }
+        }
+      }
+      slug {
+        current
+      }
+    }
+    ... on ToolshopTemplate {
+      id: _id
+      _type
+      title
+      description
+      partner {
+        logo {
+          asset {
+            url
+          }
+        }
+        description
+        title
+        slug {
+          current
+        }
+      }
+      slug {
+        current
+      }
+    }
+  }
+}`,operationName:"ToolshopPartnerBySlug",variables:p,options:m,fetchStrategy:"POST"}),De=(p,m)=>l({query:`query HygraphExample {
+  hygraphManagement {
+    metaInfo {
+      serverVersion
+    }
+  }
+}`,operationName:"HygraphExample",variables:p,options:m,fetchStrategy:"POST"}),u={executeCreateCLISessionMutation:b,fetchCLISessionQuery:I,fetchListSharedDocumentsQuery:Z,executeUpdateCLISessionMetadataMutation:Q,fetchListServiceAuthsByAppIdQuery:v,fetchToolshopAllPartners:$,fetchAppSchemaQuery:f,fetchGraphQLSchemaByIdQuery:h,executeDestroyTokenMutation:P,executeSignOutServicesMutation:R,fetchToolshopTemplateBySlug:E,fetchToolshopBuildPluginBySlug:T,executeAddAuthsMutation:N,executeCreateNewSchemaMutation:q,executeDeleteServiceAuthMutation:L,executeCreatePersistedQueryMutation:g,fetchFindLoggedInServicesQuery:B,executeSetServiceAuthMutation:k,executeCreateCLISessionEventMutation:te,fetchCliSessionByIdQuery:ae,fetchToolshopNpmPackageInfoQuery:ne,fetchDeprecated_FindLoggedInServicesQuery:Y,fetchSharedDocumentQuery:S,executeCreateEmptyPersonalTokenMutation:F,fetchListNetlifyEnabledServicesQuery:pe,fetchNpmPackageInfoQuery:ce,fetchToolshopAllTools:me,fetchToolshopAllCategoryPages:he,fetchAuthlifyTokenIdForPersonalToken:le,fetchToolshopAllCollections:re,fetchPersistedQueryQuery:ve,fetchCliSessionsByAppIdQuery:Te,fetchListOAuthServicesQuery:ue,executeUpsertAppForSiteMutation:ee,executeAddCORSOriginMutation:ye,executeRemoveCORSOriginMutation:_e,executeAddExternalGraphQLSchemaMutation:Ie,executeUpdateExternalGraphQLSchemaMutation:Re,executeRemoveExternalGraphQLSchemaMutation:Ce,fetchCORSOriginsQuery:Le,fetchToolshopPartnerBySlug:we,fetchHygraphExample:De},i=G.Auth.NetlifyGraphAuth,r="serve.onegraph.com",o=p=>p&&p.close(),s=(p,m,ie)=>(o(ie),new V.S(p,{host:r,netlifyGraphAuth:m,lazy:!0,reconnect:!0})),d=({query:p,operationName:m})=>{const ie=C.GraphQL.parse(p),oe=C.GraphQL.getOperationAST(ie,m);return oe?oe.operation==="subscription":!1};async function _(p,m,ie,oe){var be;const Pe=(be=oe==null?void 0:oe.showMetrics)!=null?be:!0,Ee=await fetch(`https://${r}/graphql?app_id=${p}&show_metrics=${Pe}`,{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json",...ie==null?void 0:ie.authHeaders()},body:JSON.stringify(m)});try{return await Ee.json()}catch(Ae){return console.error("Error in NetlifyGraphClient: ",Ae),{}}}async function A(p,m,ie,oe){const be=await fetch(`https://${r}/graphql?app_id=${p}&schema_id=${m}`,{method:"POST",headers:{Accept:"application/json","Content-Type":"application/json",...oe==null?void 0:oe.authHeaders()},body:JSON.stringify(ie)});try{return await be.json()}catch(Pe){return console.error("Error in NetlifyGraphClient: ",Pe),{}}}async function K(p,m){const ie=await fetch(`https://${r}/schema?app_id=${p}&services=${m.join(",")}`,{method:"GET",headers:{Accept:"application/json","Content-Type":"application/json"}});try{return await ie.json()}catch(oe){return console.error("Error in NetlifyGraphClient: ",oe),null}}async function j(p,m){const ie=await fetch(`https://${r}/schema?app_id=${p}&schema_id=${m}`,{method:"GET",headers:{Accept:"application/json","Content-Type":"application/json"}});try{return await ie.json()}catch(oe){return console.error("Error in NetlifyGraphClient: ",oe),null}}const se="ONEGRAPH_AUTHLIFY_TOKEN",fe=(p,m)=>{const ie=new i({siteId:p,storage:new G.wd});return m&&ie.setToken({accessToken:m,expireDate:Date.now()+3e5}),ie},de=new Proxy(y,{get(p,m,...ie){if(typeof p[m]=="function"){const oe=Reflect.get(p,m,...ie),be=m.toString();return function(...Ee){const Ae=(0,D.I7)(`api-${be}-start`),Oe=oe.apply(p,Ee);return Oe.then?new Promise((ke,Ne)=>{Oe.then(qe=>{const $e=(0,D.I7)(`api-${be}-end`,{rejected:!1});return(0,D.KT)(`api-${be}-complete`,Ae,$e),ke(qe)}).catch((...qe)=>{const $e=(0,D.I7)(`api-${be}-end`,{rejected:!0});return(0,D.KT)(`api-${be}-complete`,Ae,$e),Ne(...qe)})}):Oe}}return Reflect.get(p,m,...ie)}}),Se=null},31851:(ge,X,c)=>{c.d(X,{C$:()=>z,Ig:()=>n,No:()=>Z,Ru:()=>t,_N:()=>a,_w:()=>b,lK:()=>w,lw:()=>Q,oD:()=>x,pX:()=>I,qz:()=>l,zM:()=>U});var y=c(70277),G=c.n(y),C=c(58988),D=c.n(C),V=c(53475),M=c(78588),H=c(30751),W=c(37421);const x=({id:v})=>(0,V.Z)(v),J=["project_jinx_ui","project_psyduck_ui","project_jolteon_ui","project_rhydon_ui"],z=v=>J.some($=>v[$]),U="10.17.8",w={filter:{name:{notEqualTo:"__elideQuery"}}},O={welcome:"to Netlify Graph!",about:["Your graph combines","lots of GraphQL APIs for","use across","Netlify's functions, sites, and more..."],whatToDoNext:["Try enabling new services","in the sidebar","and make a query!"]},t={welcome:"to Netlify Graph!",about:["Your graph combines","lots of GraphQL APIs for","use across","Netlify's functions, sites, and more..."],whatToDoNext:{ui:["Try enabling new services","in the sidebar","and make a query!"],cli:["Check out the Graph UI to add new services to your Netlify endpoint!"]}};function n(v){return D().format(v,{parser:"graphql",plugins:[G()],printWidth:60,tabWidth:2})}const a=({operation:v,selectedSession:$,store:f,localDocumentFacts:h,type:P})=>{var R,E,T,N,q,L,g,B,k,te;const ae=$==null?void 0:$.id;if(!ae)return;const ne=(R=$==null?void 0:$.persistedDocument)==null?void 0:R.id;if(ne||console.warn("No persisted doc on session:",$),ne){const Y=f.get(ne),S=Y==null?void 0:Y.getOrCreateLinkedRecord("localModifications","OneGraphPersistedQueryModification"),F=S==null?void 0:S.getOrCreateLinkedRecord("locallyEditingDefinition","OneGraphPersistedQueryModifiedOperation"),pe=Y==null?void 0:Y.getLinkedRecord("documentFacts"),ce=(pe==null?void 0:pe.getLinkedRecords("definitions",w))||[],me=f.get(ae),he=me==null?void 0:me.getOrCreateLinkedRecord("lastImportedDefinition","GraphImportedDefinitionAnimationDetails");let le,re=null,ve;if(P==="function"&&v!=="FRAGMENT"){const ue=(0,M.yT)(v);if(!ue)return;le=(T=(E=f.create(`client:newOperationRecord:${ue.netlifyDirective.id}`,"OneGraphPersistedQueryOperation"))==null?void 0:E.setValue(v,"opType"))==null?void 0:T.setValue(ue.name,"name"),re=ue.netlifyDirective,ve=n(ue.body)}else if(P==="fragment"){const ue=(0,M.r_)();if(!ue)return;le=(N=f.create(`client:newOperationRecord:${ue.netlifyDirective.id}`,"OneGraphPersistedQueryFragment"))==null?void 0:N.setValue(ue.name,"name"),re=ue.netlifyDirective,ve=n(ue.body)}me==null||me.setValue((re==null?void 0:re.id)||null,"selectedDefinitionId"),(q=he==null?void 0:he.setValue((re==null?void 0:re.id)||null,"definitionId"))==null||q.setValue(le.getValue("name"),"name").setValue(Date.now(),"importedAt"),le==null||le.setValue(ve,"body",{stripDirectives:["netlify"]}),(g=(L=le==null?void 0:le.getOrCreateLinkedRecord("netlifyDirective","OneGraphNetlifyDirective"))==null?void 0:L.setValue((re==null?void 0:re.id)||null,"id"))==null||g.setValue((re==null?void 0:re.doc)||null,"doc");const Te=[...ce,le];if(pe==null||pe.setLinkedRecords(Te,"definitions",w),(te=(k=(B=F==null?void 0:F.setValue(F.getDataID(),"id"))==null?void 0:B.setValue((re==null?void 0:re.id)||null,"definitionId"))==null?void 0:k.setValue(ve,"body"))==null||te.setValue((re==null?void 0:re.doc)||null,"description"),h||console.warn("Unable to update localDocumentFactsRecord"),h){const ue={__typename:v==="FRAGMENT"?"OneGraphPersistedQueryFragment":"OneGraphPersistedQueryOperation",body:ve||"",netlifyDirective:re,opType:v==="FRAGMENT"?void 0:v},ee={...h,definitions:[...h.definitions,ue]},ye=(0,M.qZ)(ee);F==null||F.setValue(!0,"isModified"),ye&&(S==null||S.setValue(ye,"query"))}return re!=null&&re.id?{definitionId:re.id}:void 0}},l=({operation:v,selectedSession:$,store:f,localDocumentFacts:h})=>{var P,R,E,T,N,q,L,g,B,k;const te=$==null?void 0:$.id;if(!te)return;const ae=(P=$==null?void 0:$.persistedDocument)==null?void 0:P.id;if(ae||console.warn("No persisted doc on session:",$),ae){const ne=f.get(ae),Y=ne==null?void 0:ne.getOrCreateLinkedRecord("localModifications","OneGraphPersistedQueryModification"),S=Y==null?void 0:Y.getOrCreateLinkedRecord("locallyEditingDefinition","OneGraphPersistedQueryModifiedOperation"),F=ne==null?void 0:ne.getLinkedRecord("documentFacts"),pe=(F==null?void 0:F.getLinkedRecords("definitions",w))||[],ce=(0,M.yT)(v.opType),me={...ce,netlifyDirective:{id:(R=ce==null?void 0:ce.netlifyDirective)==null?void 0:R.id,doc:v.description},body:v.body,name:v.operationName,opType:v.opType};if(!me)return;const he=(T=(E=f.create(`client:newOperationRecord:${me.netlifyDirective.id}`,"OneGraphPersistedQueryOperation"))==null?void 0:E.setValue(v.opType,"opType"))==null?void 0:T.setValue(me.name,"name"),le=me.netlifyDirective,re=n(me.body);he==null||he.setValue(re,"body",{stripDirectives:["netlify"]});const ve=he==null?void 0:he.getOrCreateLinkedRecord("netlifyDirective","OneGraphNetlifyDirective");(N=ve==null?void 0:ve.setValue(le.id,"id"))==null||N.setValue(le.doc,"doc");const Te=[...pe,he];F==null||F.setLinkedRecords(Te,"definitions",w),(g=(L=(q=S==null?void 0:S.setValue(S.getDataID(),"id"))==null?void 0:q.setValue(le.id,"definitionId"))==null?void 0:L.setValue(re,"body"))==null||g.setValue((le==null?void 0:le.doc)||null,"description");const ue=f.get(te);ue==null||ue.setValue(le.id,"selectedDefinitionId"),(k=(B=ue==null?void 0:ue.getOrCreateLinkedRecord("lastImportedDefinition","GraphImportedDefinitionAnimationDetails"))==null?void 0:B.setValue(le.id,"definitionId"))==null||k.setValue(me.name,"name").setValue(Date.now(),"importedAt");let ee;if(h||console.warn("Unable to update localDocumentFactsRecord"),h){const ye={__typename:"OneGraphPersistedQueryOperation",body:v.body,netlifyDirective:{doc:le.doc||null,id:le.id},opType:v.opType},_e={...h,definitions:[...h.definitions,ye]};return ee=(0,M.qZ)(_e),Y==null||Y.setValue(!0,"isModified"),ee&&(Y==null||Y.setValue(ee,"query")),me}}},b=({operation:v,selectedSession:$,store:f,localDocumentFacts:h})=>{var P,R,E,T,N,q,L,g,B,k,te;const ae=$==null?void 0:$.id;if(!ae)return;const ne=(P=$==null?void 0:$.persistedDocument)==null?void 0:P.id;if(ne||console.warn("No persisted doc on session:",$),ne){const Y=f.get(ne),S=Y==null?void 0:Y.getOrCreateLinkedRecord("localModifications","OneGraphPersistedQueryModification"),F=S==null?void 0:S.getOrCreateLinkedRecord("locallyEditingDefinition","OneGraphPersistedQueryModifiedOperation"),pe=Y==null?void 0:Y.getLinkedRecord("documentFacts"),ce=(pe==null?void 0:pe.getLinkedRecords("definitions",w))||[],me=(0,M.yT)(v.opType),he={...me,netlifyDirective:{id:(R=me==null?void 0:me.netlifyDirective)==null?void 0:R.id,doc:v.description},body:v.body,name:v.operationName,opType:v.opType};if(!he)return;const le=(N=(T=(E=f.create(`client:newOperationRecord:${he.netlifyDirective.id}`,"OneGraphPersistedQueryOperation"))==null?void 0:E.setValue(v.opType,"opType"))==null?void 0:T.setValue(he.name,"name"))==null?void 0:N.setValue(!0,"isEphemeralStarterQuery"),re=he.netlifyDirective,ve=n(he.body);le==null||le.setValue(ve,"body",{stripDirectives:["netlify"]});const Te=le==null?void 0:le.getOrCreateLinkedRecord("netlifyDirective","OneGraphNetlifyDirective");(q=Te==null?void 0:Te.setValue(re.id,"id"))==null||q.setValue(re.doc,"doc");const ue=[...ce,le];pe==null||pe.setLinkedRecords(ue,"definitions",w),(B=(g=(L=F==null?void 0:F.setValue(F.getDataID(),"id"))==null?void 0:L.setValue(re.id,"definitionId"))==null?void 0:g.setValue(ve,"body"))==null||B.setValue((re==null?void 0:re.doc)||null,"description");const ee=f.get(ae);ee==null||ee.setValue(re.id,"selectedDefinitionId"),(te=(k=ee==null?void 0:ee.getOrCreateLinkedRecord("lastImportedDefinition","GraphImportedDefinitionAnimationDetails"))==null?void 0:k.setValue(re.id,"definitionId"))==null||te.setValue(he.name,"name").setValue(Date.now(),"importedAt");let ye;if(h||console.warn("Unable to update localDocumentFactsRecord"),h){const _e={__typename:"OneGraphPersistedQueryOperation",body:v.body,netlifyDirective:{doc:re.doc||null,id:re.id},opType:v.opType},Ie={...h,definitions:[...h.definitions,_e]};return ye=(0,M.qZ)(Ie),S==null||S.setValue(!0,"isModified"),ye&&(S==null||S.setValue(ye,"query")),he}}},I=({definitionId:v,persistedDocument:$,router:f,site:h,sessionId:P,store:R})=>{var E,T,N,q,L;const g=$==null?void 0:$.documentFacts.definitions.find(B=>{var k;return((k=B.netlifyDirective)==null?void 0:k.id)===v});if(g!==void 0){f.push(`${(0,W.Hw)(h,{kind:"GraphSessionExplorePath",path:["explorer",P]})}?functionId=${v}`);const B=R.get(P);B==null||B.setValue(v,"selectedDefinitionId");const k=$==null?void 0:$.id;if(k){const te=R.get(k),ae=g!=null&&g.body?n(g==null?void 0:g.body):"";let ne=null;try{ne=(0,M.l6)(ae)}catch{}const Y=(E=te==null?void 0:te.getOrCreateLinkedRecord("localModifications","OneGraphPersistedQueryModification"))==null?void 0:E.getOrCreateLinkedRecord("locallyEditingDefinition","OneGraphPersistedQueryModifiedOperation");(L=(N=(T=Y==null?void 0:Y.setValue(Y.getDataID(),"id"))==null?void 0:T.setValue(v,"definitionId"))==null?void 0:N.setValue(ae,"body"))==null||L.setValue(((q=g==null?void 0:g.netlifyDirective)==null?void 0:q.doc)||null,"description").setValue(ne==null?void 0:ne.name,"name").setValue(ne==null?void 0:ne.kind,"kind")}}},Z=({service:v,siteId:$,sessionId:f,store:h,authlifyTokenId:P})=>{var R,E,T,N,q,L;const g=f&&h.get(f);if(!g){(0,H.y)({message:"No session available when setting Authentication Manager",siteId:$,sessionId:f||"unknown"});return}const B=g.getOrCreateLinkedRecord("authenticationManager","OneGraphNetlifyAuthenticationManager");if(!v&&B){h.delete(B.getDataID());return}const k=h.get($);if(!k)return;const te=h.getRoot().getLinkedRecord("oneGraph"),ae=((R=k.getLinkedRecords("services",{filter:{supportsOauthLogin:!0}}))==null?void 0:R.find(S=>S.getValue("graphQLField")===(v==null?void 0:v.graphQLField)))||null,ne=((N=(T=(E=te==null?void 0:te.getLinkedRecord("authlifyToken",{authlifyTokenId:P}))==null?void 0:E.getLinkedRecord("serviceMetadata"))==null?void 0:T.getLinkedRecords("loggedInServices"))==null?void 0:N.find(S=>{var F;return((F=S==null?void 0:S.getLinkedRecord("serviceInfo"))==null?void 0:F.getValue("graphQLField"))===(v==null?void 0:v.graphQLField)}))||null,Y=((q=k.getLinkedRecords("serviceAuths"))==null?void 0:q.find(S=>{var F;return((F=S.getLinkedRecord("serviceInfo"))==null?void 0:F.getValue("graphQLField"))===(v==null?void 0:v.graphQLField)}))||null;ae?B.setLinkedRecord(ae,"backingOAuthService"):B.setValue(void 0,"backingOAuthService"),ne?B.setLinkedRecord(ne,"loggedInFacts"):B.setValue(void 0,"loggedInFacts"),Y?B.setLinkedRecord(Y,"customOAuthClient"):B.setValue(void 0,"customOAuthClient"),(L=B.setLinkedRecord(k,"app"))==null||L.setValue(P,"authlifyTokenId")};function Q(v){return v}},1416:(ge,X,c)=>{c.d(X,{f8:()=>y,ib:()=>C,ot:()=>G});const y=D=>{const V={};return D&&(V.next=D),V},G=D=>{let V=D.headers.get("Link");if(!V)return null;const M={};let H,W,x,J,z;V=V.split(",");for(let U=0,w=V.length;U<w;U++)H=V[U].replace(/(^\s*|\s*$)/,""),[W,x]=H.split(";"),J=W.match(/\bpage=(\d+)/),z=J&&Number(J[1]),x.match(/next/)?(M.next=z,M.current=z-1):x.match(/prev/)?(M.prev=z,M.current=z+1):x.match(/last/)&&(M.last=z);return M},C=D=>D==null?void 0:D.get("current")},41862:(ge,X,c)=>{c.d(X,{AB:()=>P,BM:()=>q,CY:()=>Q,D5:()=>h,Dy:()=>U,F0:()=>te,Md:()=>v,Nx:()=>T,P8:()=>N,Qu:()=>E,U6:()=>ae,Yz:()=>Y,cF:()=>k,cJ:()=>g,fd:()=>$,gK:()=>R,iv:()=>ne,mH:()=>L,vp:()=>l,yz:()=>B,zv:()=>b});const y=null,G=["user_capabilities","sites","d"],C=["user_capabilities","sites","u"],D=["user_capabilities","sites","c"],V=["user_capabilities","deploys","r"],M=null,H=["user_capabilities","accounts","u"],W=["user_capabilities","accounts","d"],x=["user_capabilities","billing","u"],J=["user_capabilities","members","r"],z=["user_capabilities","members","u"],U=["enforced_strict","enforced_with_fallback"],w="active",O="final_notice",t="hibernating";function n(S,F,pe=[]){return!!(S&&F&&!S.get("public")&&F.getIn(pe))}function a(S,F=[]){return S&&S.getIn(F)}function l(S,F){return n(S,F,G)}function b(S){var F;return S&&((F=S.get("user_capabilities"))==null?void 0:F.size)===0}function I(S,F){return l(S,F)}function Z(S,F){return n(S,F,y)}function Q(S,F){return n(S,F,C)}function v(S,F){return n(S,F,V)||S&&S.get("public")}function $(S){return a(S,D)}function f(S){return a(S,M)}function h(S){return a(S,H)}function P(S){return!k(S)&&a(S,W)}function R(S,F){return F||a(S,x)}function E(S){return a(S,z)}function T(S){return a(S,J)}function N(S,F){return S&&!U.includes(S.get("enforce_saml"))||F&&F.get("saml_enabled")||S&&S.get("org_saml_enabled")}function q(S){return R(S)}function L(S){return!k(S)&&R(S)}function g(S){return S==="Controller"?"Billing Admin":S}function B(S,F){const pe=S&&S.get("account_slug");return F&&F.find(ce=>ce.get("slug")===pe)}function k(S){const F=S&&S.get("lifecycle_state");return F&&F!==w}function te(S){const F=S&&S.get("lifecycle_state");return F===O||F===t}function ae(S,F){return S&&(S.getIn(["capabilities",F])||S.getIn(["site_capabilities",F]))}function ne(S){return S&&S.getIn(["capabilities","self_hosted_git_support","included"])&&a(S,H)}function Y(S){return S&&S.get("site_access")==="all"&&!te(S)}},63007:(ge,X,c)=>{c.d(X,{jN:()=>w});var y=c(39532),G=c(53529),C=c(2417),D=c.n(C),V=c(5964);const M="5f9562c1-be9c-4898-bc6a-5b40de4e1450",H="graph.netlify.com",W=new y.Auth.NetlifyGraphAuth({siteId:M,graphOrigin:`https://${H}`});class x extends Error{constructor({message:t,service:n,errors:a}){super(t),this.name="AuthError",this.message=t,this.service=n,this.errors=a}}class J extends Error{constructor({message:t,errors:n,extensions:a}){super(t),this.name="QueryError",this.message=t,this.errors=n,this.extensions=a}}const z=({siteId:O})=>{async function t(n,a){var l,b;const I=await(0,V.Y)({siteId:O}),Z=`https://${H}/graphql?app_id=${M}&operationName=${n.name}&show_metrics=false&netlify_site_id=${O}`,v=await(await fetch(Z,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json",Authorization:`bearer ${I.jwt}`},body:JSON.stringify({query:n.text,doc_id:n.id,variables:a})})).json();if(n.operationKind==="query"&&(v.errors||[]).length>0){const $=W.findMissingAuthServices(v.errors)[0];throw $?new x({service:$,message:`You must log into ${$}`,errors:v.errors}):new J({message:(b=(l=v.errors)==null?void 0:l[0])==null?void 0:b.message,errors:v.errors,extensions:v.extensions})}return v}return async function(a,l){return t(a,l)}},U=({siteId:O})=>{const t=new G.S(O,{oneGraphAuth:W,reconnect:!0,lazy:!0,host:H});return(a,l)=>{const b=t.request({query:a.text,doc_id:a.id,operationName:a.name,variables:l});return C.Observable.from(b)}},w=O=>{const{siteId:t}=O,n=z({siteId:t}),a=U({siteId:t});return new C.Environment({network:C.Network.create(n,a),store:new C.Store(new C.RecordSource)})}},21809:(ge,X,c)=>{c.d(X,{_z:()=>Ce,AC:()=>Le,ao:()=>Re,zP:()=>Ie,KT:()=>N,I7:()=>T,yN:()=>De,Fk:()=>we});var y=c(79328),G=c(24789),C=c(76352),D=c(67351);const V="ErrorPageHit",M="DataFullyLoadedTimeout",H="viewInitialRender",W="viewDataFullyLoaded",x="viewChanged",J="errorPageHit",z="viewInitialRender",U="viewDataFullyLoaded",w="viewIRDFLDelta",O="viewDepth",t=["user"],n="featureName",a="featureLoadTimingListener",l="featureSpecificDFLListener";var b=c(62935);let I=[],Z=0,Q=[],v=[],$=window,f=window.location;function h(u){I.push(u),Q.length>0&&requestIdleCallback(()=>{Q=Q.filter(({whenMadeCallback:i,markNamesToWaitFor:r,startOffset:o,verifyMark:s})=>{const d=q(r,I,o,s);return d?(i(d),!1):!0})},{timeout:2e3}),v.forEach(i=>i(u))}function P(){return{pageUrl:f.href,pageIsIframed:$.top!==$.self}}function R(){return I}function E(){I=[],Z=0,Q=[],v=[],$=window,f=window.location}function T(u,i){let r=$.performance.mark(u);const o=i==null?void 0:i.overrideTimeMarked;r||(r=performance.getEntriesByName(u).pop());const s=(!o||o===0?o:!1)||(r==null?void 0:r.startTime)||performance.now(),d={name:u,props:i,timeMarked:s,index:Z++,env:P()};return h(d),d}function N(u,i,r){let o=$.performance.mark(u);o||(o=performance.getEntriesByName(u).pop());const s={name:u,duration:r.timeMarked-i.timeMarked,timeMarked:(o==null?void 0:o.startTime)||performance.now(),index:Z++,env:P()};return h(s),s}function q(u,i,r,o){const s=i.reduce((d,_,A)=>(r!==void 0&&A<r||u.includes(_.name)&&(o?o(_):!0)&&(d[_.name]=_),d),{});return Object.keys(s).length===u.length?s:null}function L({markNamesToWaitFor:u,whenMadeCallback:i,startOffset:r,verifyMark:o,listenerClass:s}){const d=q(u,I,r,o);d?requestIdleCallback(()=>{i(d)},{timeout:2e3}):Q.push({whenMadeCallback:i,markNamesToWaitFor:u,startOffset:r,verifyMark:o,listenerClass:s})}function g(u){Q=Q.filter(({listenerClass:i})=>i!==u)}function B(u){v.push(u)}window._rum=window._rum||{},window._rum.markers={getAllMarks:R,markTime:T,markMeasurement:N,whenAllMarksMade:L,onMarkAdded:B};const k=["api-aws.netlify.com","api.netlify.com","api-staging.netlify.com","www.netlify.com","www.netlify.app","app.netlifystg.com","app.netlifystg.app","app.netlify.com","analytics.services.netlify.com","analytics-staging.services.netlify.com","supportapi.services.netlify.com","serve.onegraph.com","list-v2--netlify-plugins.netlify.app","localhost","d33wubrfki0l68.cloudfront.net"],te=["commandbar","github","zuora","bitbucket","gitlab","firebase","gravatar"];function ae(u){if(u==null)return!1;const i=new URL(u||"",window.location.origin);return i.hostname.toLowerCase().endsWith(".netlify.com")||k.includes(i.hostname.toLowerCase())||ne(u)}function ne(u){return u==null?!1:new URL(u||"",window.location.origin).origin===window.location.origin}function Y(u){return u==null?!1:new URL(u||"",window.location.origin).pathname.startsWith("/.netlify/functions/")}function S(u){if(u==null)return!1;const i=new URL(u||"",window.location.origin);return te.some(r=>i.hostname.toLowerCase().includes(r))}function F(u){const i={};return Array.isArray(u)&&u.forEach(({name:r,duration:o,description:s})=>{o&&(i[`st_${r}_duration`]=o),s&&(i[`st_${r}_desc`]=s)}),i}function pe(u){if(!u)return{};const i={...u,...F(u==null?void 0:u.serverTiming)};return delete i.name,delete i.serverTiming,delete i.entryType,i}const ce=[];window._rum=window._rum||{},window._rum.timings=[];function me(u){if(ce.length===0)return;if(ce.length===1)return ce[0].featureName;const i=ce.reduceRight((r,o,s)=>(!r&&s===0&&(r=o),!r&&u>o.viewStartTime&&(r=o),r),void 0);return i?i.featureName:void 0}const he=[];let le="unset",re=!0;function ve(u,i){var r,o,s,d;let _={};u.view&&u.view.url.includes("#")&&(u.view.url=u.view.url.split("#")[0]),(o=(r=u.view)==null?void 0:r.referrer)!=null&&o.includes("#")&&(u.view.referrer=u.view.referrer.split("#")[0]);const A=u.resource;if(A&&A.url&&A.url.includes("#")&&(A.url=A.url.split("#")[0]),u.type==="resource"){const K=ae(u.resource.url);if(_={..._,requestIsInternal:K,requestIsSameOrigin:ne(u.resource.url),requestIsExternalDep:!K&&S(u.resource.url),requestApiType:Y(u.resource.url)?"function":"server"},A!=null&&A.url.includes("#access_token")&&(_.resourceHasAccessToken=!0),A!=null&&A.url.includes("#token")&&(_.resourceHasToken=!0),"performanceEntry"in i&&i.performanceEntry!==void 0&&(_={..._,...pe(i.performanceEntry)}),u.resource.type==="fetch"||u.resource.type==="xhr"){const j=i,se=j==null?void 0:j.response,fe=(0,D.RR)();let de=null,Se=null;if(se!=null&&se.headers&&(de=se.headers.get("x-request-id"),Se=se.headers.get("x-nf-srv-version")),((s=j.performanceEntry)==null?void 0:s.startTime)&&K){const p=me((d=j.performanceEntry)==null?void 0:d.startTime);fe!==p&&(_.featureName=p,_.respondedAfterViewChange=!0)}_={..._,requestId:de,requestNFServerVersion:Se}}}else u.type==="view"&&(he.includes(u.view.id)||(le=u.view.id,he.push(u.view.id),re=u.view.loading_type==="initial_load"));u.context={...u.context,..._}}function Te(){return le}function ue(){B(u=>{var i,r,o;if(u.name===x){const s=[H],d=u,_=(0,D.UC)((i=u.props)==null?void 0:i.featureName),A=_.name;(r=_==null?void 0:_.networkingRules)!=null&&r.skipMeasuringCriticalPathData||s.push(W),(o=u.props)!=null&&o.featureName&&ce.push({featureName:A,viewStartTime:u.timeMarked}),g(a),L({listenerClass:a,markNamesToWaitFor:s,startOffset:R().length-1,whenMadeCallback:K=>{var j,se;const fe=K[H],de=K[W],Se=re?0:d.timeMarked,p=fe.timeMarked-Se,m=de?de.timeMarked-Se:-1,ie=de?de.timeMarked-fe.timeMarked:-1;y.v.addTiming(z,p),y.v.addTiming(U,m),y.v.addTiming(w,ie),de&&((j=de.props)==null?void 0:j.viewDFLTimedOut)===!0&&y.v.addAction(M,{featureName:A,viewInitialRender:p,viewDataFullyLoaded:m,delta:ie}),window._rum.timings.push({featureName:A,viewInitialRender:p,viewDataFullyLoaded:m,delta:ie,viewDFLTimedOut:!!((se=de==null?void 0:de.props)!=null&&se.viewDFLTimedOut)})},verifyMark:K=>{var j;return((j=K.props)==null?void 0:j.viewId)===Te()}})}})}const ee=!window.Cypress;let ye=0,_e;window._rum=window._rum||{},window._rum.waiters=[];function Ie(){const u="abb8711a-ca04-44e2-bbd6-df0e07a7f3f8",i="pubd771a23f8cb1e4f45f24b5fd37e11a96",r="netlify-react-ui";ee&&u&&i&&r&&!window.Cypress&&(y.v.init({applicationId:u,clientToken:i,site:"datadoghq.com",service:r,version:"639cf6ef13ed8d000aa5c7a8",env:"production",sampleRate:100,trackInteractions:!1,trackViewsManually:!0,beforeSend:(o,s)=>{var d,_;if(o.type==="error"&&((d=o.error)==null?void 0:d.source)==="report"||o.type==="error"&&(((_=o.error)==null?void 0:_.message)||"").toLowerCase().includes("userflow"))return!1;ve(o,s)}}),y.v.addRumGlobalContext("suspiciousUsage",G.s),ue())}function Re({routePath:u}){const i=(0,D.WV)(u),r=(0,D.UC)(i),o=Te(),s=Me();let d=!1,_=!1;return{markInitialRender:A=>{d||(d=!0,T(H,{viewId:o,featureName:i,...A||{}}))},markDataFullyLoaded:A=>{_||(_=!0,T(W,{viewId:o,featureName:i,...A||{}}))},whenDataFullyLoaded:({whenDFLCallback:A,timeout:K=15e3})=>{var j,se,fe,de,Se;g(l);let p=[];const m={viewDFLTimedOut:!1};if(s&&(0,C.le)("nf-session")&&(p=[...p,...t]),(j=r==null?void 0:r.networkingRules)!=null&&j.criticalPathAPICalls&&(Array.isArray((se=r==null?void 0:r.networkingRules)==null?void 0:se.criticalPathAPICalls)?p=[...p,...(fe=r==null?void 0:r.networkingRules)==null?void 0:fe.criticalPathAPICalls]:typeof((de=r==null?void 0:r.networkingRules)==null?void 0:de.criticalPathAPICalls)=="function"&&(p=[...p,...(Se=r==null?void 0:r.networkingRules)==null?void 0:Se.criticalPathAPICalls()])),window._rum.waiters.push({featureName:i,apiMarksToWaitFor:p}),p.length===0){A==null||A(m);return}const ie=setTimeout(()=>{m.viewDFLTimedOut=!0,A==null||A(m),A=null},K);L({listenerClass:l,markNamesToWaitFor:p.map(oe=>`api-${oe}-complete`),startOffset:s?0:_e==null?void 0:_e.index,whenMadeCallback:()=>{clearTimeout(ie),A==null||A(m),A=null}})}}}function Ce(u,i){ee&&y.v.addRumGlobalContext(u,i)}function Le({id:u,plan:i,accountId:r,email:o}){if(ee){const s={id:u,plan:i,accountId:r};typeof o=="string"&&(s.isInternalUser=o.endsWith("@netlify.com")),y.v.setUser(s)}}function we(u){if(ee){ye++;const i=(0,D.bl)(u);y.v.addRumGlobalContext(n,i),y.v.startView(u),_e=T(x,{urlTrackPath:u,featureName:(0,D.WV)(u)}),T(x,{urlTrackPath:u,featureName:i}),y.v.addTiming(O,ye)}}function De(u){if(ee){let i="internal-nav";Me()&&(i="page-load-nav");const r={pathname:window.location.pathname,errorPageType:u,navType:i};y.v.addAction(V,r),T(J,r)}}const Me=()=>ye<=1},66664:(ge,X,c)=>{c.d(X,{$2:()=>t,A$:()=>N,BO:()=>P,Bj:()=>H,MR:()=>V,Qc:()=>I,Qy:()=>b,VH:()=>n,We:()=>T,_4:()=>U,g$:()=>q,hA:()=>f,i7:()=>x,lR:()=>z,nu:()=>w,pC:()=>Q,pn:()=>M,s8:()=>R,tJ:()=>L,yp:()=>l,z0:()=>Z,zJ:()=>a,zu:()=>$});var y=c(90046),G=c.n(y),C=c(78025),D=c(29861);const V="success",M="error",H="in-progress",W="blank",x={SUCCESS:V,ERROR:M,IN_PROGRESS:H,BLANK:W},J={[V]:"Site is live",[M]:"Site deploy failed",[H]:"Site deploy in progress",[W]:"Site has not yet been deployed"};function z(g){return g.get("deploy_id")?V:g.get("error_message")?M:g.get("build_id")||g.get("state")!=="current"?H:W}function U(g){return J[z(g)]}function w(g){const{siteDomain:B}=C.Z;return`${g.get("name")||g.get("subdomain")}.${B}`}function O(g){return`https://${g.get("default_domain")||w(g)}`}function t(g){return g.get("custom_domain")?g.get("url"):O(g)}function n(g){return g&&g.getIn(["build_settings","provider"])}function a(g){const B=n(g);return B&&D.uI.getIn([B,"name"])||B}function l(g){return/^gitlab/.test(n(g))?"merge request":"pull request"}function b(g){return/^gitlab/.test(n(g))?"MR":"PR"}function I(g){return!!g.getIn(["build_settings","repo_branch"])}function Z(g){return I(g)&&(g.getIn(["build_settings","allowed_branches"])||(0,y.List)()).size!==1}function Q(g,B){return`https://${v(g,B)}`}function v(g,B){return`${B}--${w(g)}`}function $(g){return g.get("custom_domain")||h(g)}function f(g){return g.get("account_subdomain")||g.get("name")}function h(g){return g.get("default_domain")||w(g)}function P(g){const[B,...k]=h(g).split(".");return k.join(".")}function R(g){return!((g==null?void 0:g.getIn(["build_settings","repo_url"]))||(g==null?void 0:g.get("repo_url"))||(g==null?void 0:g.get("deploy_hook")))}const E=["trusty","production",null];function T(g){if(R(g))return!1;const B=g==null?void 0:g.get("build_image");return E.includes(B)}function N(g){return R(g)?!1:(g==null?void 0:g.get("build_image"))==="xenial"}function q(g){return!!(g!=null&&g.getIn(["build_settings","stop_builds"]))}function L(g){return g.getIn(["build_settings","provider"])===D.CB.github&&g.getIn(["build_settings","repo_owner_type"])==="Organization"&&!g.getIn(["build_settings","public_repo"])}},82522:(ge,X,c)=>{c.d(X,{KS:()=>G,SP:()=>C,Sg:()=>y});const y="workflowui/configs",G="site-settings",C="log-drains-settings"},49493:(ge,X,c)=>{c.d(X,{T:()=>G});var y=c(82522);const G=async(C,D)=>{const V=new URL([y.Sg,C,D].filter(Boolean).join("/"),window.location.origin),H=await(await fetch(V)).json();return Object.keys(H).length?H:void 0}},66308:(ge,X,c)=>{c.d(X,{Z:()=>Q});var y=c(5780),G=c.n(y),C=c(42249),D=c(93967),V=c(28136),M=c(72243);const H="001",W="002",x="003",J="004",z="unknown";function U(v){if(!(v!=null&&v.directResults))return v;const{key:$,message:f,code:h}=v.directResults;let P;switch(h){case J:P="CVV code";break;case W:P="card number";break;case x:P="card type";break}if($)switch(!0){case($==="creditCardExpirationMonth"||(f==null?void 0:f.includes("creditCardExpirationMonth"))||$==="creditCardExpirationYear"||(f==null?void 0:f.includes("creditCardExpirationYear"))):P="card expiration date";break;case($==="cardSecurityCode"||(f==null?void 0:f.includes("cardSecurityCode"))):P="CVV code";break;case($==="creditCardHolderName"||(f==null?void 0:f.includes("creditCardHolderName"))):P="cardholder name";break;case($==="creditCardCountry"||(f==null?void 0:f.includes("creditCardCountry"))):P="country";break;case($==="creditCardState"||(f==null?void 0:f.includes("creditCardState"))):P="state";break;case($==="creditCardAddress1"||(f==null?void 0:f.includes("creditCardAddress1"))):case($==="creditCardAddress2"||(f==null?void 0:f.includes("creditCardAddress2"))):P="address";break;case($==="creditCardCity"||(f==null?void 0:f.includes("creditCardCity"))):P="city";break;case($==="creditCardPostalCode"||(f==null?void 0:f.includes("creditCardPostalCode"))):P="zip/postal code";break}return P?(v.displayMessage=`The provided ${P} is invalid.`,v):("key"in v.directResults&&$==="error"&&(f&&f.includes("Submit_Too_Quick")?v.displayMessage="You have submitted this form too many times. Please try again later.":f&&f.includes("Authentication failed, please check your password")?v.displayMessage="Verification step failed because the authentication was incorrect or the authentication was canceled.":v.displayMessage=`Validation failed on server-side, Please check your input values. ${f?`Internal Message: (${f}`:""}`),v)}const w="1.3.1",O="8ad088718045e6340180479027db13c7",t="8a12892d804132bf01804c4c9bb718d7";let n,a=!1;const l=()=>window.Z||null;async function b(v){a||(await new Promise(($,f)=>{a=!0;const h=document.createElement("script");h.type="text/javascript",h.async=!0,h.onload=()=>$(),h.onerror=()=>f("failed to load zuora"),h.src=`https://static.zuora.com/Resources/libs/hosted/${w}/zuora-min.js`,document.getElementsByTagName("head")[0].appendChild(h)}),window.addEventListener("message",v))}async function I({rendererParams:v,rendererPrepopulateFields:$,onSubmissionSuccess:f,onSubmissionError:h,onRenderError:P,onRenderSuccess:R}){try{let T=function(ee){h==null||h(U(ee)),Z()};var E=T;const{key:N,signature:q,style:L,submitEnabled:g,tenantId:B,token:k,url:te,sandbox:ae,passthroughParams:ne,zuoraPayload:Y,zuora_id:S,hosted_page_id:F}=v,pe=Date.now();n=pe;const ce=()=>n===pe;await b(ee=>{!ce()||ee.origin.endsWith(".zuora.com")&&console.log(ee)});const he=ee=>{!ce()||(console.log("zuora callback invoked",ee),["true",!0].includes(ee==null?void 0:ee.success)?f==null||f(ee):ee.responseFrom==="Response_From_Submit_Page"?T({displayMessage:"Failed to process payment",directResults:ee}):P==null||P("failed to load page"),Z())},le=(ee,ye,_e,Ie)=>{!ce()||(console.error("zuora client error message invoked",ee,ye,_e,Ie),T==null||T({displayMessage:_e,directResults:{key:ee,code:ye,message:_e,rawGatewayInfo:Ie}}))},re=ee=>{!ce()||console.log("zuora showing challenge modal",ee)},ve=(ne||[]).reduce((ee,ye,_e)=>(_e<15?ee[`field_passthrough${_e+1}`]=ye:console.error("only 15 passthrough params allowed"),ee),{}),Te=new V.Z;Te.setPublicKey(N);const ue={...typeof $=="object"?$:{},creditCardExpirationMonth:Te.encrypt(parseInt(Y.expirationMonth)<10?`0${parseInt(Y.expirationMonth)}`:`${Y.expirationMonth}`),creditCardExpirationYear:Te.encrypt(""+Y.expirationYear),creditCardNumber:Te.encrypt(Y.creditCardNumber.replace(/\s/gi,"")),cardSecurityCode:Te.encrypt(Y.securityCode),creditCardHolderName:Y.cardHolderInfo.cardHolderName,creditCardCountry:M.vU[Y.cardHolderInfo.country]||Y.cardHolderInfo.country,creditCardState:(0,M.H8)(Y.cardHolderInfo.state),creditCardAddress1:Y.cardHolderInfo.addressLine1,creditCardAddress2:Y.cardHolderInfo.addressLine2,creditCardCity:Y.cardHolderInfo.city,creditCardPostalCode:Y.cardHolderInfo.zipCode};l().setEventHandler("onloadCallback",()=>{!ce()||(l().setAgreement("External","Recurring","Visa,Mastercard,Discover",""),l().allowScroll(),R==null||R(),setTimeout(()=>{l().submit(),setTimeout(()=>{const ee=document.getElementById("zuora_form_container");ee&&(ee.style.display="block")})},2e3))}),l().renderWithErrorHandler({id:F||(ae?O:t),key:N,signature:q,style:L,submitEnabled:g,tenantId:B,token:k,url:te,field_accountId:S,...ve},ue,he,le,null,null,re)}catch(T){console.error(T),P==null||P(T)}}function Z(){const v=document.querySelector("#zuora_payment iframe");v&&v.remove();const $=document.getElementById("zuora_form_container");$&&($.style.display="none")}class Q{constructor($){this.braintreeZuoraTypeMap={amex:"AmericanExpress",discover:"Discover",mastercard:"MasterCard",visa:"Visa",jcb:"JCB",diners:"Diners"},this.getZuoraCardType=f=>{const h=(0,C._O)(f.number)||{};return this.braintreeZuoraTypeMap[h.type]},this.createZuoraPayload=f=>{const{month:h,year:P}=(0,C.qj)(f.expiration),R=this.getZuoraCardType(f);return{accountKey:this.tokenBundle.payment_gateway_id,cardHolderInfo:{cardHolderName:f.name,addressLine1:f.addressLine1||"placeholder",addressLine2:f.addressLine2,city:f.city,country:f.country,state:f.state,zipCode:f.zipCode},creditCardNumber:f.number,creditCardType:R,defaultPaymentMethod:!0,expirationMonth:h,expirationYear:P,securityCode:f.cvv}},this.hasRequiredFields=f=>{const{accountKey:h,cardHolderInfo:P,creditCardType:R,expirationMonth:E,expirationYear:T}=f;return![h,P,R,E,T].some(N=>!N)},this.zuoraErrorMessage=f=>{const h=f.reasons&&f.reasons[0]&&f.reasons[0].message||"Unable to process transaction",P=h.split(".").shift(),R=/PROCESSOR_DECLINED/.test(h)?". Please contact your bank for more information.":"";return`${P}${R}`},this.zuoraResponseToPaymentMethod=(f,h)=>{if(!h.success)throw new D.Z(this.zuoraErrorMessage(h));try{const P=h.paymentMethodId;if(!P)throw new Error("Missing paymentMethodId in Zuora response");const R=this.tokenBundle.customer_id,E=this.tokenBundle.organization_id;if(!R&&!E)throw new Error("Missing customer_id or organization_id in token bundle from API");const T={type:"card",zuora_id:P,customer_id:R,data:{card_type:f.creditCardType,name:f.cardHolderInfo.cardHolderName,last4:f.creditCardNumber.substr(f.creditCardNumber.length-4),country:f.cardHolderInfo.country,state:f.cardHolderInfo.state,auth_transaction_id:h.authTransactionId},sandbox:this.tokenBundle.sandbox,enterpriseException:this.tokenBundle.enterpriseException};return Promise.resolve(T)}catch(P){throw G().notify(P,R=>{R.context="zuora-client \uFE65 zuoraResponseToPaymentMethod"}),new D.Z("Unable to process transaction")}},this.createPaymentMethod=f=>{const h=this.createZuoraPayload(f);if(!this.hasRequiredFields(h))throw new D.Z("Unsupported payment method");try{const{signature:P,token:R,secure:E}=this.tokenBundle;if(!P)throw new Error("Missing signature in token bundle from API");if(!R)throw new Error("Missing token in token bundle from API");return E?this.perform3DSecureHostedFrameSequence(h).then(T=>this.zuoraResponseToPaymentMethod(h,T)):fetch(this.tokenBundle.uri,{body:JSON.stringify(h),headers:{Accept:"application/json","Content-Type":"application/json",signature:P,token:R},method:"POST",mode:"cors"}).then(T=>T.json()).then(T=>this.zuoraResponseToPaymentMethod(h,T))}catch(P){throw G().notify(P,R=>{R.context="zuora-client \uFE65 createPaymentMethod"}),new D.Z("Unable to process transaction")}},this.perform3DSecureHostedFrameSequence=async f=>{const{sandbox:h,uri:P,key:R,tenantId:E,signature:T,token:N,zuora_id:q,hosted_page_id:L}=this.tokenBundle;if(!E||!R||!T||!N)throw console.error("perform3DSecureHostedFrameSequence did not receive all of the data needed",this.tokenBundle),G().notify(e,g=>{g.context="zuora-client \uFE65 perform3DSecureHostedFrameSequence"}),new D.Z("Unable to process transaction");return new Promise((g,B)=>{I({rendererParams:{sandbox:h,url:P,key:R,tenantId:E,signature:T,token:N,submitEnabled:!0,style:"inline",passthroughParams:[],zuoraPayload:f,zuora_id:q,hosted_page_id:L},rendererPrepopulateFields:{},onRenderSuccess:()=>{console.log("rendered")},onRenderError:k=>console.error("failed to render",k),onSubmissionError:k=>{console.error("failed to process",k),B(new D.Z(k.displayMessage))},onSubmissionSuccess:k=>{if(!(k!=null&&k.refId))return B(new D.Z("Internal Error: Failed to get a refId > paymentMethodId"));g({paymentMethodId:k.refId,authTransactionId:k.zThreeDs2TxId,success:!0})}})})},this.tokenBundle=$}}},72243:(ge,X,c)=>{c.d(X,{H8:()=>V,hU:()=>G,vU:()=>y,zN:()=>C});const y={AF:"AFG",AX:"ALA",AL:"ALB",DZ:"DZA",AS:"ASM",AD:"AND",AO:"AGO",AI:"AIA",AQ:"ATA",AG:"ATG",AR:"ARG",AM:"ARM",AW:"ABW",AU:"AUS",AT:"AUT",AZ:"AZE",BS:"BHS",BH:"BHR",BD:"BGD",BB:"BRB",BY:"BLR",BE:"BEL",BZ:"BLZ",BJ:"BEN",BM:"BMU",BT:"BTN",BO:"BOL",BQ:"BES",BA:"BIH",BW:"BWA",BV:"BVT",BR:"BRA",IO:"IOT",BN:"BRN",BG:"BGR",BF:"BFA",BI:"BDI",KH:"KHM",CM:"CMR",CA:"CAN",CV:"CPV",KY:"CYM",CF:"CAF",TD:"TCD",CL:"CHL",CN:"CHN",CX:"CXR",CC:"CCK",CO:"COL",KM:"COM",CG:"COG",CD:"COD",CK:"COK",CR:"CRI",CI:"CIV",HR:"HRV",CU:"CUB",CW:"CUW",CY:"CYP",CZ:"CZE",DK:"DNK",DJ:"DJI",DM:"DMA",DO:"DOM",EC:"ECU",EG:"EGY",SV:"SLV",GQ:"GNQ",ER:"ERI",EE:"EST",ET:"ETH",FK:"FLK",FO:"FRO",FJ:"FJI",FI:"FIN",FR:"FRA",GF:"GUF",PF:"PYF",TF:"ATF",GA:"GAB",GM:"GMB",GE:"GEO",DE:"DEU",GH:"GHA",GI:"GIB",GR:"GRC",GL:"GRL",GD:"GRD",GP:"GLP",GU:"GUM",GT:"GTM",GG:"GGY",GN:"GIN",GW:"GNB",GY:"GUY",HT:"HTI",HM:"HMD",VA:"VAT",HN:"HND",HK:"HKG",HU:"HUN",IS:"ISL",IN:"IND",ID:"IDN",IR:"IRN",IQ:"IRQ",IE:"IRL",IM:"IMN",IL:"ISR",IT:"ITA",JM:"JAM",JP:"JPN",JE:"JEY",JO:"JOR",KZ:"KAZ",KE:"KEN",KI:"KIR",KP:"PRK",KR:"KOR",KW:"KWT",KG:"KGZ",LA:"LAO",LV:"LVA",LB:"LBN",LS:"LSO",LR:"LBR",LY:"LBY",LI:"LIE",LT:"LTU",LU:"LUX",MO:"MAC",MK:"MKD",MG:"MDG",MW:"MWI",MY:"MYS",MV:"MDV",ML:"MLI",MT:"MLT",MH:"MHL",MQ:"MTQ",MR:"MRT",MU:"MUS",YT:"MYT",MX:"MEX",FM:"FSM",MD:"MDA",MC:"MCO",MN:"MNG",ME:"MNE",MS:"MSR",MA:"MAR",MZ:"MOZ",MM:"MMR",NA:"NAM",NR:"NRU",NP:"NPL",NL:"NLD",NC:"NCL",NZ:"NZL",NI:"NIC",NE:"NER",NG:"NGA",NU:"NIU",NF:"NFK",MP:"MNP",NO:"NOR",OM:"OMN",PK:"PAK",PW:"PLW",PS:"PSE",PA:"PAN",PG:"PNG",PY:"PRY",PE:"PER",PH:"PHL",PN:"PCN",PL:"POL",PT:"PRT",PR:"PRI",QA:"QAT",RE:"REU",RO:"ROU",RU:"RUS",RW:"RWA",BL:"BLM",SH:"SHN",KN:"KNA",LC:"LCA",MF:"MAF",PM:"SPM",VC:"VCT",WS:"WSM",SM:"SMR",ST:"STP",SA:"SAU",SN:"SEN",RS:"SRB",SC:"SYC",SL:"SLE",SG:"SGP",SX:"SXM",SK:"SVK",SI:"SVN",SB:"SLB",SO:"SOM",ZA:"ZAF",GS:"SGS",SS:"SSD",ES:"ESP",LK:"LKA",SD:"SDN",SR:"SUR",SJ:"SJM",SZ:"SWZ",SE:"SWE",CH:"CHE",SY:"SYR",TW:"TWN",TJ:"TJK",TZ:"TZA",TH:"THA",TL:"TLS",TG:"TGO",TK:"TKL",TO:"TON",TT:"TTO",TN:"TUN",TR:"TUR",TM:"TKM",TC:"TCA",TV:"TUV",UG:"UGA",UA:"UKR",AE:"ARE",GB:"GBR",US:"USA",UM:"UMI",UY:"URY",UZ:"UZB",VU:"VUT",VE:"VEN",VN:"VNM",VG:"VGB",VI:"VIR",WF:"WLF",EH:"ESH",YE:"YEM",ZM:"ZMB",ZW:"ZWE"},G={AA:"Armed Forces America",AE:"Armed Forces",AK:"Alaska",AL:"Alabama",AP:"Armed Forces Pacific",AR:"Arkansas",AZ:"Arizona",CA:"California",CO:"Colorado",CT:"Connecticut",DC:"Washington DC",DE:"Delaware",FL:"Florida",GA:"Georgia",GU:"Guam",HI:"Hawaii",IA:"Iowa",ID:"Idaho",IL:"Illinois",IN:"Indiana",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",MA:"Massachusetts",MD:"Maryland",ME:"Maine",MI:"Michigan",MN:"Minnesota",MO:"Missouri",MS:"Mississippi",MT:"Montana",NC:"North Carolina",ND:"North Dakota",NE:"Nebraska",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NV:"Nevada",NY:"New York",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",PR:"Puerto Rico",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VA:"Virginia",VI:"Virgin Islands",VT:"Vermont",WA:"Washington",WI:"Wisconsin",WV:"West Virginia",WY:"Wyoming"},C={AB:"Alberta",BC:"British Columbia",MB:"Manitoba",NB:"New Brunswick",NL:"Newfoundland and Labrador",NS:"Nova Scotia",NT:"Northwest Territories",NU:"Nunavut",ON:"Ontario",PE:"Prince Edward Island",QC:"Quebec",SK:"Saskatchewan",YT:"Yukon"},D=[...Object.values(G),...Object.values(C)];function V(M){let H="";if(M.length===2)H=G[M.toUpperCase()]||C[M.toUpperCase()];else if(M){const W=M.toLowerCase().replace(/\W/gi,"");H=D.find(x=>{const J=x.toLowerCase().replace(/\W/gi,"");return W===J})||""}return H||M}}}]);
